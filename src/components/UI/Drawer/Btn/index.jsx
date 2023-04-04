@@ -8,7 +8,7 @@ const Index = ({navigation}) => {
             className={"pl-2"}
             onPress={() => navigation.toggleDrawer()}
         >
-            <AppMenuIcon name={'appstore-o'} size={32}/>
+            <AppMenuIcon name={'appstore-o'} size={28} color={"#146C94"}/>
         </TouchableOpacity>
     );
 };
