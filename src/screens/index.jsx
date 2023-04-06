@@ -1,7 +1,7 @@
 import React from 'react';
-import {Text, View, TouchableOpacity, Image} from "react-native";
+import {Image} from "react-native";
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import Home from "./Main/Home";
+import Main from "./Main/";
 import Btn from "../components/UI/Drawer/Btn";
 import Bell from "../components/UI/Drawer/Bell";
 import Logo from './../assets/img/Icons/logo.png';
@@ -19,7 +19,7 @@ const Index = () => {
                               headerRight: props => <Bell/>
                           })}
         >
-            <Drawer.Screen name="Home" component={Home}/>
+            <Drawer.Screen name="Main" component={Main}/>
         </Drawer.Navigator>
     );
 };

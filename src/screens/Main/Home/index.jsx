@@ -11,7 +11,7 @@ import MessageIcon from 'react-native-vector-icons/MaterialIcons';
 import { TextInput, Searchbar } from 'react-native-paper';
 import { ScrollView } from 'react-native-gesture-handler';
 import MapImg from './../../../assets/img/map.jpg';
-const Index = () => {
+const Index = (props) => {
     const ref = React.useRef(null);
     const [searchQuery, setSearchQuery] = React.useState('');
     const onChangeSearch = query => setSearchQuery(query);
@@ -41,7 +41,7 @@ const Index = () => {
                         colors={['#e18d98', '#d57a80', 'transparent']}
                     // colors={['#e18d98', '#d57a80', 'transparent']}
                     >
-                        <TouchableWithoutFeedback onPress={() => console.log("First Help")}>
+                        <TouchableWithoutFeedback onPress={() => props.navigation.navigate('FirstHelp')}>
                             <View className={"flex flex-row justify-around rounded h-24"}>
                                 <View className={""}>
                                     <Image source={FirstHelpIcon} className={"object-top bottom-5"} />
