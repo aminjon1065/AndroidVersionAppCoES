@@ -1,0 +1,51 @@
+{
+  "translation": {
+    "Interface": {
+      "Drawer": {
+        "Home": "Асосӣ",
+        "About": "Дар бораи барнома",
+        "Settings": "Танзимот"
+
+      },
+      "Cards": {
+        "WhatToDo": "Чи бояд кард?",
+        "WhatToDoDescription": "Чи бояд кард дар Ҳолатҳои гуногуни фавқулодда",
+        "FirstHelp": "Кумаки аввал",
+        "FirstHelpDescription": "Кумаки аввал барои ҷабрдидаҳо",
+        "RiskMap": "Харитаи хатар",
+        "CoESForKids": "КҲФ барои кудакон",
+        "CoESForKidsDescription": "Омӯзонидани асосҳои бехатарӣ ба кӯдакон"
+      },
+      "List": {
+        "Recommended": "КҲФ тавсия медиҳад",
+        "CivilDefense": "Ҳифзи аҳолӣ",
+        "Encyclopedia": "Энсиклопедия",
+        "Quiz": "Худро санҷ",
+        "COESKids": "КҲФ барои кудакон"
+      },
+      "Functions": {
+        "Back": "Қафо",
+        "Cancel": "Бекор кардан",
+        "Show": "Дидан",
+        "Search": "Кофтан...",
+        "ChangeFontSize": "Иваз намудани андозаи шрифт"
+
+      },
+      "WeatherToday": "Обу ҳаво барои имрӯз!",
+      "NewNotification": "Огоҳии нав!",
+      "SignIn": "Даромад"
+    },
+    "Other": {
+      "Denied": "Иҷозат нест!",
+      "WEBSite": "Сомонаи кумита"
+    },
+    "SelectEmergency": "Интихоби ҲФ",
+    "SelectedEmergency": "Интихоб шуда",
+    "EmergenciesList": {
+      "earthquake": "Заминҷунбӣ",
+      "landslides": "Ярч",
+      "avalanche": "Тарма",
+      "flood": "Сел"
+    }
+  }
+}

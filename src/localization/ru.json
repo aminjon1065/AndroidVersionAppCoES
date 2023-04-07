@@ -1,0 +1,49 @@
+{
+  "translation": {
+    "Interface": {
+      "Drawer": {
+        "Home": "Главная",
+        "About": "О приложении",
+        "Settings": "Настройки"
+      },
+      "Cards": {
+        "WhatToDo": "Что делать если?",
+        "WhatToDoDescription": "Что делать если произошла какая-то ситуация",
+        "FirstHelp": "Помощь",
+        "FirstHelpDescription": "Первая помощь пострадавшему",
+        "RiskMap": "Карта рисков",
+        "CoESForKids": "КЧС Детям",
+        "CoESForKidsDescription": "Учить детей основы безопасности"
+      },
+      "List": {
+        "Recommended": "КЧС рекомендует",
+        "CivilDefense": "Гражданская оборона",
+        "Encyclopedia": "Энциклопедия",
+        "Quiz": "Проверь себя",
+        "COESKids": "КЧС детям"
+      },
+      "Functions": {
+        "Back": "Назад",
+        "Cancel": "Отмена",
+        "Show": "Посмотреть",
+        "Search": "Поиск...",
+        "ChangeFontSize": "Изменить размер шрифта"
+      },
+      "WeatherToday": "Погода на сегодня!",
+      "NewNotification": "Новое Уведомелние!",
+      "SignIn": "Войти"
+    },
+    "Other": {
+      "Denied": "Не разрешено!",
+      "WEBSite": "Сайт комитета"
+    },
+    "SelectEmergency": "Выбрать ЧС",
+    "SelectedEmergency": "Выбрано",
+    "EmergenciesList": {
+      "earthquake": "Землятрясения",
+      "landslides": "Оползни",
+      "avalanche": "Лавина",
+      "flood": "Наводнение"
+    }
+  }
+}
