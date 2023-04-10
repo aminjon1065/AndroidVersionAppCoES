@@ -80,7 +80,7 @@ const Index = (props) => {
                         result.length >= 1
                             ?
                             result.map((item, index) => (
-                                <View key={index} className={"mt-2 py-2 bg-slate-200"}>
+                                <View key={index} className={"mt-2 py-2 bg-slate-200 rounded-lg"}>
                                     {
                                         searchText && <Text>{item.category}</Text>
                                     }
