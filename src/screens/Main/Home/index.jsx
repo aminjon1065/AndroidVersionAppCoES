@@ -67,17 +67,22 @@ const Index = (props) => {
                             location={[0.25, 0.4, 1]}
                         // colors={['#e18d98', '#d57a80', 'transparent']}
                         >
-                            <View className={"items-center"}>
-                                <Image source={WhatToDoIcon} className={"object-top "} />
-                            </View>
-                            <View className={"justify-center "}>
-                                <Text className={"text-2xl text-center text-white"}>
-                                    Что делать?
-                                </Text>
-                                <Text className={"text-center text-white"}>
-                                    Что делать в экстренных ситуациях
-                                </Text>
-                            </View>
+                            <TouchableWithoutFeedback onPress={() => props.navigation.navigate('WhatToDo')}>
+
+                                <View>
+                                    <View className={"items-center"}>
+                                        <Image source={WhatToDoIcon} className={"object-top "} />
+                                    </View>
+                                    <View className={"justify-center "}>
+                                        <Text className={"text-2xl text-center text-white"}>
+                                            Что делать?
+                                        </Text>
+                                        <Text className={"text-center text-white"}>
+                                            Что делать в экстренных ситуациях
+                                        </Text>
+                                    </View>
+                                </View>
+                            </TouchableWithoutFeedback>
                         </LinearGradient>
                         <LinearGradient
                             start={[0, 0]}
@@ -88,17 +93,22 @@ const Index = (props) => {
                             colors={['#74EBD5', '#9FACE6', 'transparent']}
                         // colors={['#e18d98', '#d57a80', 'transparent']}
                         >
-                            <View className={"items-center"}>
-                                <Image source={SaveKidsIcon} className={"object-top"} />
-                            </View>
-                            <View className={" justify-center "}>
-                                <Text className={"text-2xl text-center text-white"}>
-                                    КЧС Детям
-                                </Text>
-                                <Text className={"text-center text-white"}>
-                                    Основы безопасности детям
-                                </Text>
-                            </View>
+                            <TouchableWithoutFeedback onPress={() => props.navigation.navigate('CoesKids')}>
+                                <View>
+                                    <View className={"items-center"}>
+                                        <Image source={SaveKidsIcon} className={"object-top"} />
+                                    </View>
+                                    <View className={" justify-center "}>
+
+                                        <Text className={"text-2xl text-center text-white"}>
+                                            КЧС Детям
+                                        </Text>
+                                        <Text className={"text-center text-white"}>
+                                            Основы безопасности детям
+                                        </Text>
+                                    </View>
+                                </View>
+                            </TouchableWithoutFeedback>
                         </LinearGradient>
                     </View>
                     <View className={"mt-4"}>
@@ -125,7 +135,7 @@ const Index = (props) => {
                         </View>
                     </View>
                     <View className="bg-slate-50 mt-4 rounded-2xl">
-                        <TouchableWithoutFeedback onPress={() => console.log("map")}>
+                        <TouchableWithoutFeedback onPress={() => props.navigation.navigate('Map')}>
                             <ImageBackground source={MapImg} blurRadius={5} imageStyle={{ borderRadius: 10 }} className="  h-32 flex flex-row items-center justify-center">
                                 <Text className="text-center text-xl">
                                     Map
