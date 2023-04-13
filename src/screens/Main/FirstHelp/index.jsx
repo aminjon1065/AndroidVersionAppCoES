@@ -1,6 +1,6 @@
-import React, { useState,useEffect } from 'react';
-import { View, Text, TouchableOpacity, Keyboard, ScrollView } from 'react-native';
-import { Searchbar } from 'react-native-paper';
+import React, {useState, useEffect} from 'react';
+import {View, Text, TouchableOpacity, Keyboard, ScrollView} from 'react-native';
+import {Searchbar} from 'react-native-paper';
 import ArrowLeftIcon from 'react-native-vector-icons/Octicons'
 import ClearIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import HideKeboardIcon from 'react-native-vector-icons/MaterialIcons';
@@ -52,7 +52,7 @@ const Index = (props) => {
                             className=" items-center"
                             onPress={() => props.navigation.goBack()}
                         >
-                            <ArrowLeftIcon name='arrow-left' size={28} color={'#146C94'} />
+                            <ArrowLeftIcon name='arrow-left' size={28} color={'#146C94'}/>
                             <Text className="text-[#146C94]">
                                 Назад
                             </Text>
@@ -71,7 +71,7 @@ const Index = (props) => {
                             onChangeText={onChangeSearchText}
                             value={searchText}
                             iconColor={'#146C94'}
-                        // clearIcon={'close'}
+                            // clearIcon={'close'}
                         />
                     </View>
                 </View>
@@ -99,7 +99,7 @@ const Index = (props) => {
                     }
                 </ScrollView>
             </View>
-        </View >
+        </View>
     );
 };
 

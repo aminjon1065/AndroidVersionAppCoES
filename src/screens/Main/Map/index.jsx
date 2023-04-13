@@ -3,7 +3,7 @@ import { View } from 'react-native';
 
 const Index = () => {
     return (
-        <View>
+        <View className={"bg-white h-screen"}>
             
         </View>
     );
