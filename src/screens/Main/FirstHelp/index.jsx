@@ -6,8 +6,8 @@ import ClearIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import HideKeboardIcon from 'react-native-vector-icons/MaterialIcons';
 import {useSelector} from "react-redux";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import {routesDataTj} from "./../../../data/FirstHelpTj";
-import {routesDataRu} from "./../../../data/FirstHelpRu";
+import {routesDataTj} from "../../../data/FirstHelpTj";
+import {routesDataRu} from "../../../data/FirstHelpRu";
 import ShowItem from './../../../components/showItem';
 
 const Index = (props) => {
@@ -75,12 +75,12 @@ const Index = (props) => {
                         />
                     </View>
                 </View>
-                <ScrollView className="mt-2">
+                <ScrollView className="pt-2 mb-32">
                     {
                         result.length >= 1
                             ?
                             result.map((item, index) => (
-                                <View key={index} className={"mt-2 py-2 bg-slate-200 rounded-lg"}>
+                                <View key={index} className={"mt-2 py-2 bg-slate-200 rounded-lg pl-1"}>
                                     {
                                         searchText && <Text>{item.category}</Text>
                                     }

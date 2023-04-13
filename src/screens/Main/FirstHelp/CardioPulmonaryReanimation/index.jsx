@@ -8,7 +8,7 @@ const Index = () => {
     const {i18n} = useTranslation();
     const lang = i18n.language;
     return (
-        <View>
+        <View className={"bg-white"}>
             {
                 lang === 'ru'
                     ?
