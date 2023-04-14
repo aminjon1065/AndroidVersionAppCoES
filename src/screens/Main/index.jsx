@@ -36,7 +36,7 @@ const Index = () => {
         <>
             <Stack.Navigator initialRouteName='Home' screenOptions={{
                 header: (props) => <NavigationBackBar props={props}/>,
-                animation: 'slide_from_right'
+                animation:'slide_from_right'
             }}>
                 {/* Main routes */}
                 <Stack.Screen name="Home" component={Home} options={{headerShown: false}}/>

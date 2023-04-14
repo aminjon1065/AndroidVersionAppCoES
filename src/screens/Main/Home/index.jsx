@@ -53,7 +53,6 @@ const Index = (props) => {
         setResult(langStore.langInterface === "tj" ? routesDataTj.items : routesDataRu.items)
         getLng();
     }, [langStore]);
-
     return (
         <ScrollView>
             <View
