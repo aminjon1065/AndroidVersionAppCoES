@@ -1,16 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, Image, TouchableWithoutFeedback, ImageBackground} from "react-native";
+import {View, Text, Image, TouchableWithoutFeedback, ImageBackground, Linking} from "react-native";
 import {LinearGradient} from 'expo-linear-gradient';
 import FirstHelpIcon from './../../../assets/img/Icons/Frame.png';
 import WhatToDoIcon from './../../../assets/img/Icons/icons8-inquiry-100.png';
 import SaveKidsIcon from './../../../assets/img/Icons/defend-family.png';
 import {StatusBar} from "expo-status-bar";
-import SearchIcon from 'react-native-vector-icons/EvilIcons';
 import CallIcon from 'react-native-vector-icons/MaterialIcons';
 import MessageIcon from 'react-native-vector-icons/MaterialIcons';
 import {Searchbar} from 'react-native-paper';
 import {routesDataRu} from "../../../data/routesDataRu";
-
 import {ScrollView} from 'react-native-gesture-handler';
 import MapImg from './../../../assets/img/map.jpg';
 import {useTranslation} from "react-i18next";
@@ -30,6 +28,13 @@ const Index = (props) => {
     const onChangeSearchText = (text) => {
         setSearchText(text)
         searchFilterFunction(text);
+    }
+    const call = async () => {
+        try {
+            await Linking.openURL(`tel:112`)
+        } catch (e) {
+            console.log(e)
+        }
     }
     const searchFilterFunction = (text) => {
         if (text) {
@@ -176,7 +181,7 @@ const Index = (props) => {
                                         Нужна помощь специалиста КЧС?
                                     </Text>
                                     <View className="flex flex-row pt-2">
-                                        <TouchableWithoutFeedback onPress={() => console.log("call")}>
+                                        <TouchableWithoutFeedback onPress={call}>
                                             <View
                                                 className="flex flex-row flex-1 mr-1 items-center justify-center rounded-xl py-3 bg-red-500">
                                                 <CallIcon name='phone' size={32} color={"white"}/>
