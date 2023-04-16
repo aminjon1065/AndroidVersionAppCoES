@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import {
     DrawerContentScrollView,
     DrawerItemList,
@@ -9,8 +9,12 @@ import WeatherIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {useDispatch} from "react-redux";
 import locationState, {updateLocation} from "../../../../state/slices/location";
 import Weather from "../../../Weather";
+// import CloudsVideo from '../../../../assets/video/Overcast.mp4';
+import {Video} from 'expo-av';
 
 const Index = (props) => {
+    const video = React.useRef(null);
+    const [status, setStatus] = React.useState({});
     const [location, setLocation] = useState(null);
     const [errorMsg, setErrorMsg] = useState('');
     const [temperature, setTemperature] = useState(null);
@@ -52,7 +56,15 @@ const Index = (props) => {
 
     return (
         <View className="flex-1">
-            <View className="mt-10 bg-slate-300 rounded-xl mx-3 items-center justify-center h-1/6">
+            <View className="mt-10 rounded-xl mx-3 items-center justify-center h-1/6 bg-slate-200">
+            {/*<View className="h-1/6 flex-1">*/}
+            {/*    <Video*/}
+            {/*        source={CloudsVideo}*/}
+            {/*        className={"flex-1"}*/}
+            {/*        shouldPlay*/}
+            {/*        resizeMode="cover"*/}
+            {/*        isLooping*/}
+            {/*    />*/}
                 <Weather
                     temperature={temperature}
                     condition={conditional}

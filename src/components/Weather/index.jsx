@@ -66,7 +66,6 @@ const Index = ({error, condition, temperature, isLoading, navigation}) => {
             </View>
         )
     }
-
     return (
         <View className={"mr-4"}>
             {
@@ -92,10 +91,10 @@ export default Index;
 
 const styles = StyleSheet.create({
     weatherText: {
-        color: "white"
+        color: "black",
+        fontSize:36
     },
     weatherIcon: {
-        color: "white",
-        fontSize: 24
+        color: "black",
     }
 })

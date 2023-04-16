@@ -7,6 +7,8 @@ import Btn from "../components/UI/Drawer/Btn";
 import Bell from "../components/UI/Drawer/Bell";
 import Logo from './../assets/img/Icons/logo.png';
 import CustomDrawer from './../components/UI/Drawer/customDrawer';
+import MainPageIcon from 'react-native-vector-icons/AntDesign';
+import SettingsIcon from 'react-native-vector-icons/AntDesign';
 
 const Drawer = createDrawerNavigator();
 
@@ -24,8 +26,30 @@ const Index = () => {
                           })}
                           drawerContent={(props) => <CustomDrawer {...props} />}
         >
-            <Drawer.Screen name="Main" component={Main}/>
-            <Drawer.Screen name="Settings" component={Settings}/>
+            <Drawer.Screen
+                name="Main"
+                component={Main}
+                options={{
+                    title: "Главная",
+                    drawerIcon: () => <MainPageIcon
+                        name={"home"}
+                        color={"#146C94"}
+                        size={24}
+                    />
+                }}
+            />
+            <Drawer.Screen
+                name="Settings"
+                component={Settings}
+                options={{
+                    title: "Настройки",
+                    drawerIcon: () => <SettingsIcon
+                        name={"setting"}
+                        color={"#146C94"}
+                        size={24}
+                    />
+                }}
+            />
         </Drawer.Navigator>
     );
 };
