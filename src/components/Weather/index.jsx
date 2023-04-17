@@ -91,10 +91,10 @@ export default Index;
 
 const styles = StyleSheet.create({
     weatherText: {
-        color: "black",
+        color: "#146C94",
         fontSize:36
     },
     weatherIcon: {
-        color: "black",
+        color: "#146C94",
     }
 })
