@@ -166,7 +166,7 @@ const Index = (props) => {
                                                 <View className={" justify-center "}>
 
                                                     <Text className={"text-2xl text-center text-white"}>
-                                                        КЧС Детям
+                                                        КЧС для детей
                                                     </Text>
                                                     <Text className={"text-center text-white"}>
                                                         Основы безопасности детям

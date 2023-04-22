@@ -14,17 +14,18 @@ const Drawer = createDrawerNavigator();
 
 const Index = () => {
     return (
-        <Drawer.Navigator initialRouteName="Home"
-                          screenOptions={({navigation}) => ({
-                              // drawerType:"slide",
-                              headerTitleAlign: "center",
-                              headerShadowVisible: false,
-                              headerTitle: props => <TouchableOpacity onPress={() => navigation.navigate('Home')}><Image
-                                  source={Logo} className={"w-10 h-10"}/></TouchableOpacity>,
-                              headerLeft: props => <Btn navigation={navigation}/>,
-                              headerRight: props => <Bell/>
-                          })}
-                          drawerContent={(props) => <CustomDrawer {...props} />}
+        <Drawer.Navigator
+            initialRouteName="Home"
+            screenOptions={({navigation}) => ({
+                // drawerType:"slide",
+                headerTitleAlign: "center",
+                headerShadowVisible: false,
+                headerTitle: props => <TouchableOpacity onPress={() => navigation.navigate('Home')}><Image
+                    source={Logo} className={"w-10 h-10"}/></TouchableOpacity>,
+                headerLeft: props => <Btn navigation={navigation}/>,
+                headerRight: props => <Bell navigation={navigation}/>
+            })}
+            drawerContent={(props) => <CustomDrawer {...props} />}
         >
             <Drawer.Screen
                 name="Main"

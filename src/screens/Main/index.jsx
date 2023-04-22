@@ -28,6 +28,7 @@ import SnakeScreen from './WhatToDo/Snake';
 import DogScreen from './WhatToDo/Dog';
 import BathingSafetyScreen from './WhatToDo/BathingSafety';
 import DrowningManScreen from './WhatToDo/DrowningMan';
+import Notifications from "./Notifications";
 
 const Stack = createNativeStackNavigator();
 
@@ -44,6 +45,7 @@ const Index = () => {
                 <Stack.Screen name="WhatToDo" component={WhatToDoScreen} options={{headerShown: false}}/>
                 <Stack.Screen name="CoesKids" component={CoesKidsScreen} options={{headerShown: false}}/>
                 {/*<Stack.Screen name="Map" component={MapScreen}/>*/}
+                <Stack.Screen name="Notifications" component={Notifications}/>
                 {/* / Main routes */}
 
                 {/* First Help Screens */}

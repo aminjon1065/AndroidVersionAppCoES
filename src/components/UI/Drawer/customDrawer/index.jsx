@@ -5,17 +5,14 @@ import {
     DrawerItemList,
 } from '@react-navigation/drawer';
 import * as Location from 'expo-location';
-import WeatherIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {useDispatch} from "react-redux";
-import locationState, {updateLocation} from "../../../../state/slices/location";
+import {updateLocation} from "../../../../state/slices/location";
 import Weather from "../../../Weather";
 import TelegramIcon from 'react-native-vector-icons/FontAwesome';
 import FacebookIcon from 'react-native-vector-icons/FontAwesome';
 import YoutubeIcon from 'react-native-vector-icons/FontAwesome';
 
 const Index = (props) => {
-    const video = React.useRef(null);
-    const [status, setStatus] = React.useState({});
     const [location, setLocation] = useState(null);
     const [errorMsg, setErrorMsg] = useState('');
     const [temperature, setTemperature] = useState(null);
@@ -30,9 +27,8 @@ const Index = (props) => {
                 setErrorMsg('Permission to access location was denied');
                 return;
             }
-
             let location = await Location.getCurrentPositionAsync({});
-            setLocation(location);
+            setLocation(location.coords);
             const {latitude, longitude} = location.coords;
             dispatchLocation(updateLocation({latitude, longitude}))
             await getWeather(latitude, longitude)
@@ -88,7 +84,7 @@ const Index = (props) => {
                 <Text className={"text-xl text-center mb-5"}>
                     Мы в соиальных сетях
                 </Text>
-                <View className={"flex flex-row justify-around"}>
+                <View className={"flex flex-row justify-around bg-slate-100 py-2 rounded-xl"}>
                     <TouchableWithoutFeedback
                         onPress={() => socialRedirect('https://t.me/joinchat/AAAAAFYS-kB8t1NMv1t4QA')}
                     >
