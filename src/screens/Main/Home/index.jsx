@@ -201,16 +201,16 @@ const Index = (props) => {
                                         </TouchableWithoutFeedback>
                                     </View>
                                 </View>
-                                <View className="bg-slate-50 mt-4 rounded-2xl">
-                                    <TouchableWithoutFeedback onPress={() => props.navigation.navigate('Map')}>
-                                        <ImageBackground source={MapImg} blurRadius={5} imageStyle={{borderRadius: 10}}
-                                                         className="  h-32 flex flex-row items-center justify-center">
-                                            <Text className="text-center text-xl">
-                                                Map
-                                            </Text>
-                                        </ImageBackground>
-                                    </TouchableWithoutFeedback>
-                                </View>
+                                {/*<View className="bg-slate-50 mt-4 rounded-2xl">*/}
+                                {/*    <TouchableWithoutFeedback onPress={() => props.navigation.navigate('Map')}>*/}
+                                {/*        <ImageBackground source={MapImg} blurRadius={5} imageStyle={{borderRadius: 10}}*/}
+                                {/*                         className="  h-32 flex flex-row items-center justify-center">*/}
+                                {/*            <Text className="text-center text-xl">*/}
+                                {/*                Map*/}
+                                {/*            </Text>*/}
+                                {/*        </ImageBackground>*/}
+                                {/*    </TouchableWithoutFeedback>*/}
+                                {/*</View>*/}
                             </>
                     }
                 </View>

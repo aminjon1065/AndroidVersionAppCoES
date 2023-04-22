@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View} from 'react-native';
+import {TouchableWithoutFeedback, View, Linking, Text} from 'react-native';
 import {
     DrawerContentScrollView,
     DrawerItemList,
@@ -9,8 +9,9 @@ import WeatherIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {useDispatch} from "react-redux";
 import locationState, {updateLocation} from "../../../../state/slices/location";
 import Weather from "../../../Weather";
-// import CloudsVideo from '../../../../assets/video/Overcast.mp4';
-import {Video} from 'expo-av';
+import TelegramIcon from 'react-native-vector-icons/FontAwesome';
+import FacebookIcon from 'react-native-vector-icons/FontAwesome';
+import YoutubeIcon from 'react-native-vector-icons/FontAwesome';
 
 const Index = (props) => {
     const video = React.useRef(null);
@@ -53,18 +54,24 @@ const Index = (props) => {
             }
         };
     }, []);
-
+    const socialRedirect = async (link) => {
+        try {
+            await Linking.openURL(link)
+        } catch (e) {
+            console.log(e)
+        }
+    }
     return (
         <View className="flex-1">
             <View className="mt-10 rounded-xl mx-3 items-center justify-center h-1/6 bg-slate-200">
-            {/*<View className="h-1/6 flex-1">*/}
-            {/*    <Video*/}
-            {/*        source={CloudsVideo}*/}
-            {/*        className={"flex-1"}*/}
-            {/*        shouldPlay*/}
-            {/*        resizeMode="cover"*/}
-            {/*        isLooping*/}
-            {/*    />*/}
+                {/*<View className="h-1/6 flex-1">*/}
+                {/*    <Video*/}
+                {/*        source={CloudsVideo}*/}
+                {/*        className={"flex-1"}*/}
+                {/*        shouldPlay*/}
+                {/*        resizeMode="cover"*/}
+                {/*        isLooping*/}
+                {/*    />*/}
                 <Weather
                     temperature={temperature}
                     condition={conditional}
@@ -77,6 +84,28 @@ const Index = (props) => {
             <DrawerContentScrollView {...props}>
                 <DrawerItemList {...props} />
             </DrawerContentScrollView>
+            <View className={"px-2 mb-16"}>
+                <Text className={"text-xl text-center mb-5"}>
+                    Мы в соиальных сетях
+                </Text>
+                <View className={"flex flex-row justify-around"}>
+                    <TouchableWithoutFeedback
+                        onPress={() => socialRedirect('https://t.me/joinchat/AAAAAFYS-kB8t1NMv1t4QA')}
+                    >
+                        <TelegramIcon name={"telegram"} color={'#139fe0'} size={48}/>
+                    </TouchableWithoutFeedback>
+                    <TouchableWithoutFeedback
+                        onPress={() => socialRedirect('https://www.youtube.com/channel/UC2CorI3Cv_eRlQ6JL1LcBJQ')}
+                    >
+                        <YoutubeIcon name={"youtube-play"} color={'#c5091f'} size={48}/>
+                    </TouchableWithoutFeedback>
+                    <TouchableWithoutFeedback
+                        onPress={() => socialRedirect('https://www.facebook.com/khf.tj/')}
+                    >
+                        <FacebookIcon name={"facebook-square"} color={'#139fe0'} size={48}/>
+                    </TouchableWithoutFeedback>
+                </View>
+            </View>
         </View>
     );
 };

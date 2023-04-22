@@ -43,7 +43,7 @@ const Index = () => {
                 <Stack.Screen name="FirstHelp" component={FirstHelpScreen} options={{headerShown: false}}/>
                 <Stack.Screen name="WhatToDo" component={WhatToDoScreen} options={{headerShown: false}}/>
                 <Stack.Screen name="CoesKids" component={CoesKidsScreen} options={{headerShown: false}}/>
-                <Stack.Screen name="Map" component={MapScreen}/>
+                {/*<Stack.Screen name="Map" component={MapScreen}/>*/}
                 {/* / Main routes */}
 
                 {/* First Help Screens */}
