@@ -9,6 +9,7 @@ import CallIcon from 'react-native-vector-icons/MaterialIcons';
 import MessageIcon from 'react-native-vector-icons/MaterialIcons';
 import {Searchbar} from 'react-native-paper';
 import {routesDataRu} from "../../../data/routesDataRu";
+import {routesDataTj} from "../../../data/routesDataTj";
 import {ScrollView} from 'react-native-gesture-handler';
 import MapImg from './../../../assets/img/map.jpg';
 import {useTranslation} from "react-i18next";

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {TouchableWithoutFeedback, View, Linking, Text} from 'react-native';
+import {TouchableWithoutFeedback, View, Linking, Text, Image, TouchableOpacity} from 'react-native';
 import {
     DrawerContentScrollView,
     DrawerItemList,
@@ -11,6 +11,16 @@ import Weather from "../../../Weather";
 import TelegramIcon from 'react-native-vector-icons/FontAwesome';
 import FacebookIcon from 'react-native-vector-icons/FontAwesome';
 import YoutubeIcon from 'react-native-vector-icons/FontAwesome';
+import WebIcon from 'react-native-vector-icons/Ionicons';
+import TJ from './../../../../assets/img/tj.png';
+import RU from './../../../../assets/img/ru.png';
+import {useTranslation} from "react-i18next";
+import {langInterface} from "../../../../state/slices/lang";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import {Badge} from "react-native-paper";
+import CheckIcon from "react-native-vector-icons/MaterialCommunityIcons";
+import LangChange from "../LangChange";
+
 
 const Index = (props) => {
     const [location, setLocation] = useState(null);
@@ -20,6 +30,10 @@ const Index = (props) => {
     const dispatchLocation = useDispatch();
     const [isLoading, setLoading] = useState(true);
     const API_KEY = "f94d12d6f240d375f0e762c1eb652d95";
+    const [lang, setLang] = useState("");
+    const {i18n} = useTranslation();
+
+    const dispatch = useDispatch();
     useEffect(() => {
         (async () => {
             let {status} = await Location.requestForegroundPermissionsAsync();
@@ -58,16 +72,11 @@ const Index = (props) => {
         }
     }
     return (
-        <View className="flex-1">
+        <View className="flex-1 bg-slate-100">
+            <View className={"mt-12"}>
+                <LangChange props={props}/>
+            </View>
             <View className="mt-10 rounded-xl mx-3 items-center justify-center h-1/6 bg-slate-200">
-                {/*<View className="h-1/6 flex-1">*/}
-                {/*    <Video*/}
-                {/*        source={CloudsVideo}*/}
-                {/*        className={"flex-1"}*/}
-                {/*        shouldPlay*/}
-                {/*        resizeMode="cover"*/}
-                {/*        isLooping*/}
-                {/*    />*/}
                 <Weather
                     temperature={temperature}
                     condition={conditional}
@@ -84,7 +93,7 @@ const Index = (props) => {
                 <Text className={"text-xl text-center mb-5"}>
                     Мы в соиальных сетях
                 </Text>
-                <View className={"flex flex-row justify-around bg-slate-100 py-2 rounded-xl"}>
+                <View className={"flex flex-row justify-around py-2 rounded-xl"}>
                     <TouchableWithoutFeedback
                         onPress={() => socialRedirect('https://t.me/joinchat/AAAAAFYS-kB8t1NMv1t4QA')}
                     >
@@ -99,6 +108,11 @@ const Index = (props) => {
                         onPress={() => socialRedirect('https://www.facebook.com/khf.tj/')}
                     >
                         <FacebookIcon name={"facebook-square"} color={'#139fe0'} size={48}/>
+                    </TouchableWithoutFeedback>
+                    <TouchableWithoutFeedback
+                        onPress={() => socialRedirect('https://khf.tj/')}
+                    >
+                        <WebIcon name={"ios-globe-outline"} color={'#495960'} size={48}/>
                     </TouchableWithoutFeedback>
                 </View>
             </View>
