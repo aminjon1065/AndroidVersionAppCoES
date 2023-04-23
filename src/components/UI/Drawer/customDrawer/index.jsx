@@ -12,13 +12,6 @@ import TelegramIcon from 'react-native-vector-icons/FontAwesome';
 import FacebookIcon from 'react-native-vector-icons/FontAwesome';
 import YoutubeIcon from 'react-native-vector-icons/FontAwesome';
 import WebIcon from 'react-native-vector-icons/Ionicons';
-import TJ from './../../../../assets/img/tj.png';
-import RU from './../../../../assets/img/ru.png';
-import {useTranslation} from "react-i18next";
-import {langInterface} from "../../../../state/slices/lang";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import {Badge} from "react-native-paper";
-import CheckIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import LangChange from "../LangChange";
 
 
@@ -31,9 +24,6 @@ const Index = (props) => {
     const [isLoading, setLoading] = useState(true);
     const API_KEY = "f94d12d6f240d375f0e762c1eb652d95";
     const [lang, setLang] = useState("");
-    const {i18n} = useTranslation();
-
-    const dispatch = useDispatch();
     useEffect(() => {
         (async () => {
             let {status} = await Location.requestForegroundPermissionsAsync();
