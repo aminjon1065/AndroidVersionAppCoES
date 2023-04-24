@@ -5,7 +5,7 @@ import {
     DrawerItemList,
 } from '@react-navigation/drawer';
 import * as Location from 'expo-location';
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {updateLocation} from "../../../../state/slices/location";
 import Weather from "../../../Weather";
 import TelegramIcon from 'react-native-vector-icons/FontAwesome';
@@ -16,6 +16,7 @@ import LangChange from "../LangChange";
 
 
 const Index = (props) => {
+    const darkModeSelector = useSelector(state => state.theme.darkMode);
     const [location, setLocation] = useState(null);
     const [errorMsg, setErrorMsg] = useState('');
     const [temperature, setTemperature] = useState(null);
@@ -62,11 +63,11 @@ const Index = (props) => {
         }
     }
     return (
-        <View className="flex-1 bg-slate-100">
+        <View className={`flex-1 ${darkModeSelector ? 'bg-slate-900' : 'bg-slate-100'}`}>
             <View className={"mt-12"}>
                 <LangChange props={props}/>
             </View>
-            <View className="mt-10 rounded-xl mx-3 items-center justify-center h-1/6 bg-slate-200">
+            <View className={`mt-10 rounded-xl mx-3 items-center justify-center h-1/6 bg-slate-200`}>
                 <Weather
                     temperature={temperature}
                     condition={conditional}
@@ -80,10 +81,10 @@ const Index = (props) => {
                 <DrawerItemList {...props} />
             </DrawerContentScrollView>
             <View className={"px-2 mb-16"}>
-                <Text className={"text-xl text-center mb-5"}>
+                <Text className={`text-xl text-center mb-5 ${darkModeSelector ? 'text-white' : 'text-slate-300'}`}>
                     Мы в соиальных сетях
                 </Text>
-                <View className={"flex flex-row justify-around py-2 rounded-xl"}>
+                <View className={`flex flex-row justify-around py-2 rounded-xl ${darkModeSelector ? 'bg-slate-600' : 'bg-slate-100'}`}>
                     <TouchableWithoutFeedback
                         onPress={() => socialRedirect('https://t.me/joinchat/AAAAAFYS-kB8t1NMv1t4QA')}
                     >
@@ -102,7 +103,7 @@ const Index = (props) => {
                     <TouchableWithoutFeedback
                         onPress={() => socialRedirect('https://khf.tj/')}
                     >
-                        <WebIcon name={"ios-globe-outline"} color={'#495960'} size={48}/>
+                        <WebIcon name={"ios-globe-outline"} color={darkModeSelector ? 'white' : '#495960'} size={48}/>
                     </TouchableWithoutFeedback>
                 </View>
             </View>

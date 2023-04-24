@@ -18,6 +18,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import ShowItem from "../../../components/showItem";
 
 const Index = (props) => {
+    const darkModeSelector = useSelector(state => state.theme.darkMode);
     const [searchText, setSearchText] = useState("")
     const [lng, setLng] = useState('');
     const [result, setResult] = useState([]);
@@ -96,9 +97,34 @@ const Index = (props) => {
                                     </View>
                                 ))
                                 :
-                                <Text className={"text-red-500 mt-2"}>
-                                    Not found
-                                </Text>
+                                <View>
+                                    <Text className="text-center text-xl text-slate-800">
+                                        Вы можете спросить о
+                                        <Text className={"text-red-500 bg-slate-400 py-3"}>
+                                            {searchText}
+                                        </Text> у наших специалистов
+                                    </Text>
+                                    <View className="flex flex-row pt-2">
+                                        <TouchableWithoutFeedback onPress={call}>
+                                            <View
+                                                className="flex flex-row flex-1 mr-1 items-center justify-center rounded-xl py-3 bg-red-500">
+                                                <CallIcon name='phone' size={32} color={"white"}/>
+                                                <Text className="text-center text-white ml-3">
+                                                    Позвонить
+                                                </Text>
+                                            </View>
+                                        </TouchableWithoutFeedback>
+                                        <TouchableWithoutFeedback onPress={() => console.log("message")}>
+                                            <View
+                                                className="flex flex-row flex-1 ml-1 items-center justify-center rounded-xl py-3 bg-cyan-800">
+                                                <MessageIcon name='message' size={32} color={"white"}/>
+                                                <Text className="text-center text-white ml-3">
+                                                    Написать
+                                                </Text>
+                                            </View>
+                                        </TouchableWithoutFeedback>
+                                    </View>
+                                </View>
                             :
                             <>
                                 <LinearGradient
@@ -215,7 +241,7 @@ const Index = (props) => {
                             </>
                     }
                 </View>
-                <StatusBar style={"auto"}/>
+                <StatusBar style={darkModeSelector ? 'light' : "dark"}/>
             </View>
         </ScrollView>
     );
