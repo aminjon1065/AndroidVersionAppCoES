@@ -3,7 +3,7 @@ import {ActivityIndicator, StyleSheet, Text, TouchableOpacity, View} from "react
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import {useTranslation} from "react-i18next";
 
-const Index = ({error, condition, temperature, isLoading, navigation}) => {
+const Index = ({error, condition, temperature, isLoading, navigation, color}) => {
     const {t} = useTranslation();
     const weatherOption = {
         Thunderstorm: {
@@ -68,21 +68,16 @@ const Index = ({error, condition, temperature, isLoading, navigation}) => {
     }
     return (
         <View className={"mr-4"}>
-            {
-                isLoading
-                    ?
-                    <ActivityIndicator/>
-                    :
-                    <>
-                        <TouchableOpacity onPress={() => navigation.navigate("Weathers")}>
-                            <Icon name={`${weatherOption[condition.main].iconName}`} style={styles.weatherIcon}
-                                  size={48}/>
-                            <Text style={styles.weatherText}>
-                                {text}
-                            </Text>
-                        </TouchableOpacity>
-                    </>
-            }
+            <>
+                <TouchableOpacity onPress={() => navigation.navigate("Weathers")}>
+                    <Icon name={`${weatherOption[condition.main].iconName}`}
+                          style={{color: color, ...styles.weatherIcon}}
+                          size={34}/>
+                    <Text style={{color: color, ...styles.weatherText}}>
+                        {text}
+                    </Text>
+                </TouchableOpacity>
+            </>
         </View>
     );
 };
@@ -91,10 +86,8 @@ export default Index;
 
 const styles = StyleSheet.create({
     weatherText: {
-        color: "#146C94",
-        fontSize:36
+
+        fontSize: 28
     },
-    weatherIcon: {
-        color: "#146C94",
-    }
+    weatherIcon: {}
 })

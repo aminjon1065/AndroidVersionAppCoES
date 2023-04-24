@@ -63,19 +63,19 @@ const Index = (props) => {
     return (
         <ScrollView>
             <View
-                className={"h-screen bg-white"}
+                className={`h-screen ${darkModeSelector ? 'bg-slate-800' : 'bg-white'}`}
             >
                 <View className={"p-2 mt-5"}>
                     <View className={""}>
                         <Searchbar
-                            className={"bg-slate-100 mb-5 rounded text-slate-300"}
+                            className={`mb-5 rounded text-slate-300 ${darkModeSelector ? 'bg-slate-500' : 'bg-slate-100'}`}
                             // onIconPress={() => ref.current.focus()}
                             // ref={ref}
                             placeholder="Поиск"
-                            placeholderTextColor='#E0E0E0'
+                            placeholderTextColor={darkModeSelector ? 'white' : '#E0E0E0'}
                             onChangeText={onChangeSearchText}
                             value={searchText}
-                            iconColor={'#146C94'}
+                            iconColor={'#94A3B8'}
                         />
                     </View>
                     {
@@ -204,7 +204,8 @@ const Index = (props) => {
                                     </LinearGradient>
                                 </View>
                                 <View className={"mt-4"}>
-                                    <Text className="text-center text-xl text-slate-800">
+                                    <Text
+                                        className={`text-center text-xl ${darkModeSelector ? 'text-slate-100' : 'text-slate-800'}`}>
                                         Нужна помощь специалиста КЧС?
                                     </Text>
                                     <View className="flex flex-row pt-2">
