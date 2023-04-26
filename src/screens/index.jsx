@@ -15,7 +15,6 @@ const Drawer = createDrawerNavigator();
 
 const Index = () => {
     const darkModeSelector = useSelector(state => state.theme.darkMode);
-    console.log(darkModeSelector)
     return (
         <Drawer.Navigator
             initialRouteName="Home"

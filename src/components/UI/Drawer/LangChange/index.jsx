@@ -17,7 +17,7 @@ const Index = ({props}) => {
             const storageLng = await AsyncStorage.getItem("lng");
             storageLng === "tj" ? await changeTj() : await changeRu()
         }
-        getLng().then(r => console.log(r));
+        getLng();
     }, []);
     const dispatch = useDispatch();
     const changeTj = async () => {

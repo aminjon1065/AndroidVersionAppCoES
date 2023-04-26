@@ -11,6 +11,7 @@ import {routesDataRu} from "../../../data/FirstHelpRu";
 import ShowItem from './../../../components/showItem';
 
 const Index = (props) => {
+    const darkModeSelector = useSelector(state => state.theme.darkMode);
     const ref = React.useRef(null);
     const [searchText, setSearchText] = useState("");
     const [data, setData] = useState([]);
@@ -44,7 +45,7 @@ const Index = (props) => {
         getLng();
     }, [langStore]);
     return (
-        <View className="h-screen bg-white">
+        <View className={`h-screen ${darkModeSelector ? 'bg-slate-800' : 'bg-white'}`}>
             <View className={"px-2"}>
                 <View className={"flex flex-row items-center"}>
                     <View className="mr-1">
@@ -52,8 +53,8 @@ const Index = (props) => {
                             className=" items-center"
                             onPress={() => props.navigation.goBack()}
                         >
-                            <ArrowLeftIcon name='arrow-left' size={28} color={'#146C94'}/>
-                            <Text className="text-[#146C94]">
+                            <ArrowLeftIcon name='arrow-left' size={28} color={darkModeSelector ? 'white' : '#146C94'}/>
+                            <Text className={darkModeSelector ? 'text-white' : `text-[#146C94]`}>
                                 Назад
                             </Text>
                         </TouchableOpacity>
@@ -63,7 +64,7 @@ const Index = (props) => {
                             icon={() => null
                             }
                             onIconPress={() => Keyboard.dismiss}
-                            className={"bg-slate-100 rounded text-slate-300"}
+                            className={`rounded text-slate-300 ${darkModeSelector ? 'bg-slate-600' : 'bg-slate-100 '}`}
                             // onIconPress={() => ref.current.focus()}
                             // ref={ref}
                             placeholder="Поиск"
@@ -80,7 +81,7 @@ const Index = (props) => {
                         result.length >= 1
                             ?
                             result.map((item, index) => (
-                                <View key={index} className={"mt-2 py-2 bg-slate-200 rounded-lg pl-1"}>
+                                <View key={index} className={`mt-2 py-2 rounded-lg pl-1 ${darkModeSelector ? 'bg-slate-600' : ' bg-slate-200'}`}>
                                     {
                                         searchText && <Text>{item.category}</Text>
                                     }

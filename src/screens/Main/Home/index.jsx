@@ -13,9 +13,10 @@ import {routesDataTj} from "../../../data/routesDataTj";
 import {ScrollView} from 'react-native-gesture-handler';
 import MapImg from './../../../assets/img/map.jpg';
 import {useTranslation} from "react-i18next";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import ShowItem from "../../../components/showItem";
+import {darkMode, themeMode} from "../../../state/slices/theme";
 
 const Index = (props) => {
     const darkModeSelector = useSelector(state => state.theme.darkMode);
@@ -23,10 +24,10 @@ const Index = (props) => {
     const [lng, setLng] = useState('');
     const [result, setResult] = useState([]);
     const [data, setData] = useState([]);
+    const dispatch = useDispatch()
     const {t} = useTranslation();
     // const FontSize = useSelector(state => state.font.fontSize)
     const langStore = useSelector(state => state.lang)
-
     const onChangeSearchText = (text) => {
         setSearchText(text)
         searchFilterFunction(text);
@@ -35,7 +36,7 @@ const Index = (props) => {
         try {
             await Linking.openURL(`tel:112`)
         } catch (e) {
-            console.log(e)
+            console.log('error')
         }
     }
     const searchFilterFunction = (text) => {
@@ -53,7 +54,10 @@ const Index = (props) => {
     useEffect(() => {
         async function getLng() {
             const storageLng = await AsyncStorage.getItem("lng");
+            const themeMode = await AsyncStorage.getItem('darkMode');
             setLng(storageLng);
+            const boolTheme = themeMode === 'dark'
+            await dispatch(darkMode(boolTheme))
         }
 
         setData(langStore.langInterface === "tj" ? routesDataTj.items : routesDataRu.items)
@@ -127,6 +131,7 @@ const Index = (props) => {
                                 </View>
                             :
                             <>
+
                                 <LinearGradient
                                     start={[0.5, 1]} end={[0, 0.1]}
                                     // Background Linear Gradient
