@@ -6,11 +6,10 @@ import Tj from "./tj";
 
 const Index = () => {
     const {i18n} = useTranslation();
-    const lang = i18n.language;
     return (
         <View className={"bg-white"}>
             {
-                lang === 'ru'
+                i18n.language === 'ru'
                     ?
                     <Ru/>
                     :

@@ -26,7 +26,7 @@ const Index = ({props}) => {
         await AsyncStorage.setItem("lng", "tj")
         props.navigation.closeDrawer()
         dispatch(langInterface('tj'))
-        props.navigation.navigate("Home")
+        // props.navigation.navigate("Home")
     }
     const changeRu = async () => {
         setLang("ru")
@@ -34,7 +34,7 @@ const Index = ({props}) => {
         await AsyncStorage.setItem("lng", "ru")
         props.navigation.closeDrawer();
         dispatch(langInterface('ru'))
-        props.navigation.navigate("Home")
+        // props.navigation.navigate("Home")
     };
     return (
         <View className={"pt-0 flex flex-row justify-around"}>

@@ -12,11 +12,11 @@ const Index = () => {
     const [loading, setLoading] = useState(true);
     const dispatch = useDispatch()
     useEffect(() => {
-        const boolTheme = darkModeSelector === 'dark';
-        setDark(boolTheme);
+        // console.log(boolTheme)
+        setDark(darkModeSelector);
         setLoading(false)
-    }, []);
 
+    }, []);
     const onToggleSwitch = async () => {
         try {
             setDark(!dark)
@@ -27,6 +27,8 @@ const Index = () => {
             console.log('error')
         }
     }
+    // console.log(darkModeSelector)
+    // console.log(dark)
     return (
         <View className={`h-screen ${darkModeSelector ? 'bg-slate-800' : 'bg-white'}`}>
             <View>
@@ -43,12 +45,9 @@ const Index = () => {
                                 </Text>
                                 <View className={`flex- flex-row justify-around items-center `}>
                                     <Text className={`font-bold ${darkModeSelector ? 'text-white' : 'text-slate-900'}`}>
-                                        Светлая тема
-                                    </Text>
-                                    <Switch value={dark} onValueChange={onToggleSwitch}/>
-                                    <Text className={`font-bold ${darkModeSelector ? 'text-white' : 'text-slate-900'}`}>
                                         Тёмная тема
                                     </Text>
+                                    <Switch value={dark} onValueChange={onToggleSwitch}/>
                                 </View>
                             </>
                     }

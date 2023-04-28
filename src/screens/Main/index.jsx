@@ -37,22 +37,23 @@ const Index = () => {
         <>
             <Stack.Navigator initialRouteName='Home' screenOptions={{
                 header: (props) => <NavigationBackBar props={props}/>,
-                animation:'slide_from_right'
+                animation: "slide_from_right",
+                animationDuration: 50,
+
             }}>
                 {/* Main routes */}
-                <Stack.Screen name="Home" component={Home} options={{headerShown: false}}/>
-                <Stack.Screen name="FirstHelp" component={FirstHelpScreen} options={{headerShown: false}}/>
-                <Stack.Screen name="WhatToDo" component={WhatToDoScreen} options={{headerShown: false}}/>
-                <Stack.Screen name="CoesKids" component={CoesKidsScreen} options={{headerShown: false}}/>
+                <Stack.Screen name={"Home"} component={Home} options={{headerShown: false}}/>
+                <Stack.Screen name={"FirstHelp"} component={FirstHelpScreen} options={{headerShown: false}}/>
+                <Stack.Screen name={"WhatToDo"} component={WhatToDoScreen} options={{headerShown: false}}/>
+                <Stack.Screen name={"CoesKids"} component={CoesKidsScreen} options={{headerShown: false}}/>
                 {/*<Stack.Screen name="Map" component={MapScreen}/>*/}
-                <Stack.Screen name="Notifications" component={Notifications}/>
+                <Stack.Screen name={"Notifications"} component={Notifications}/>
                 {/* / Main routes */}
-
                 {/* First Help Screens */}
-                <Stack.Screen name="FirstHelpItem" component={FirstHelpItemsScreen}/>
-                <Stack.Screen name="Bleeding" component={BleedingScreen}/>
-                <Stack.Screen name="CardioPulmonaryReanimation" component={CardioPulmonaryReanimationScreen}/>
-                <Stack.Screen name="Stroke" component={StrokeScreen}/>
+                <Stack.Screen name={"FirstHelpItem"} component={FirstHelpItemsScreen}/>
+                <Stack.Screen name={"Bleeding"} component={BleedingScreen}/>
+                <Stack.Screen name={"CardioPulmonaryReanimation"} component={CardioPulmonaryReanimationScreen}/>
+                <Stack.Screen name={"Stroke"} component={StrokeScreen}/>
                 <Stack.Screen name={"AMMONIA"} component={AmmoniScreen}/>
                 <Stack.Screen name={"FirstAid"} component={FirstAidScreen}/>
                 <Stack.Screen name={"Burn"} component={BurnScreen}/>
@@ -75,7 +76,6 @@ const Index = () => {
                 <Stack.Screen name={"BathingSafety"} component={BathingSafetyScreen}/>
                 <Stack.Screen name={"DrowningMan"} component={DrowningManScreen}/>
                 {/*What ToDo Items end*/}
-
             </Stack.Navigator>
         </>
     );

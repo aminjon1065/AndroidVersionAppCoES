@@ -24,7 +24,7 @@ const Index = (props) => {
     const [lng, setLng] = useState('');
     const [result, setResult] = useState([]);
     const [data, setData] = useState([]);
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     const {t} = useTranslation();
     // const FontSize = useSelector(state => state.font.fontSize)
     const langStore = useSelector(state => state.lang)
@@ -58,6 +58,7 @@ const Index = (props) => {
             setLng(storageLng);
             const boolTheme = themeMode === 'dark'
             await dispatch(darkMode(boolTheme))
+
         }
 
         setData(langStore.langInterface === "tj" ? routesDataTj.items : routesDataRu.items)
@@ -131,7 +132,6 @@ const Index = (props) => {
                                 </View>
                             :
                             <>
-
                                 <LinearGradient
                                     start={[0.5, 1]} end={[0, 0.1]}
                                     // Background Linear Gradient
