@@ -13,40 +13,40 @@ const Index = () => {
         <ScrollView>
             <View className={"pl-2"}>
                 <Text className={"text-2xl font-bold text-red-500 text-center mb-5"}>
-                    НАРУШЕНИЕ ПРОХОДИМОСТИ ВЕРХНИХ ДЫХАТЕЛЬНЫХ ПУТЕЙ, ПЕРВАЯ ПОМОЩЬ
-                    ПРИЗНАКИ:
+                    ЁРИИ АВВАЛИН ҲАНГОМИ ҶИСМҲОИ БЕГОНА.
+                    НИШОНАҲО:
                 </Text>
                 <View className={"mx-auto"}>
                     <Image source={img1} className={"w-64 h-64"}/>
                 </View>
                 <Text className={"text-xl text-center mb-5 "}>
-                    ПОПЫТКА ПРОИЗВОЛЬНОГО КАШЛЯ
+                    КУШИШИ СУЛФАИ ТАСОДУФӢ
                 </Text>
 
                 <View className={"mx-auto"}>
                     <Image source={img2} className={"w-64 h-64"}/>
                 </View>
                 <Text className={"text-xl text-center mb-5 "}>
-                    УДАРЫ МЕЖДУ ЛОПАТКАМИ
+                    МУШТ ДАР БАЙНИ ТАХТАПУШТ
                 </Text>
                 <View className={"mx-auto mb-5"}>
                     <Image source={img3} className={"w-64 h-64"}/>
                 </View>
                 <Text className={"text-xl text-center"}>
-                    НАДАВЛИВАНИЯ НА ЖИВОТ
+                    БА ШИКАМИ ОН ФИШОР ДЕҲ
                 </Text>
                 <View className={"mx-auto"}>
                     <Image source={img4} className={"w-64 h-64"}/>
                     <Image source={img5} className={"w-64 h-64"}/>
                 </View>
                 <Text className={"text-xl text-center"}>
-                    УДАРЫ ПО СПИНЕ
+                    ЗАРБАҲО БА ПУШТ
                 </Text>
                 <View className={"mx-auto"}>
                     <Image source={img6} className={"w-64 h-64"}/>
                 </View>
                 <Text className={"text-xl text-center"}>
-                    НАДАВЛИВАНИЯ НА ГРУДНУЮ КЛЕТКУ
+                    ФИШОР ДОДАН БА ҚАФАСИ СИНА
                 </Text>
                 <View className={"mx-auto"}>
                     <Image source={img7} className={"w-64 h-64"}/>

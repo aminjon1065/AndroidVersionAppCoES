@@ -1,28 +1,20 @@
-import React, {useEffect, useState} from 'react';
-import {Text, View} from "react-native";
+import React from 'react';
+import {View} from "react-native";
 import Ru from "./ru";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import {useTranslation} from "react-i18next";
+import Tj from "./tj";
 
 const Index = () => {
-    const [lang, setLang] = useState("");
-    useEffect(() => {
-        async function getLng() {
-            const storageLng = await AsyncStorage.getItem("lng");
-            setLang(storageLng)
-        }
+    const {i18n} = useTranslation();
 
-        getLng().then(r => console.log(r));
-    }, [lang]);
     return (
         <View className={"bg-white"}>
             {
-                lang === "ru"
+                i18n.language === "ru"
                     ?
                     <Ru/>
                     :
-                    <Text>
-                        Not found
-                    </Text>
+                    <Tj/>
             }
         </View>
     );
