@@ -16,6 +16,7 @@ import LangChange from "../LangChange";
 import * as Clipboard from 'expo-clipboard';
 import CopyIcon from 'react-native-vector-icons/Feather';
 import {Snackbar} from 'react-native-paper';
+import {useTranslation} from "react-i18next";
 
 const Index = (props) => {
     const darkModeSelector = useSelector(state => state.theme.darkMode);
@@ -29,6 +30,7 @@ const Index = (props) => {
     const [copiedMsg, setCopiedMsg] = useState(false)
     const API_KEY = "f94d12d6f240d375f0e762c1eb652d95";
     const [lang, setLang] = useState("");
+    const {t} = useTranslation();
     useEffect(() => {
         (async () => {
             let {status} = await Location.requestForegroundPermissionsAsync();
@@ -115,7 +117,9 @@ const Index = (props) => {
             </DrawerContentScrollView>
             <View className={"px-2 mb-16"}>
                 <Text className={`text-xl text-center mb-5 ${darkModeSelector ? 'text-white' : 'text-slate-800'}`}>
-                    Мы в соиальных сетях
+                    {
+                        t('Interface.Drawer.Socials')
+                    }
                 </Text>
                 <View
                     className={`flex flex-row justify-around py-2 rounded-xl ${darkModeSelector ? 'bg-slate-600' : 'bg-slate-100'}`}>

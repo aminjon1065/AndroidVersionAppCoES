@@ -10,11 +10,13 @@ import CustomDrawer from './../components/UI/Drawer/customDrawer';
 import MainPageIcon from 'react-native-vector-icons/AntDesign';
 import SettingsIcon from 'react-native-vector-icons/AntDesign';
 import {useSelector} from "react-redux";
+import {useTranslation} from "react-i18next";
 
 const Drawer = createDrawerNavigator();
 
 const Index = () => {
     const darkModeSelector = useSelector(state => state.theme.darkMode);
+    const {t} = useTranslation();
     return (
         <Drawer.Navigator
             initialRouteName="Home"
@@ -43,7 +45,7 @@ const Index = () => {
                 name="Main"
                 component={Main}
                 options={{
-                    title: "Главная",
+                    title: t('Interface.Drawer.Home'),
                     drawerIcon: () => <MainPageIcon
                         name={"home"}
                         color={darkModeSelector ? 'white' : "#146C94"}
@@ -55,7 +57,7 @@ const Index = () => {
                 name="Settings"
                 component={Settings}
                 options={{
-                    title: "Настройки",
+                    title: t('Interface.Drawer.Settings'),
                     drawerIcon: () => <SettingsIcon
                         name={"setting"}
                         color={darkModeSelector ? 'white' : "#146C94"}

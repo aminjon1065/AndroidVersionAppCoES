@@ -76,12 +76,13 @@ const Index = (props) => {
                         />
                     </View>
                 </View>
-                <ScrollView className="pt-2 mb-32">
+                <ScrollView className="pt-2 mb-36">
                     {
                         result.length >= 1
                             ?
                             result.map((item, index) => (
-                                <View key={index} className={`mt-2 py-2 rounded-lg pl-1 ${darkModeSelector ? 'bg-slate-600' : ' bg-slate-200'}`}>
+                                <View key={index}
+                                      className={`mt-2 py-2 rounded-lg pl-1 ${darkModeSelector ? 'bg-slate-600' : ' bg-slate-200'}`}>
                                     {
                                         searchText && <Text>{item.category}</Text>
                                     }
