@@ -85,6 +85,33 @@ export const routesDataTj =
                 category: "Кумаки аввал",
                 category_slug: "FirstHelp",
             },
-
+            {
+                title: "Захролудшави аз гизо",
+                slug: "FoodPoisoning",
+                icon: require('./FirstHelpIcons/FoodPoisoning.png'),
+                category: "Кумаки аввал",
+                category_slug: "FirstHelp",
+            },
+            {
+                title: "Офтобзанӣ",
+                slug: "Sunstroke",
+                icon: require('./FirstHelpIcons/sunstroke.png'),
+                category: "Кумаки аввал",
+                category_slug: "FirstHelp",
+            },
+            {
+                title: "Ҳашаротҳо",
+                slug: "Insects",
+                icon: require('./FirstHelpIcons/insects.png'),
+                category: "Кумаки аввал",
+                category_slug: "FirstHelp",
+            },
+            {
+                title: "Харошҳо",
+                slug: "Abrasions",
+                icon: require('./FirstHelpIcons/abrasions.png'),
+                category: "Кумаки аввал",
+                category_slug: "FirstHelp",
+            },
         ]
     }

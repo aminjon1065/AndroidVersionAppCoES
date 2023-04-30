@@ -47,7 +47,7 @@ const Index = (props) => {
     return (
         <View className={`h-screen ${darkModeSelector ? 'bg-slate-800' : 'bg-white'}`}>
             <View className={"px-2"}>
-                <View className={"flex flex-row items-center"}>
+                <View className={"flex flex-row items-center mb-2"}>
                     <View className="mr-1">
                         <TouchableOpacity
                             className=" items-center"

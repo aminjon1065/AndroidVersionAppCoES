@@ -29,6 +29,10 @@ import DogScreen from './WhatToDo/Dog';
 import BathingSafetyScreen from './WhatToDo/BathingSafety';
 import DrowningManScreen from './WhatToDo/DrowningMan';
 import Notifications from "./Notifications";
+import FoodPoisoning from "./FirstHelp/FoodPoisoning";
+import Sunstroke from "./FirstHelp/Sunstroke";
+import Insects from "./FirstHelp/Insects";
+import Abrasion from "./FirstHelp/Abrasion";
 
 const Stack = createNativeStackNavigator();
 
@@ -61,6 +65,10 @@ const Index = () => {
                 <Stack.Screen name={"Frostbite"} component={FrostbiteScreen}/>
                 <Stack.Screen name={"ForeignBody"} component={ForeignBodyScreen}/>
                 <Stack.Screen name={"Convulsions"} component={ConvulsionsScreen}/>
+                <Stack.Screen name={"FoodPoisoning"} component={FoodPoisoning}/>
+                <Stack.Screen name={"Sunstroke"} component={Sunstroke}/>
+                <Stack.Screen name={"Insects"} component={Insects}/>
+                <Stack.Screen name={"Abrasions"} component={Abrasion}/>
                 {/* / First Help Screens */}
 
                 {/*What ToDo Items start*/}

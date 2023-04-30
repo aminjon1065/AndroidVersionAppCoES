@@ -155,5 +155,19 @@ export const routesDataRu =
                 category: "Помощь",
                 category_slug: "FirstHelp",
             },
+            {
+                title: "Пищевое отравление",
+                slug: "FoodPoisoning",
+                icon: require('./FirstHelpIcons/FoodPoisoning.png'),
+                category: "Помощь",
+                category_slug: "FirstHelp",
+            },
+            {
+                title: "Солнечный удар",
+                slug: "Sunstroke",
+                icon: require('./FirstHelpIcons/sunstroke.png'),
+                category: "Помощь",
+                category_slug: "FirstHelp",
+            },
         ]
     }
