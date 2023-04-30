@@ -19,32 +19,34 @@ import Image14 from "../assets/img/image14.png";
 import Image15 from "../assets/img/image15.png";
 import Image16 from "../assets/img/image16.jpg";
 
-const Index = () => {
+const Index = ({darkMode}) => {
     return (
         <ScrollView>
             <View className={"mb-5"}>
                 <Text className={"text-4xl text-center text-red-400 font-bold"}>
                     ЁРИИ АВВАЛИН.
                 </Text>
-                <Text className={"text-base"}>
+                <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
                     Дар сурати руӣ додани фалокат, ва офатҳои табии шумораи зиёди одамон ба ёрии аввалин эҳтиёҷ доранд,
                     ки он бояд фавран баъди захмдоршудагон ё захролудшудагон расонида шавад. Дар сурати руӣ додани
                     ҳодисаҳои ногаҳонӣ ва бемориҳо то омадани корманди тиб оддитарин тадбирҳои ёрии аввалини тиббӣ
                     метавонад ҳаёт ва саломатии ҷабрдидаро наҷот диҳад.
                 </Text>
-                <Text className={"ml-0.5 text-base"}>
+                <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
                     - қатъи таъсири омилҳои осебпазир;
                 </Text>
-                <Text className={"ml-0.5 text-base"}>
+                <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
                     - гузаронидани чорабиниҳои оддии тиббӣ;
                 </Text>
-                <Text className={"ml-0.5 text-base"}>
+                <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
                     - сари вақт интиқол додани ҷабрдида ба муассисаи тиббӣ.
                 </Text>
                 <List.AccordionGroup>
                     <List.Accordion
                         title="ЁРИИ ҒАӢРИМУТАХАССИС ФАҚАТ ПЕШ АЗ ДУХТУР РАСОНИДА ШАВАД, НА БА ҶОИ ДУХТУР."
-                        className={"bg-slate-200 rounded-lg"}
+                        titleStyle={{color: darkMode ? 'white' : '#1E293B'}}
+                        className={`${darkMode ? 'bg-slate-600 text-white' : 'text-slate-950 bg-slate-200'} rounded-lg mt-2`}
+                        theme={{colors: {background: darkMode ? '#1E293B' : '#E2E8F0'}}}
                         id="1"
                     >
                         <List.Item
@@ -54,64 +56,68 @@ const Index = () => {
                                     РАСОНИДА ШАВАД, НА БА ҶОИ ДУХТУР.
                                 </Text>
                             </View>}
-                            className={"bg-slate-100"}
+                            className={darkMode ? 'bg-slate-800' : `bg-slate-100`}
                             description={
                                 () =>
                                     <View>
-                                        <View className={"text-base"}>
-                                            <Text className={"text-base"}>
-                                                • 1. боздоштани муваққатии хунравӣ; </Text>
-                                            <Text className={"text-base"}>
-                                                • 2. гузоштани банди асептикӣ ба захм ё ҷои сўхта, бо усули оддитарин ва
-                                                истифодаи тахтачуб ва дигар воситаи дастрас шинафартабанди кардан
-                                                ҳангоми захмҳои вазнин; </Text>
-                                            <Text className={"text-base"}>
-                                                • 3. фаъолиятҳои эҳёсозӣ; </Text>
-                                            <Text className={"text-base"}>
-                                                • 4. додани доруҳои дарднок ва дигар доруҳо барои бемориҳои маълум;
+                                        <Text className={`text-base ${darkMode ? 'text-white' : 'bg-slate-950'}`}>
+                                            • 1. боздоштани муваққатии хунравӣ; </Text>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : 'bg-slate-950'}`}>
+                                            • 2. гузоштани банди асептикӣ ба захм ё ҷои сўхта, бо усули оддитарин ва
+                                            истифодаи тахтачуб ва дигар воситаи дастрас шинафартабанди кардан
+                                            ҳангоми захмҳои вазнин; </Text>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : 'bg-slate-950'}`}>
+                                            • 3. фаъолиятҳои эҳёсозӣ; </Text>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : 'bg-slate-950'}`}>
+                                            • 4. додани доруҳои дарднок ва дигар доруҳо барои бемориҳои маълум;
+                                        </Text>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : 'bg-slate-950'}`}>
+                                            • 5. интиқоли ҷабрдидаҳо; </Text>
+                                        <View>
+                                            <Text
+                                                className={`text-base ${darkMode ? 'text-white' : 'bg-slate-950'}`}>
+                                                Ҳар як нафар бояд пеш аз расондани ёрии тиббӣ ба зарардида ёрии
+                                                аввалинро донад ва онро моҳирона иҷро намояд. Кӯмаки аввалия бояд бо
+                                                истифода аз тамоми воситаҳое, ки одатан дар доруқуттӣ мавҷуд аст,
+                                                тезтар анҷом дода шавад.
                                             </Text>
-                                            <Text className={"text-base"}>
-                                                • 5. интиқоли ҷабрдидаҳо; </Text>
-                                            <View>
-                                                <Text className={"text-base"}>
-                                                    Ҳар як нафар бояд пеш аз расондани ёрии тиббӣ ба зарардида ёрии
-                                                    аввалинро донад ва онро моҳирона иҷро намояд. Кӯмаки аввалия бояд бо
-                                                    истифода аз тамоми воситаҳое, ки одатан дар доруқуттӣ мавҷуд аст,
-                                                    тезтар анҷом дода шавад.
-                                                </Text>
-                                                <View className={"flex flex-row justify-center mb-2"}>
-                                                    <Image source={Apte4ka} className={"w-10/12 h-56 rounded-xl"}/>
-                                                </View>
-                                                <Text className={"text-base"}>
-                                                    • Кӯмаки аввалияи нодуруст ё бетаҷриба метавонад боиси мушкилоте
-                                                    шавад, ки барқароршавии ҷабрдидаро ба таъхир меандозад ё ҳатто боиси
-                                                    маъюбӣ мегардад ва дар баъзе мавридҳо (ҷароҳат бо талафоти зиёди
-                                                    хун, зарбаи барқ, сӯхтагӣ) боиси марги ҷабрдида дар ҷои ҳодиса
-                                                    мегардад.
-                                                </Text>
-                                                <Text className={"text-base"}>
-                                                    • Шумо набояд ҳеҷ гоҳ ҷабрдидаро вафотшуда ҳисоб кунед ва аз сабаби
-                                                    набудани нафаскашӣ, кори дил ва набз аз кӯмак ба ӯ даст кашед. Танҳо
-                                                    духтур ҳуқуқ дорад дар бораи марги ҷабрдида хулоса барорад ва дар
-                                                    бораи ба мақсад мувофиқ будани амалиёти эҳёгарӣ қарор қабул намояд.
-                                                    Ҳодисаҳои зиёд (махсусан бо зарбаи барқ) вуҷуд доранд, ки ҷабрдида
-                                                    гӯё фавтида ё ҳатто дар ҳолати марги клиникӣ қарор дошт, аммо
-                                                    амалҳои дуруст ва устуворона барои эҳё кардан (нафасгирии сунъӣ,
-                                                    масҳ ва ғ.) ҳаёти ӯро наҷот доданд.
-                                                </Text>
-                                                <Text className={"text-base"}>
-                                                    • Дар сурати руӣ додани ҳодиса ба зарардида ёрии аввалин расонида,
-                                                    вобаста ба ҳолати зарардида ба воситаи телефони 03 ёрии тиббиро
-                                                    даъват кардан лозим аст.
-                                                </Text>
+                                            <View className={"flex flex-row justify-center mb-2"}>
+                                                <Image source={Apte4ka} className={"w-10/12 h-56 rounded-xl"}/>
                                             </View>
-                                        </View>
+                                            <Text
+                                                className={`text-base ${darkMode ? 'text-white' : 'bg-slate-950'}`}>
+                                                • Кӯмаки аввалияи нодуруст ё бетаҷриба метавонад боиси мушкилоте
+                                                шавад, ки барқароршавии ҷабрдидаро ба таъхир меандозад ё ҳатто боиси
+                                                маъюбӣ мегардад ва дар баъзе мавридҳо (ҷароҳат бо талафоти зиёди
+                                                хун, зарбаи барқ, сӯхтагӣ) боиси марги ҷабрдида дар ҷои ҳодиса
+                                                мегардад.
+                                            </Text>
+                                            <Text
+                                                className={`text-base ${darkMode ? 'text-white' : 'bg-slate-950'}`}>
+                                                • Шумо набояд ҳеҷ гоҳ ҷабрдидаро вафотшуда ҳисоб кунед ва аз сабаби
+                                                набудани нафаскашӣ, кори дил ва набз аз кӯмак ба ӯ даст кашед. Танҳо
+                                                духтур ҳуқуқ дорад дар бораи марги ҷабрдида хулоса барорад ва дар
+                                                бораи ба мақсад мувофиқ будани амалиёти эҳёгарӣ қарор қабул намояд.
+                                                Ҳодисаҳои зиёд (махсусан бо зарбаи барқ) вуҷуд доранд, ки ҷабрдида
+                                                гӯё фавтида ё ҳатто дар ҳолати марги клиникӣ қарор дошт, аммо
+                                                амалҳои дуруст ва устуворона барои эҳё кардан (нафасгирии сунъӣ,
+                                                масҳ ва ғ.) ҳаёти ӯро наҷот доданд.
+                                            </Text>
+                                            <Text
+                                                className={`text-base ${darkMode ? 'text-white' : 'bg-slate-950'}`}>
+                                                • Дар сурати руӣ додани ҳодиса ба зарардида ёрии аввалин расонида,
+                                                вобаста ба ҳолати зарардида ба воситаи телефони 03 ёрии тиббиро
+                                                даъват кардан лозим аст.
+                                            </Text>
                                     </View>
+                                </View>
                             }
-                        />
+                            />
                     </List.Accordion>
                     <List.Accordion
-                        className={"bg-slate-200 rounded-lg mt-2"}
+                        titleStyle={{color: darkMode ? 'white' : '#1E293B'}}
+                        className={`${darkMode ? 'bg-slate-600 text-white' : 'text-slate-950 bg-slate-200'} rounded-lg mt-2`}
+                        theme={{colors: {background: darkMode ? '#1E293B' : '#E2E8F0'}}}
                         title="НИШОНАҲОИ ХАЁТ ВА МАРГИ ИНСОН."
                         id="2"
                     >
@@ -124,12 +130,12 @@ const Index = () => {
                                     </Text>
                                 </View>
                             }
-                            className={"bg-slate-100"}
+                            className={darkMode ? 'bg-slate-800' : `bg-slate-100`}
                             description={
                                 () =>
                                     <View>
                                         <View>
-                                            <Text className={"text-base"}>
+                                            <Text className={`text-base ${darkMode ? 'text-white' : 'bg-slate-950'}`}>
                                                 • Аломатҳои ҳаёт: тапиши дил; шахси ёрирасон бо даст ё гуши худро поён
                                                 аз чапи синаи ҷабрдида гузошта муайян мекунад;
                                             </Text>
@@ -138,14 +144,14 @@ const Index = () => {
                                             </View>
                                         </View>
                                         <View>
-                                            <Text className={"text-base"}>
+                                            <Text className={`text-base ${darkMode ? 'text-white' : 'bg-slate-950'}`}>
                                                 • набз дар даруни бозу, дар гардан муайян карда мешавад; </Text>
                                             <View className={"mx-auto"}>
                                                 <Image source={Image2}/>
                                             </View>
                                         </View>
                                         <View>
-                                            <Text className={"text-base"}>
+                                            <Text className={`text-base ${darkMode ? 'text-white' : 'bg-slate-950'}`}>
                                                 • мавҷудияти нафаскашӣ бо ҳаракати қафаси сина, бо тар шудани оинаи ба
                                                 бинии ҷабрдида часпидашуда ё ҳаракати пахтаи ба сўрохҳои бинӣ овардашуда
                                                 муқаррар карда мешавад;
@@ -155,7 +161,7 @@ const Index = () => {
                                             </View>
                                         </View>
                                         <View>
-                                            <Text className={"text-base"}>
+                                            <Text className={`text-base ${darkMode ? 'text-white' : 'bg-slate-950'}`}>
                                                 • вокуниши чашм ба рӯшноӣ. Вақте ки шуои рӯшноӣ равона карда мешавад,
                                                 якбора танг шудани чашмак ба амал меояд.
                                             </Text>
