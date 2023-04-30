@@ -3,17 +3,20 @@ import {Text, View} from 'react-native';
 import Ru from './ru';
 import {useTranslation} from "react-i18next";
 import Tj from "./tj";
+import {useSelector} from "react-redux";
 
 const Index = () => {
+    const darkModeSelector = useSelector(state => state.theme.darkMode);
+
     const {i18n} = useTranslation();
     return (
-        <View className="bg-white px-2">
+        <View className={`${darkModeSelector ? 'bg-slate-800' : 'bg-white'}  px-2`}>
             {
                 i18n.language === 'tj'
                     ?
-                    <Tj/>
+                    <Tj darkMode={darkModeSelector}/>
                     :
-                    <Ru/>
+                    <Ru darkMode={darkModeSelector}/>
             }
         </View>
     );

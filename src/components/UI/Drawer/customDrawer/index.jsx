@@ -79,7 +79,7 @@ const Index = (props) => {
     }
     const onDismissSnackBar = () => setCopiedMsg(false);
     return (
-        <View className={`flex-1 ${darkModeSelector ? 'bg-slate-900' : 'bg-slate-100'}`}>
+        <View className={`flex-1 ${darkModeSelector ? 'bg-slate-800' : 'bg-slate-100'}`}>
             <View className={"mt-12"}>
                 <LangChange props={props}/>
             </View>

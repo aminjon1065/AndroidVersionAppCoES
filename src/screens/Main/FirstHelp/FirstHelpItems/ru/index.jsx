@@ -18,14 +18,15 @@ import Image13 from './../assets/img/image13.png'
 import Image14 from './../assets/img/image14.png'
 import Image15 from './../assets/img/image15.png'
 import Image16 from './../assets/img/image16.jpg'
-const Index = () => {
+
+const Index = ({darkMode}) => {
     return (
         <ScrollView>
             <View className={"mb-5"}>
                 <Text className={"text-4xl text-center text-red-400 font-bold"}>
                     Первая помощь.
                 </Text>
-                <Text className={"text-base"}>
+                <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
                     При авариях, катастрофах и стихийных бедствиях значительное количество людей может нуждаться в
                     первой
                     медицинской помощи, которая должна быть оказана сразу же после получения травмы или отравления. При
@@ -33,19 +34,19 @@ const Index = () => {
                     прибытия
                     медицинского работника могут спасти жизнь и сохранить здоровье пострадавшему.
                 </Text>
-                <Text className={"ml-0.5 text-base"}>
+                <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
                     - Прекращение воздействия травмирующих факторов
                 </Text>
-                <Text className={"ml-0.5 text-base"}>
+                <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
                     - Проведение простейших медицинских мероприятий
                 </Text>
-                <Text className={"ml-0.5 text-base"}>
+                <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
                     - Скорейшая транспортировка пострадавшего в медицинское учреждение.
                 </Text>
                 <List.AccordionGroup>
                     <List.Accordion
                         title="ПОМОЩЬ, ОКАЗАННАЯ НЕ СПЕЦИАЛИСТОМ, ДОЛЖНА БЫТЬ ТОЛЬКО ПОМОЩЬЮ, ПРОВЕДЕННОЙ ДО ВРАЧА, А НЕ ВМЕСТО ВРАЧА"
-                        className={"bg-slate-200 rounded-lg"}
+                        className={`${darkMode ? 'bg-slate-800 text-white' : 'text-slate-950 bg-slate-200'}`}
                         id="1"
                     >
                         <List.Item
