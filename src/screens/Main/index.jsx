@@ -33,6 +33,8 @@ import FoodPoisoning from "./FirstHelp/FoodPoisoning";
 import Sunstroke from "./FirstHelp/Sunstroke";
 import Insects from "./FirstHelp/Insects";
 import Abrasion from "./FirstHelp/Abrasion";
+import SignsFracture from "./FirstHelp/SignsFracture";
+import Hydrargyrum from "./FirstHelp/Hydrargyrum";
 
 const Stack = createNativeStackNavigator();
 
@@ -69,6 +71,8 @@ const Index = () => {
                 <Stack.Screen name={"Sunstroke"} component={Sunstroke}/>
                 <Stack.Screen name={"Insects"} component={Insects}/>
                 <Stack.Screen name={"Abrasions"} component={Abrasion}/>
+                <Stack.Screen name={"SignsFracture"} component={SignsFracture}/>
+                <Stack.Screen name={"Hydrargyrum"} component={Hydrargyrum}/>
                 {/* / First Help Screens */}
 
                 {/*What ToDo Items start*/}
@@ -87,5 +91,4 @@ const Index = () => {
         </>
     );
 };
-
 export default Index;

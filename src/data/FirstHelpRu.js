@@ -113,6 +113,20 @@ export const routesDataRu =
                 category: "Помощь",
                 category_slug: "FirstHelp",
             },
+            {
+                title: "Травма конечности",
+                slug: "SignsFracture",
+                icon: require('./FirstHelpIcons/fracture.png'),
+                category: "Помощь",
+                category_slug: "FirstHelp",
+            },
+            {
+                title: "Ртуть",
+                slug: "Hydrargyrum",
+                icon: require('./FirstHelpIcons/Hydrargyrum.png'),
+                category: "Помощь",
+                category_slug: "FirstHelp",
+            },
 
         ]
     }

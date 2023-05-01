@@ -22,7 +22,7 @@ import Image16 from "../assets/img/image16.jpg";
 const Index = ({darkMode}) => {
     return (
         <ScrollView>
-            <View className={"mb-5"}>
+            <View className={"mb-14"}>
                 <Text className={"text-4xl text-center text-red-400 font-bold"}>
                     ЁРИИ АВВАЛИН.
                 </Text>
@@ -109,10 +109,10 @@ const Index = ({darkMode}) => {
                                                 вобаста ба ҳолати зарардида ба воситаи телефони 03 ёрии тиббиро
                                                 даъват кардан лозим аст.
                                             </Text>
+                                        </View>
                                     </View>
-                                </View>
                             }
-                            />
+                        />
                     </List.Accordion>
                     <List.Accordion
                         titleStyle={{color: darkMode ? 'white' : '#1E293B'}}
@@ -174,7 +174,9 @@ const Index = ({darkMode}) => {
                         />
                     </List.Accordion>
                     <List.Accordion
-                        className={"bg-slate-200 rounded-lg mt-2"}
+                        titleStyle={{color: darkMode ? 'white' : '#1E293B'}}
+                        className={`${darkMode ? 'bg-slate-600 text-white' : 'text-slate-950 bg-slate-200'} rounded-lg mt-2`}
+                        theme={{colors: {background: darkMode ? '#1E293B' : '#E2E8F0'}}}
                         title="НИШОНАҲОИ ХАЁТ ДАЛЕЛИ БЕШУБҲАЕСТ, ИСЛОҲИ ИСБОТИ БЕХАТО МЕБОШАНД, КИ ЁРИИ ФАВРӢ МЕТАВОНАД ОДАМРО НАҶОТ ДИҲАД."
                         id="3"
                     >
@@ -186,19 +188,17 @@ const Index = ({darkMode}) => {
                                         НИШОНАҲОИ ХАЁТ ДАЛЕЛИ БЕШУБҲАЕСТ, ИСЛОҲИ ИСБОТИ БЕХАТО МЕБОШАНД, КИ ЁРИИ ФАВРӢ
                                         МЕТАВОНАД ОДАМРО НАҶОТ ДИҲАД.
                                     </Text>
-                                    <Text className={"text-base"}>
+                                    <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
                                         Признаки жизни являются безошибочным доказательством того, что немедленное
                                         оказание помощи еще может спасти человека.
                                     </Text>
-                                    <Text className={"text-base"}>
+                                    <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
                                         • Нафаскашии сунъиро дар сурате гузаронидан лозим аст, ки агар ҷабрдида бо
                                         душворӣ нафас мекашад ё нафас намекашад (аҳёнан, рагкашӣ) ё нафаскашӣ, сарфи
                                         назар аз сабабҳо (зарбаи барқ, заҳролудшавӣ, ғарқшавӣ ва ғ.) тадриҷан бад
                                         мешавад.
                                     </Text>
-                                    <Text
-                                        className={"text-base"}
-                                    >
+                                    <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
                                         • Пас аз пайдоиши нафаскашӣ идома додан лозим нест.
                                     </Text>
                                     <Text className={"text-base text-red-600"}>
@@ -207,38 +207,33 @@ const Index = ({darkMode}) => {
                                         className={"text-base"}
                                     >
                                         • агар имконпазир бошад, ҷабрдидаро ба пушт хобонед; </Text>
-                                    <Text
-                                        className={"text-base"}
-                                    >
+                                    <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
+
                                         • ҷабрдидаро аз либосе, ки нафаскаширо маҳдуд мекунад, озод кунед (рӯймолро
                                         кушоед, гиребонашро кушоед, камарбанди шим ва ғ.);
                                     </Text>
                                     <View className={"mx-auto mt-2"}>
                                         <Image source={Image5}/>
                                     </View>
-                                    <Text
-                                        className={"text-base"}
-                                    >
+                                    <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
+
                                         • даҳони ҷабрдидаро аз ашёи бегона озод кунед;
                                     </Text>
                                     <View className={"mx-auto"}>
                                         <Image source={Image6}/>
                                     </View>
-                                    <Text
-                                        className={"text-base"}
-                                    >
+                                    <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
+
                                         • даҳони сахт бастаро кушода, ҷоғи поёнро ба пеш тела диҳед, то ки дандонҳои
                                         поёнӣ дар пеши дандонҳои болои бошанд.
                                     </Text>
-                                    <Text
-                                        className={"text-base"}
-                                    >
+                                    <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
+
                                         • дар паҳлӯи сари ҷабрдида истода, як дасташро ба зери гардан гузоред ва бо кафи
                                         дасти дигар ба пешонӣ зер кунед, сарро то ҳадди имкон хам шавад;
                                     </Text>
-                                    <Text
-                                        className={"text-base"}
-                                    >
+                                    <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
+
                                         • ба назди ҷабрдида такя кунед, бо даҳони кушода нафаси чуқур кашед, даҳони
                                         кушодаи ҷабрдидаро бо лабҳо пурра пӯшонед ва бошиддат нафас кашед (дар айни
                                         замон бинии чабрдидаро бо рухсора ё ангуштони худ пӯшонед). Ба воситаи дока,
@@ -247,9 +242,8 @@ const Index = ({darkMode}) => {
                                     <View className={"mx-auto"}>
                                         <Image source={Image7}/>
                                     </View>
-                                    <Text
-                                        className={"text-base"}
-                                    >
+                                    <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
+
                                         • нафаскашии сунъӣ бо усули даҳон ба бинӣ бо даҳони ҷабрдида кушода гузаронида
                                         мешавад;
                                     </Text>
@@ -260,15 +254,13 @@ const Index = ({darkMode}) => {
                                             <Image source={Image10}/>
                                         </View>
                                     </ScrollView>
-                                    <Text
-                                        className={"text-base"}
-                                    >
+                                    <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
+
                                         • фосилаи дуюми байни нафасгирии сунъиро риоя кунед (вақти ҳар як сӯзандоруи
                                         ҳаво 1,5 - 2 сония аст)
                                     </Text>
-                                    <Text
-                                        className={"text-base"}
-                                    >
+                                    <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
+
                                         • пас аз барқарор кардани нафаскашии мустақил дар ҷабрдида (бо васеъшавии қафаси
                                         сина ба таври визуалӣ муайян карда мешавад), нафаскашии сунъиро қатъ намуда,
                                         ҷабрдидаро ба ҳолати устувори паҳлуӣ гузоред (гардон кардани сар, тан ва китф
@@ -279,7 +271,9 @@ const Index = ({darkMode}) => {
                         </List.Item>
                     </List.Accordion>
                     <List.Accordion
-                        className={"bg-slate-200 rounded-lg mt-2"}
+                        titleStyle={{color: darkMode ? 'white' : '#1E293B'}}
+                        className={`${darkMode ? 'bg-slate-600 text-white' : 'text-slate-950 bg-slate-200'} rounded-lg mt-2`}
+                        theme={{colors: {background: darkMode ? '#1E293B' : '#E2E8F0'}}}
                         title="МАСҲИ БЕРУНИИ ДИЛ."
                         id="4"
                     >
@@ -293,34 +287,33 @@ const Index = ({darkMode}) => {
                             description={
                                 () =>
                                     <View>
-                                        <Text className={"text-base"}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
                                             Ҳангоми боздошти дил пайдо мешавад, ки инҳо хос аст:
                                         </Text>
-                                        <Text className={"text-base"}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
                                             • ранги сурх ё кабудшавии пӯст;
                                         </Text>
-                                        <Text className={"text-base"}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
                                             • аз даст додани ҳуш;
                                         </Text>
-                                        <Text className={"text-base"}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
                                             • аз даст додани ҳуш;
                                         </Text>
-                                        <Text className={"text-base"}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
                                             • қатъ ё вайрон шудани нафаскашӣ (нафасҳои ларзиш).
                                         </Text>
-                                        <Text className={"text-base"}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
                                             • чабрдидаро ба тахкурсии сахти хамвор (фарш, скамейка ва г.) хобонед;
                                         </Text>
-                                        <Text className={"text-base"}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
                                             • худро ба паҳлӯи ҷабрдида гузоред ва (агар як шахс кӯмак кунад) бо роҳи
                                             даҳон ба даҳон ё даҳон ба бинӣ ду нафаси тезу пурқувват кунед.
                                         </Text>
                                         <View className={"mx-auto mt-2"}>
                                             <Image source={Image11}/>
                                         </View>
-                                        <Text
-                                            className={"text-base"}
-                                        >
+                                        <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
+
                                             • кафи як дастро (одатан чап) ба нимаи поёни устухон гузоред (3 ангушти
                                             кундаланг аз канори поёни он ба қафо қадам занед). кафи дасти дуюмро ба
                                             болои кафи якум гузоред.
@@ -332,21 +325,21 @@ const Index = ({darkMode}) => {
                                                 <Image source={Image14}/>
                                             </View>
                                         </ScrollView>
-                                        <Text className={"text-base"}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
                                             • бо зарбаҳои зуд (дастҳо дар буғумҳои оринҷ рост карда мешаванд) пахш
                                             карда, онро ба таври амудӣ ба поён 4 - 5 см, бо давомнокии фишор на бештар
                                             аз 0,5 сония гузаронед. ва бо фосилаи пахшкунии на бештар аз 0,5 с;
                                         </Text>
-                                        <Text className={"text-base"}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
                                             • барои ҳар 2 нафаскашии чуқури ҳаво ба устухони сина 15 маротиба фишор
                                             диҳед (ҳангоми кумаки як нафар);
                                         </Text>
-                                        <Text className={"text-base"}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
                                             • бо иштироки ду нафар дар реаниматсия таносуби «нафаскашӣ - масҳ»-ро ба
                                             андозаи 1:5 гузаронед (яъне баъди илҳоми амиқ ба қафаси сина 5 маротиба
                                             фишор оваред);
                                         </Text>
-                                        <Text className={"text-base"}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
                                             • ҳангоми гузаронидани реаниматсия аз тарафи як нафар дар ҳар 2 дақиқа масҳи
                                             дилро ба муддати 2—3 сония қатъ намуда, набзи раги каротиди ҷабрдидаро
                                             санҷед;
@@ -356,7 +349,7 @@ const Index = ({darkMode}) => {
                                                 <Image source={Image15}/>
                                             </View>
                                         </ScrollView>
-                                        <Text className={"text-base"}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
                                             • ҳангоми пайдо шудани набз масҳи берунии дилро бас кунед ва нафаскашии
                                             сунъиро то пайдо шудани нафаскаши давом дихед.
                                         </Text>

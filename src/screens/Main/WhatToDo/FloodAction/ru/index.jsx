@@ -6,9 +6,9 @@ const Index = () => {
         <ScrollView>
             <View>
                 <Text className={"text-4xl text-center text-red-400 font-bold"}>
-                    Действия при Паводоке
+                    Действия при Паводоках
                 </Text>
-                <Text className={"text-slate-900 ml-0.5 text-red-500 text-xl"}>
+                <Text className={"ml-0.5 text-red-500 text-xl"}>
                     Правила поведения при паводке:
                 </Text>
                 <Text className={"text-base ml-1"}>

@@ -39,14 +39,13 @@ const Index = (props) => {
             const storageLng = await AsyncStorage.getItem("lng");
             setLng(storageLng);
         }
-
         setData(langStore.langInterface === "tj" ? routesDataTj.items : routesDataRu.items)
         setResult(langStore.langInterface === "tj" ? routesDataTj.items : routesDataRu.items)
         getLng();
     }, [langStore]);
     return (
         <View className={`h-screen ${darkModeSelector ? 'bg-slate-800' : 'bg-white'}`}>
-            <View className={"px-2"}>
+            <View className={"px-2 pb-4"}>
                 <View className={"flex flex-row items-center mb-2"}>
                     <View className="mr-1">
                         <TouchableOpacity

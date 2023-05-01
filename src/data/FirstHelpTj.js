@@ -113,5 +113,12 @@ export const routesDataTj =
                 category: "Кумаки аввал",
                 category_slug: "FirstHelp",
             },
+            {
+                title: "шикасти устухон",
+                slug: "SignsFracture",
+                icon: require('./FirstHelpIcons/fracture.png'),
+                category: "Кумаки аввал",
+                category_slug: "FirstHelp",
+            },
         ]
     }
