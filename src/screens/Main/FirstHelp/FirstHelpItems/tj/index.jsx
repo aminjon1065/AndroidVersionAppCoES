@@ -60,22 +60,22 @@ const Index = ({darkMode}) => {
                             description={
                                 () =>
                                     <View>
-                                        <Text className={`text-base ${darkMode ? 'text-white' : 'bg-slate-950'}`}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                                             • 1. боздоштани муваққатии хунравӣ; </Text>
-                                        <Text className={`text-base ${darkMode ? 'text-white' : 'bg-slate-950'}`}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                                             • 2. гузоштани банди асептикӣ ба захм ё ҷои сўхта, бо усули оддитарин ва
                                             истифодаи тахтачуб ва дигар воситаи дастрас шинафартабанди кардан
                                             ҳангоми захмҳои вазнин; </Text>
-                                        <Text className={`text-base ${darkMode ? 'text-white' : 'bg-slate-950'}`}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                                             • 3. фаъолиятҳои эҳёсозӣ; </Text>
-                                        <Text className={`text-base ${darkMode ? 'text-white' : 'bg-slate-950'}`}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                                             • 4. додани доруҳои дарднок ва дигар доруҳо барои бемориҳои маълум;
                                         </Text>
-                                        <Text className={`text-base ${darkMode ? 'text-white' : 'bg-slate-950'}`}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                                             • 5. интиқоли ҷабрдидаҳо; </Text>
                                         <View>
                                             <Text
-                                                className={`text-base ${darkMode ? 'text-white' : 'bg-slate-950'}`}>
+                                                className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                                                 Ҳар як нафар бояд пеш аз расондани ёрии тиббӣ ба зарардида ёрии
                                                 аввалинро донад ва онро моҳирона иҷро намояд. Кӯмаки аввалия бояд бо
                                                 истифода аз тамоми воситаҳое, ки одатан дар доруқуттӣ мавҷуд аст,
@@ -93,7 +93,7 @@ const Index = ({darkMode}) => {
                                                 мегардад.
                                             </Text>
                                             <Text
-                                                className={`text-base ${darkMode ? 'text-white' : 'bg-slate-950'}`}>
+                                                className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                                                 • Шумо набояд ҳеҷ гоҳ ҷабрдидаро вафотшуда ҳисоб кунед ва аз сабаби
                                                 набудани нафаскашӣ, кори дил ва набз аз кӯмак ба ӯ даст кашед. Танҳо
                                                 духтур ҳуқуқ дорад дар бораи марги ҷабрдида хулоса барорад ва дар
@@ -104,7 +104,7 @@ const Index = ({darkMode}) => {
                                                 масҳ ва ғ.) ҳаёти ӯро наҷот доданд.
                                             </Text>
                                             <Text
-                                                className={`text-base ${darkMode ? 'text-white' : 'bg-slate-950'}`}>
+                                                className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                                                 • Дар сурати руӣ додани ҳодиса ба зарардида ёрии аввалин расонида,
                                                 вобаста ба ҳолати зарардида ба воситаи телефони 03 ёрии тиббиро
                                                 даъват кардан лозим аст.
@@ -135,7 +135,7 @@ const Index = ({darkMode}) => {
                                 () =>
                                     <View>
                                         <View>
-                                            <Text className={`text-base ${darkMode ? 'text-white' : 'bg-slate-950'}`}>
+                                            <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                                                 • Аломатҳои ҳаёт: тапиши дил; шахси ёрирасон бо даст ё гуши худро поён
                                                 аз чапи синаи ҷабрдида гузошта муайян мекунад;
                                             </Text>
@@ -144,14 +144,14 @@ const Index = ({darkMode}) => {
                                             </View>
                                         </View>
                                         <View>
-                                            <Text className={`text-base ${darkMode ? 'text-white' : 'bg-slate-950'}`}>
+                                            <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                                                 • набз дар даруни бозу, дар гардан муайян карда мешавад; </Text>
                                             <View className={"mx-auto"}>
                                                 <Image source={Image2}/>
                                             </View>
                                         </View>
                                         <View>
-                                            <Text className={`text-base ${darkMode ? 'text-white' : 'bg-slate-950'}`}>
+                                            <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                                                 • мавҷудияти нафаскашӣ бо ҳаракати қафаси сина, бо тар шудани оинаи ба
                                                 бинии ҷабрдида часпидашуда ё ҳаракати пахтаи ба сўрохҳои бинӣ овардашуда
                                                 муқаррар карда мешавад;
@@ -161,7 +161,7 @@ const Index = ({darkMode}) => {
                                             </View>
                                         </View>
                                         <View>
-                                            <Text className={`text-base ${darkMode ? 'text-white' : 'bg-slate-950'}`}>
+                                            <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                                                 • вокуниши чашм ба рӯшноӣ. Вақте ки шуои рӯшноӣ равона карда мешавад,
                                                 якбора танг шудани чашмак ба амал меояд.
                                             </Text>
