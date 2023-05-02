@@ -6,7 +6,6 @@ import {useSelector} from "react-redux";
 const Index = () => {
     const {i18n} = useTranslation();
     const darkModeSelector = useSelector(state => state.theme.darkMode);
-
     return (
         <View className={`h-screen ${darkModeSelector ? 'bg-slate-800' : 'bg-white'}`}>
             <ScrollView>
