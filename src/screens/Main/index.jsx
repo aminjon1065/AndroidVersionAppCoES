@@ -39,6 +39,7 @@ import Hydrargyrum from "./FirstHelp/Hydrargyrum";
 const Stack = createNativeStackNavigator();
 
 const Index = () => {
+
     return (
         <>
             <Stack.Navigator initialRouteName='Home' screenOptions={{

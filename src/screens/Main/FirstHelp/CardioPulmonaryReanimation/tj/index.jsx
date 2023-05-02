@@ -17,7 +17,7 @@ import image14 from './../assets/14.jpg'
 import image15 from './../assets/15.jpg'
 import CallIcon from "react-native-vector-icons/MaterialIcons";
 
-const Index = () => {
+const Index = ({darkMode}) => {
     const call = async (number) => {
         try {
             await Linking.openURL(`tel:${number}`)
@@ -34,16 +34,16 @@ const Index = () => {
                 <Text className="text-center text-blue-600 text-xl">
                     Барои худ чи бояд донист?
                 </Text>
-                <Text className={"ml-1 text-base"}>
+                <Text className={`ml-1 text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     Барои одами калонсол:
                 </Text>
-                <Text className={"ml-2 text-base"}>
+                <Text className={`ml-1 text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     - Нафаскаши дар як дақиқа-<Text className={"text-red-400 font-bold"}>12-18</Text> маротиба
                 </Text>
-                <Text className={"ml-2 text-base"}>
+                <Text className={`ml-1 text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     - Таппиши дил дар як дақиқа <Text className={"text-red-400 font-bold"}>69-80</Text> маротиба
                 </Text>
-                <Text className={"ml-2 text-base"}>
+                <Text className={`ml-1 text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     - Меъёри фишори хун <Text className={"text-red-400 font-bold"}>120/80</Text> мм.сут.сим.
                 </Text>
                 <Text className="text-center text-blue-600 text-xl">
@@ -53,7 +53,7 @@ const Index = () => {
                     <View className={"mx-auto"}>
                         <Image source={image1}/>
                     </View>
-                    <Text className={"text-center text-base "}>
+                    <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         Беҳушшавӣ
                     </Text>
                 </View>
@@ -62,7 +62,7 @@ const Index = () => {
                     <View className={"mx-auto mt-2"}>
                         <Image source={image2}/>
                     </View>
-                    <Text className={"text-center text-base"}>
+                    <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         Қатъ шудани нафаскашӣ
                     </Text>
                 </View>
@@ -70,13 +70,13 @@ const Index = () => {
                     <View className={"mx-auto"}>
                         <Image source={image3} className={"w-32 h-32"}/>
                     </View>
-                    <Text className={"ml-1 text-base text-center"}>
+                    <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         Набудани набз дар шараёнҳои хоб:
                     </Text>
-                    <Text className={"ml-2 text-base text-center"}>
+                    <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         1 Таъғирёбии ранги пуст.
                     </Text>
-                    <Text className={"ml-2 text-base text-center"}>
+                    <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         2 Кушодшавии гавҳараки чашм.
                     </Text>
                 </View>
@@ -84,7 +84,7 @@ const Index = () => {
                     <View className={"mx-auto"}>
                         <Image source={image4} className={"w-32 h-32"}/>
                     </View>
-                    <Text className={"text-center text-base"}>
+                    <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         Санҷиши ҳолати ҳуш: фарёдкардани ҷабрдида, аз китф афшондани бемор
                     </Text>
                 </View>
@@ -93,7 +93,7 @@ const Index = () => {
                     <View className={"mx-auto"}>
                         <Image source={image5} className={"w-32 h-32"}/>
                     </View>
-                    <Text className={"text-center text-base"}>
+                    <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         Санҷиши нафас ба гуш (бо овоз, бо ёрии оинача).
                     </Text>
                 </View>
@@ -101,7 +101,7 @@ const Index = () => {
                     <View className={"mx-auto"}>
                         <Image source={image6} className={"w-32 h-32"}/>
                     </View>
-                    <Text className={"text-center text-base"}>
+                    <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         Санҷиши набз дар шараёни хоб.
                     </Text>
                 </View>
@@ -110,7 +110,7 @@ const Index = () => {
                     <View className={"mx-auto"}>
                         <Image source={image7} className={"w-32 h-32"}/>
                     </View>
-                    <Text className={"text-center text-base"}>
+                    <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         Санҷиши гавҳараки чашм бо равшании чароғак.
                     </Text>
                 </View>
@@ -122,23 +122,23 @@ const Index = () => {
                 <Text className="text-center text-blue-600 text-xl">
                     ҚОИДАҲОИ АСОСИИ ЭҲЁИ ДИЛУ ШУШ
                 </Text>
-                <Text className={"text-start text-base"}>
+                <Text className={`text-start text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     - Таъмини роҳҳои гузариши нафаскашӣ.
                 </Text>
-                <Text className={"text-start text-base"}>
+                <Text className={`text-start text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     - нигоҳ доштани нафаскашӣ.
                 </Text>
-                <Text className={"text-start text-base"}>
+                <Text className={`text-start text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     - нигоҳ доштани гардиши хун.
                 </Text>
                 <View>
                     <Text className="text-center text-blue-600 text-xl">
                         ИДОРАИ ГУЗАРИШИ РОҲҲОИ НАФАС:
                     </Text>
-                    <Text className={"text-start text-base"}>
+                    <Text className={`text-start text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         • Сари беморро ба қафо хам кунед.
                     </Text>
-                    <Text className={"text-start text-base"}>
+                    <Text className={`text-start text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         • Ҷоғашро боло кашед.
                     </Text>
                     <View className={"mx-auto"}>
@@ -148,16 +148,16 @@ const Index = () => {
                 <Text className="text-center text-blue-600 text-xl">
                     ГУЗАРОНИДАНИ НАФАСИ СУНЪӢ
                 </Text>
-                <Text className={"text-start text-base"}>
+                <Text className={`text-start text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     • Сари беморро ба қафо хам кунед.
                 </Text>
-                <Text className={"text-start text-base"}>
+                <Text className={`text-start text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     • Нафаси ором гиред.
                 </Text>
-                <Text className={"text-start text-base"}>
+                <Text className={`text-start text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     • Бо ду ангушт қисми нарми бинии ҷабрдидаро махкам доред.
                 </Text>
-                <Text className={"text-start text-base"}>
+                <Text className={`text-start text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     • Ду нафаси чуқур кашида ба шуши ҷабрдида нафас диҳед, даҳони ӯро бо лабҳои худ сахт махкам
                     кунед.
                 </Text>
@@ -170,10 +170,10 @@ const Index = () => {
                     <Text className="text-center text-blue-600 text-xl">
                         ГУЗАРОНИДАНИ НАФАСИ СУНЪӢ
                     </Text>
-                    <Text className={"text-start text-base"}>
+                    <Text className={`text-start text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         • Давомнокии нафаскашӣ -1 сония.
                     </Text>
-                    <Text className={"text-start text-base"}>
+                    <Text className={`text-start text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         • Баланд шудани қафаси синаи ҷабрдидаро нигоҳ кунед.
                     </Text>
                 </View>
@@ -185,13 +185,13 @@ const Index = () => {
                         <View className={"mx-auto"}>
                             <Image source={image12} className={"w-44 h-44 rounded mr-1"}/>
                         </View>
-                        <Text className={"text-center text-base"}>Дар паҳлӯи ҷабрдида истода</Text>
+                        <Text className={`text-center text-base ${darkMode ? 'text-white' :"text-slate-950"}`}>Дар паҳлӯи ҷабрдида истода</Text>
                     </View>
                     <View className={"mb-2"}>
                         <View className={"mx-auto"}>
                             <Image source={image13} className={"w-44 h-44 rounded mr-1"}/>
                         </View>
-                        <Text className={"text-center text-base"}>
+                        <Text className={`text-center text-base ${darkMode ? 'text-white' :"text-slate-950"}`}>
                             Иҷрои ҳаводиҳии механикӣ ва масҳи ғаӣримустақими дил аз ҷониби як наҷотдиҳанда: 2 нафас + 15 фишор.
                         </Text>
                     </View>
@@ -199,7 +199,7 @@ const Index = () => {
                         <View className={"mx-auto"}>
                             <Image source={image14} className={"w-44 h-44 rounded mr-1"}/>
                         </View>
-                        <Text className={"text-center text-base"}>
+                        <Text className={`text-center text-base ${darkMode ? 'text-white' :"text-slate-950"}`}>
                             Иҷрои ҳаводиҳии механикӣ ва масҳи ғайримустақими дил аз ҷониби ду наҷотдиҳанда: 1 нафас + 5 фишор
                         </Text>
                     </View>
@@ -207,7 +207,7 @@ const Index = () => {
                         <View className={"mx-auto"}>
                             <Image source={image15} className={"w-56 h-44 rounded mr-1"}/>
                         </View>
-                        <Text className={"text-center text-base"}>
+                        <Text className={`text-center text-base ${darkMode ? 'text-white' :"text-slate-950"}`}>
                             Ба ёрии таъҷилӣ занг занед
                         </Text>
                         <View className={"flex flex-row"}>

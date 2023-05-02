@@ -17,7 +17,7 @@ import image14 from './../assets/14.jpg'
 import image15 from './../assets/15.jpg'
 import CallIcon from "react-native-vector-icons/MaterialIcons";
 
-const Index = () => {
+const Index = ({darkMode}) => {
     const call = async (number) => {
         try {
             await Linking.openURL(`tel:${number}`)
@@ -34,16 +34,16 @@ const Index = () => {
                 <Text className="text-center text-blue-600 text-xl">
                     ЧТО НЕОБХОДИМО ЗНАТЬ О СЕБЕ?
                 </Text>
-                <Text className={"ml-1 text-base"}>
+                <Text className={`ml-1 text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     Для взрослого человека:
                 </Text>
-                <Text className={"ml-2 text-base"}>
+                <Text className={`ml-2 text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     - Частота дыхания в норме – <Text className={"text-red-400 font-bold"}>12-18</Text> вдохов в 1 мин
                 </Text>
-                <Text className={"ml-2 text-base"}>
+                <Text className={`ml-2 text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     - Частота сердечных сокращений <Text className={"text-red-400 font-bold"}>69-80</Text> в 1 мин
                 </Text>
-                <Text className={"ml-2 text-base"}>
+                <Text className={`ml-2 text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     - Величина артериального давления <Text className={"text-red-400 font-bold"}>120/80</Text>мм.рт.ст.
                 </Text>
                 <Text className="text-center text-blue-600 text-xl">
@@ -53,7 +53,7 @@ const Index = () => {
                     <View className={"mx-auto"}>
                         <Image source={image1}/>
                     </View>
-                    <Text className={"text-center text-base "}>
+                    <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         Отсутствие сознания
                     </Text>
                 </View>
@@ -62,7 +62,7 @@ const Index = () => {
                     <View className={"mx-auto mt-2"}>
                         <Image source={image2}/>
                     </View>
-                    <Text className={"text-center text-base"}>
+                    <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         Отсутствие дыхания
                     </Text>
                 </View>
@@ -70,13 +70,13 @@ const Index = () => {
                     <View className={"mx-auto"}>
                         <Image source={image3} className={"w-32 h-32"}/>
                     </View>
-                    <Text className={"ml-1 text-base text-center"}>
+                    <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         Отсутствие пульса на сонных артериях:
                     </Text>
-                    <Text className={"ml-2 text-base text-center"}>
+                    <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         1 Изменение цвета кожных покровов
                     </Text>
-                    <Text className={"ml-2 text-base text-center"}>
+                    <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         2 Расширение зрачка
                     </Text>
                 </View>
@@ -84,7 +84,7 @@ const Index = () => {
                     <View className={"mx-auto"}>
                         <Image source={image4} className={"w-32 h-32"}/>
                     </View>
-                    <Text className={"text-center text-base"}>
+                    <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         Проверить наличие сознания (окликнуть пострадавшего, потрясти за плечо.
                     </Text>
                 </View>
@@ -93,7 +93,7 @@ const Index = () => {
                     <View className={"mx-auto"}>
                         <Image source={image5} className={"w-32 h-32"}/>
                     </View>
-                    <Text className={"text-center text-base"}>
+                    <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         Проверить наличие дыхания (на слух, при помощи зеркала).
                     </Text>
                 </View>
@@ -101,7 +101,7 @@ const Index = () => {
                     <View className={"mx-auto"}>
                         <Image source={image6} className={"w-32 h-32"}/>
                     </View>
-                    <Text className={"text-center text-base"}>
+                    <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         Проверить пульс на сонной
                     </Text>
                 </View>
@@ -110,7 +110,7 @@ const Index = () => {
                     <View className={"mx-auto"}>
                         <Image source={image7} className={"w-32 h-32"}/>
                     </View>
-                    <Text className={"text-center text-base"}>
+                    <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         Проверить реакцию зрачка на свет.
                     </Text>
                 </View>
@@ -122,23 +122,23 @@ const Index = () => {
                 <Text className="text-center text-blue-600 text-xl">
                     ОСНОВНЫЕ ПРАВИЛА ПРОВЕДЕНИЯ СЕРДЕЧНО – ЛЕГОЧНОЙ РЕАНИМАЦИИ
                 </Text>
-                <Text className={"text-start text-base"}>
+                <Text className={`text-start text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     - Обеспечение проходимости верхних дыхательных путей
                 </Text>
-                <Text className={"text-start text-base"}>
+                <Text className={`text-start text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     - Поддержание дыхания
                 </Text>
-                <Text className={"text-start text-base"}>
+                <Text className={`text-start text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     - Поддержание кровообращения
                 </Text>
                 <View>
                     <Text className="text-center text-blue-600 text-xl">
                         ОБЕСПЕЧЕНИЕ ПРОХОДИМОСТИ ВЕРХНИХ ДЫХАТЕЛЬНЫХ ПУТЕЙ
                     </Text>
-                    <Text className={"text-start text-base"}>
+                    <Text className={`text-start text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         • Осторожно запрокиньте голову
                     </Text>
-                    <Text className={"text-start text-base"}>
+                    <Text className={`text-start text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         • Подтяните подбородок вверх
                     </Text>
                     <View className={"mx-auto"}>
@@ -148,16 +148,16 @@ const Index = () => {
                 <Text className="text-center text-blue-600 text-xl">
                     ПРОВЕДЕНИЕ ИСКУССТВЕННОГО ДЫХАНИЯ
                 </Text>
-                <Text className={"text-start text-base"}>
+                <Text className={`text-start text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     • Запрокиньте голову
                 </Text>
-                <Text className={"text-start text-base"}>
+                <Text className={`text-start text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     • Сделайте спокойный вдох
                 </Text>
-                <Text className={"text-start text-base"}>
+                <Text className={`text-start text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     • Зажмите мягкую часть носа пострадавшего двумя пальцами
                 </Text>
-                <Text className={"text-start text-base"}>
+                <Text className={`text-start text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     • Сделайте спокойный выдох в рот пострадавшего, плотно обхватив его рот своими губами
                 </Text>
                 <ScrollView horizontal={true} className={"mb-3"}>
@@ -169,10 +169,10 @@ const Index = () => {
                     <Text className="text-center text-blue-600 text-xl">
                         ПРОВЕДЕНИЕ ИСКУССТВЕННОГО ДЫХАНИЯ
                     </Text>
-                    <Text className={"text-start text-base"}>
+                    <Text className={`text-start text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         • Продолжительность вдоха -1 сек
                     </Text>
-                    <Text className={"text-start text-base"}>
+                    <Text className={`text-start text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         • Наблюдайте за подъемом грудной клетки пострадавшего
                     </Text>
                 </View>
@@ -184,13 +184,13 @@ const Index = () => {
                         <View className={"mx-auto"}>
                             <Image source={image12} className={"w-44 h-44 rounded mr-1"}/>
                         </View>
-                        <Text className={"text-center text-base"}>Встаньте сбоку от пострадавшего</Text>
+                        <Text className={`text-center text-base  ${darkMode ? 'text-white' : 'text-slate-950'}`}>Встаньте сбоку от пострадавшего</Text>
                     </View>
                     <View className={"mb-2"}>
                         <View className={"mx-auto"}>
                             <Image source={image13} className={"w-44 h-44 rounded mr-1"}/>
                         </View>
-                        <Text className={"text-center text-base"}>
+                        <Text className={`text-center text-base  ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                             Выполнение ИВЛ и непрямого массажа сердца одним
                             спасателем: 2 вдоха + 15 надавливаний.
                         </Text>
@@ -199,7 +199,7 @@ const Index = () => {
                         <View className={"mx-auto"}>
                             <Image source={image14} className={"w-44 h-44 rounded mr-1"}/>
                         </View>
-                        <Text className={"text-center text-base"}>
+                        <Text className={`text-center text-base  ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                             Выполнение ИВЛ и непрямого массажа сердца двумя спасателями: 1 вдох + 5 надавливаний
                         </Text>
                     </View>
@@ -207,7 +207,7 @@ const Index = () => {
                         <View className={"mx-auto"}>
                             <Image source={image15} className={"w-44 h-44 rounded mr-1"}/>
                         </View>
-                        <Text className={"text-center text-base"}>
+                        <Text className={`text-center text-base  ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                             - Вызвать скорую помощь
                         </Text>
                         <View className={"flex flex-row"}>

@@ -8,7 +8,7 @@ import img4 from './../assets/4.png';
 import img03 from './../assets/03.jpg';
 import CallIcon from "react-native-vector-icons/MaterialIcons";
 
-const Index = () => {
+const Index = ({darkMode}) => {
     const call = async (number) => {
         try {
             await Linking.openURL(`tel:${number}`)
@@ -22,7 +22,7 @@ const Index = () => {
                 <Text className={"text-4xl text-center text-red-400 font-bold"}>
                     ЧТО ТАКОЕ ИНСУЛЬТ?
                 </Text>
-                <Text className={"ml-1 text-base"}>
+                <Text className={`ml-1 text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     Инсульт - это острое нарушение мозгового кровообращения, вследствие которого часть клеток головного
                     мозга погибает.
                 </Text>
@@ -32,7 +32,7 @@ const Index = () => {
                 <Text className={"text-center text-xl text-blue-600 mt-2"}>
                     В ТВОИХ РУКАХ СПАСТИ ЖИЗНЬ
                 </Text>
-                <Text className="ml-1 text-base">
+                <Text className={`ml-1 text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     В большинстве случаев человеку можно спасти жизнь и предотвратить развитие тяжелых последствий
                     инсульта!
                     Для этого необходимо уметь выявить признаки инсульта, и своевременно вызвать «Скорую помощь».
@@ -46,22 +46,22 @@ const Index = () => {
                     ПРИЗНАКИ ИНСУЛЬТА:
                 </Text>
                 <View>
-                    <Text className="text-base">
+                    <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         - внезапная слабость и онемение в руке или руке и ноге на одной стороне тела;
                     </Text>
-                    <Text className="text-base">
+                    <Text className={`ml-1 text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         - внезапное помутнение сознания, нарушение речи или непонимание обращенной речи;
                     </Text>
-                    <Text className="text-base">
+                    <Text className={`ml-1 text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         - внезапное онемение губы или половины лица, часто с «перекосом» лица;
                     </Text>
-                    <Text className="text-base">
+                    <Text className={`ml-1 text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         - внезапное нарушение зрения в одном или обоих глазах, появление ощущения двоения в глазах;
                     </Text>
-                    <Text className="text-base">
+                    <Text className={`ml-1 text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         - внезапное нарушение походки, головокружение, потеря равновесия или координации;
                     </Text>
-                    <Text className="text-base">
+                    <Text className={`ml-1 text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         - внезапная сильная головная боль по неизвестной причине.
                     </Text>
                 </View>
@@ -73,13 +73,13 @@ const Index = () => {
                         <View className={"mx-auto"}>
                             <Image source={img1p} className={"h-44 w-44"}/>
                         </View>
-                        <Text className={"text-center text-base"}>
+                        <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                             Попросите пострадавшего УЛЫБНУТЬСЯ
                         </Text>
-                        <Text className={"text-center text-base"}>
+                        <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                             Не может улыбнуться?
                         </Text>
-                        <Text className={"text-center text-base"}>
+                        <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                             Уголок рта опущен?
                         </Text>
                     </View>
@@ -87,16 +87,16 @@ const Index = () => {
                         <View className={"mx-auto"}>
                             <Image source={img2} className={"h-44 w-44"}/>
                         </View>
-                        <Text className={"text-center text-base"}>
+                        <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                             Попросите его ЗАГОВОРИТЬ.
                         </Text>
-                        <Text className={"text-center text-base"}>
+                        <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                             Попросите выговорить простое предложение.
                         </Text>
-                        <Text className={"text-center text-base"}>
+                        <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                             Связно. Например: «За окном светит солнце».
                         </Text>
-                        <Text className={"text-center text-base"}>
+                        <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                             Не может разборчиво произнести предложение?
                         </Text>
                     </View>
@@ -104,13 +104,13 @@ const Index = () => {
                         <View className={"mx-auto"}>
                             <Image source={img3} className={"h-44 w-44"}/>
                         </View>
-                        <Text className={"text-center text-base"}>
+                        <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                             Попросите его ПОДНЯТЬ ОБЕ РУКИ.
                         </Text>
-                        <Text className={"text-center text-base"}>
+                        <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                             Не может поднять обе руки?
                         </Text>
-                        <Text className={"text-center text-base"}>
+                        <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                             Одна ослабла?
                         </Text>
                     </View>
@@ -151,20 +151,20 @@ const Index = () => {
                         <Text className={"text-center text-xl text-blue-600 mt-2"}>
                             До прибытия врача необходимо принять самостоятельные меры:
                         </Text>
-                        <Text className={"text-start text-base"}>
+                        <Text className={`text-start text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                             1. Уложите пострадавшего так, чтобы голова и плечи были приподняты.
                         </Text>
-                        <Text className={"text-start text-base"}>
+                        <Text className={`text-start text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                             2. Откройте окно, чтобы поступал свежий воздух.
                         </Text>
-                        <Text className={"text-start text-base"}>
+                        <Text className={`text-start text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                             3. Снимите или расстегните стесняющую одежду.
                         </Text>
-                        <Text className={"text-start text-base"}>
+                        <Text className={`text-start text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                             4. При рвоте поверните голову пострадавшего на бок, чтобы рвотные массы не попадали в
                             дыхательные пути.
                         </Text>
-                        <Text className={"text-start text-base"}>
+                        <Text className={`text-start text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                             5. Не давайте языку пациента западать – постоянно следите за дыханием.
                         </Text>
                     </View>
@@ -172,7 +172,7 @@ const Index = () => {
                         <Text className={"text-3xl font-bold text-center text-red-500"}>
                             ПОМНИТЕ!
                         </Text>
-                        <Text className={"text-base"}>
+                        <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                             Время, за которое можно успеть восстановить кровоток в артериях мозга и остановить гибель
                             клеток – 4 часа.
                             Чем раньше Вы вызовете «Скорую помощь», тем эффективнее будет лечение и меньше тяжелых
