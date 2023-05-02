@@ -8,7 +8,7 @@ import img5 from './../assets/5.jpg';
 import img6 from './../assets/6.jpg';
 import img7 from './../assets/7.jpg';
 
-const Index = () => {
+const Index = (darkMode) => {
     return (
         <ScrollView>
             <View className={"pl-2"}>
@@ -19,33 +19,33 @@ const Index = () => {
                 <View className={"mx-auto"}>
                     <Image source={img1} className={"w-64 h-64"}/>
                 </View>
-                <Text className={"text-xl text-center mb-5 "}>
+                <Text className={`text-xl text-center mb-5 ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     КУШИШИ СУЛФАИ ТАСОДУФӢ
                 </Text>
 
                 <View className={"mx-auto"}>
                     <Image source={img2} className={"w-64 h-64"}/>
                 </View>
-                <Text className={"text-xl text-center mb-5 "}>
+                <Text className={`text-xl text-center mb-5 ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     МУШТ ДАР БАЙНИ ТАХТАПУШТ
                 </Text>
                 <View className={"mx-auto mb-5"}>
                     <Image source={img3} className={"w-64 h-64"}/>
                 </View>
-                <Text className={"text-xl text-center"}>
+                <Text className={`text-xl text-center ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     БА ШИКАМИ ОН ФИШОР ДЕҲ
                 </Text>
                 <View className={"mx-auto"}>
                     <Image source={img4} className={"w-64 h-64"}/>
                     <Image source={img5} className={"w-64 h-64"}/>
                 </View>
-                <Text className={"text-xl text-center"}>
+                <Text className={`text-xl text-center ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     ЗАРБАҲО БА ПУШТ
                 </Text>
                 <View className={"mx-auto"}>
                     <Image source={img6} className={"w-64 h-64"}/>
                 </View>
-                <Text className={"text-xl text-center"}>
+                <Text className={`text-xl text-center ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     ФИШОР ДОДАН БА ҚАФАСИ СИНА
                 </Text>
                 <View className={"mx-auto"}>

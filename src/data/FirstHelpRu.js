@@ -127,6 +127,13 @@ export const routesDataRu =
                 category: "Помощь",
                 category_slug: "FirstHelp",
             },
+            {
+                title: "Удар молнии",
+                slug: "Lightning",
+                icon: require('./FirstHelpIcons/lightning.png'),
+                category: "Помощь",
+                category_slug: "FirstHelp",
+            },
 
         ]
     }

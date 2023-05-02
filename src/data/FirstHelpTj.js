@@ -120,5 +120,12 @@ export const routesDataTj =
                 category: "Кумаки аввал",
                 category_slug: "FirstHelp",
             },
+            {
+                title: "Раъду барк задан",
+                slug: "Lightning",
+                icon: require('./FirstHelpIcons/lightning.png'),
+                category: "Кумаки аввал",
+                category_slug: "FirstHelp",
+            },
         ]
     }

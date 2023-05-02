@@ -11,7 +11,7 @@ import image8 from './../assets/8.jpg';
 import image9 from './../assets/9.jpg';
 import image10 from './../assets/10.jpg';
 
-const Index = () => {
+const Index = (darkMode) => {
     return (
         <ScrollView>
             <View className={"pl-2"}>
@@ -23,31 +23,31 @@ const Index = () => {
                     <Image source={image1}/>
                     <Image source={image2}/>
                 </View>
-                <Text className={"text-center text-base"}>
+                <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     САНҶИШИ ҲУШ
                 </Text>
                 <View className={"mx-auto mb-5"}>
                     <Image source={image3} className={"w-56 h-44"}/>
                 </View>
-                <Text className={"text-center text-base"}>
+                <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     КУШОДАНИ РОҲҲОИ НАФАС
                 </Text>
                 <View className={"mx-auto mb-5"}>
                     <Image source={image4} className={"w-56 h-44"}/>
                 </View>
-                <Text className={"text-center text-base"}>
+                <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     САНҶИШИ НАФАС
                 </Text>
                 <View className={"mx-auto  mb-5"}>
                     <Image source={image5} className={"w-56 h-44"}/>
                 </View>
-                <Text className={"text-center text-base"}>
+                <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     БА ЁРИИ ТАЪҶИЛӢ ЗАНГ ЗАНЕД
                 </Text>
                 <View className={"mx-auto mb-5"}>
                     <Image source={image6} className={"w-56 h-44"}/>
                 </View>
-                <Text className={"text-center text-base"}>
+                <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     ФИШОР БА ҚАФАСИ СИНА
                 </Text>
                 <ScrollView horizontal={true} className={"mb-5"}>
@@ -55,7 +55,7 @@ const Index = () => {
                     <Image source={image8} className={"w-56 h-36"}/>
                     <Image source={image9} className={"w-56 h-36"}/>
                 </ScrollView>
-                <Text className={"text-center text-base"}>
+                <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     ДОДАНИ НАФАСИ СУНЪӢ
                 </Text>
                 <View className={"mx-auto mb-5"}>

@@ -35,6 +35,7 @@ import Insects from "./FirstHelp/Insects";
 import Abrasion from "./FirstHelp/Abrasion";
 import SignsFracture from "./FirstHelp/SignsFracture";
 import Hydrargyrum from "./FirstHelp/Hydrargyrum";
+import Lightning from "./FirstHelp/Lightning";
 
 const Stack = createNativeStackNavigator();
 
@@ -74,6 +75,7 @@ const Index = () => {
                 <Stack.Screen name={"Abrasions"} component={Abrasion}/>
                 <Stack.Screen name={"SignsFracture"} component={SignsFracture}/>
                 <Stack.Screen name={"Hydrargyrum"} component={Hydrargyrum}/>
+                <Stack.Screen name={"Lightning"} component={Lightning}/>
                 {/* / First Help Screens */}
 
                 {/*What ToDo Items start*/}
