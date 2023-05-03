@@ -60,11 +60,14 @@ const Index = ({navigation}) => {
 
     const showModal = () => setVisible(true);
     const hideModal = () => setVisible(false);
+    const redirectToNotifications = async () => {
+        hideModal()
+        await navigation.navigate("Notifications")
+    }
     useEffect(() => {
         registerForPushNotificationsAsync().then(token => setExpoPushToken(token));
         notificationListener.current = Notifications.addNotificationReceivedListener(notification => {
             setNotification(notification);
-            console.log("Alerttt")
             showModal();
         });
         responseListener.current = Notifications.addNotificationResponseReceivedListener(response => {
@@ -137,15 +140,21 @@ const Index = ({navigation}) => {
                         <Portal>
                             <Modal visible={visible} onDismiss={hideModal} className={"items-center"}>
                                 <View
-                                    className={"flex justify-center bg-slate-900/25 backdrop-blur-3xl px-5 py-2 rounded-xl"}>
-                                    <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur
+                                    className={"flex justify-center bg-zinc-900/80 backdrop-blur-3xl px-5 py-2 rounded-xl"}>
+                                    <Text className={"text-white"}>Lorem ipsum dolor sit amet, consectetur adipisicing
+                                        elit. Animi aspernatur
                                         delectus, dolores ducimus, earum enim eos eum exercitationem ipsa ipsum
                                         molestiae mollitia non, placeat quibusdam rem tempora totam ullam
                                         voluptate!
                                     </Text>
-                                    <Button onPress={hideModal}>
-                                        close
-                                    </Button>
+                                    <View className={"flex flex-row justify-around"}>
+                                        <Button onPress={hideModal}>
+                                            cancel
+                                        </Button>
+                                        <Button onPress={redirectToNotifications}>
+                                            Show
+                                        </Button>
+                                    </View>
                                 </View>
                             </Modal>
                         </Portal>
