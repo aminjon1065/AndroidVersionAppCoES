@@ -5,40 +5,40 @@ import img2 from './../assets/2.jpg';
 import img3 from './../assets/3.jpg';
 import img4 from './../assets/4.jpg';
 
-const Index = () => {
+const Index = ({darkMode}) => {
     return (
         <ScrollView>
             <View className={"pl-2"}>
                 <Text className={"text-2xl text-red-500 font-bold text-center"}>
                     ХАРОШҲО:
                 </Text>
-                <Text className={"text-base"}>
+                <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     Харошҳо – ин осеби сатҳӣ пӯст мебошад, ки дар он танҳо қабатҳои болоии пӯст осеб мебинанд.
                 </Text>
-                <Text className={"text-base"}>
+                <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     Хоришҳо хунравии шадидро ба вуҷуд намеоранд.
                 </Text>
-                <Text className={"text-base mb-5"}>
+                <Text className={`text-base mb-5 ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     Бемор ҳисси сахти сӯзишро эҳсос мекунад.
                 </Text>
                 <Text className={"text-lg text-center text-blue-600"}>
                     Кӯмаки аввалия барои харошҳо – ин пешгирии воридшавии сироят ба сатҳи захм мебошад.
                 </Text>
-                <Text className={"text-base"}>
+                <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     Агар ягон осеби ҷиддӣ ё хунравии шадид вуҷуд надошта бошад, ҷои осебдидаро бо собун ва оби гарм
                     бишӯед.
                 </Text>
-                <Text className={"text-base"}>
+                <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     Дар шароити саҳро беҳтар аст, ки бо худ маҳлули тайёри пероксиди гидрогени 3% дошта бошед.
                 </Text>
-                <Text className={"text-base"}>
+                <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     Дар хотир доред, ки Шумо захмҳоро бо оби дарё ва чашмаҳо шуста наметавонед.
                 </Text>
-                <Text className={"text-base"}>
+                <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     Пас аз тоза кардани сатҳӣ захми харошҳоро аз лоӣу гил, онро бо маҳлули йод ё сабзи дурахшон коркард
                     кардан лозим аст. Маҳлули перманганати калий низ мувофиқ аст.
                 </Text>
-                <Text className={"text-base mb-5"}>
+                <Text className={`text-base mb-5 ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     Одатан: харошҳо пас аз ёрии аввалияи дуруст худ аз худ дар давоми 5 то 7 рӯз шифо меёбанд.
                 </Text>
                 <View className={"mx-auto mb-5"}>

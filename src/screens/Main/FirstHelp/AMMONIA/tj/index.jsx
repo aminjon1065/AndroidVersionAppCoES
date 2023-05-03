@@ -78,7 +78,7 @@ function index({darkMode}) {
                     <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         - ҳангоми сӯхтани пӯст.
                     </Text>
-                    <Text className="text-base">
+                    <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         - дар сурати осеб дидани чашм, дар аксари мавридҳо, пешгӯӣ номусоид аст, аз даст додани биноиш
                         мумкин аст.
                     </Text>
