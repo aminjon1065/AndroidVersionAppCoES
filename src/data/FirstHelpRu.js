@@ -134,6 +134,13 @@ export const routesDataRu =
                 category: "Помощь",
                 category_slug: "FirstHelp",
             },
+            {
+                title: "Укус змеи",
+                slug: "SnakeBite",
+                icon: require('./WhatToDoIcons/snake.png'),
+                category: "Помощь",
+                category_slug: "FirstHelp",
+            },
 
         ]
     }

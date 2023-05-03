@@ -2,28 +2,30 @@ import React from 'react';
 import {ScrollView, View, Text} from "react-native";
 import {List} from "react-native-paper";
 
-const Index = () => {
+const Index = ({darkMode}) => {
     return (
         <ScrollView>
-            <View>
+            <View className={"pl-2 h-screen mb-5"}>
                 <Text className={"text-4xl text-center text-red-400 font-bold"}>
                     Действия если укусила змея
                 </Text>
-                <Text className={"text-slate-900 ml-0.5 text-red-500 text-xl"}>
+                <Text className={"ml-0.5 text-red-500 text-xl"}>
                     Что делать, если укусила змея
                 </Text>
-                <Text className={"text-base ml-1"}>
+                <Text className={`text-base ${darkMode ? 'text-white' :"text-slate-950"}`}>
                     Пострадавшего необходимо как можно скорее доставить в больницу или к ближайшему фельдшеру. Там ему
                     вводят сыворотку, нейтрализующую змеиный яд.
                 </Text>
                 <List.AccordionGroup>
                     <List.Accordion
                         title="Перед оказанием квалифицированной медицинской помощи необходимо предпринять следующие шаги:"
-                        className={"bg-slate-200 rounded-lg"}
+                        titleStyle={{color: darkMode ? 'white' : '#1E293B'}}
+                        className={`${darkMode ? 'bg-slate-600 text-white' : 'text-slate-950 bg-slate-200'} rounded-lg mt-2`}
+                        theme={{colors: {background: darkMode ? '#1E293B' : '#E2E8F0'}}}
                         id="1"
                     >
                         <List.Item
-                            className={"bg-slate-100"}
+                            className={darkMode ? "bg-slate-800" : 'bg-slate-100'}
                             title={
                                 () => <Text className={"text-red-500 text-lg"}>
                                     Перед оказанием квалифицированной медицинской помощи необходимо предпринять
@@ -33,8 +35,8 @@ const Index = () => {
                             }
                             description={
                                 () =>
-                                    <View>
-                                        <Text className={"text-base"}>
+                                    <View >
+                                        <Text className={`text-base ${darkMode ? 'text-white' :"text-slate-950"}`}>
                                             Уложите пострадавшего и не позволяйте ему двигаться. Восстановите укушенную
                                             конечность. Чем больше движений, тем быстрее яд распространяется по телу.
                                             Можно попробовать выдавить яд из ранки, промыть ее водой.
@@ -57,19 +59,21 @@ const Index = () => {
                         />
                     </List.Accordion>
                     <List.Accordion
-                        className={"bg-slate-200 rounded-lg mt-2"}
+                        titleStyle={{color: darkMode ? 'white' : '#1E293B'}}
+                        className={`${darkMode ? 'bg-slate-600 text-white' : 'text-slate-950 bg-slate-200'} rounded-lg mt-2`}
+                        theme={{colors: {background: darkMode ? '#1E293B' : '#E2E8F0'}}}
                         title="Как правильно отсасывать змеиный яд:"
                         id="2"
                     >
                         <List.Item
-                            className={"bg-slate-100"}
+                            className={darkMode ? "bg-slate-800" : 'bg-slate-100'}
                             title={() => <Text className={"text-red-500 text-lg"}>
                                 Как правильно отсасывать змеиный яд:
                             </Text>}
                             description={
                                 () =>
                                     <View>
-                                        <Text className={"text-base"}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' :"text-slate-950"}`}>
                                             Следует знать, что отсасывать яд стоит сразу же, через 3-5 минут эта
                                             процедура уже не имеет смысла.
                                             Взять укушенное место таким образом, чтобы образовалась кожная складка и
