@@ -27,26 +27,48 @@ Notifications.setNotificationHandler({
 
 async function registerForPushNotificationsAsync() {
     let token;
-    const {status: existingStatus} = await Notifications.getPermissionsAsync();
-    let finalStatus = existingStatus;
-    if (existingStatus !== 'granted') {
-        const {status} = await Notifications.requestPermissionsAsync();
-        finalStatus = status;
+    if (Device.isDevice) {
+        const {status: existingStatus} =
+            await Notifications.getPermissionsAsync();
+        let finalStatus = existingStatus;
+        if (existingStatus !== "granted") {
+            const {status} = await Notifications.requestPermissionsAsync();
+            finalStatus = status;
+        }
+        if (finalStatus !== "granted") {
+            alert("Failed to get push token for push notification!");
+            return;
+        }
+        token = (await Notifications.getExpoPushTokenAsync()).data;
+        console.log(token)
+        try {
+            await fetch("https://only.tj/api/v1/store-token", {
+                method: "POST",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    expoToken: token,
+                    deviceName: Device.deviceName,
+                }),
+            }).then((res) => {
+                console.log("success");
+            });
+        } catch (e) {
+            console.log("error");
+        }
+    } else {
+        alert("Must use physical device for Push Notifications");
     }
-    if (finalStatus !== 'granted') {
-        alert('Failed to get push token for push notification!');
-        return;
+    if (Platform.OS === "android") {
+        await Notifications.setNotificationChannelAsync("default", {
+            name: "default",
+            importance: Notifications.AndroidImportance.MAX,
+            vibrationPattern: [0, 250, 250, 250],
+            lightColor: "#FF231F7C",
+        });
     }
-    token = (await Notifications.getExpoPushTokenAsync()).data;
-    // console.log(token);
-    // console.log('token');
-
-    Notifications.setNotificationChannelAsync('default', {
-        name: 'default',
-        importance: Notifications.AndroidImportance.MAX,
-        vibrationPattern: [0, 250, 250, 250],
-        lightColor: '#FF231F7C',
-    });
     return token;
 }
 
@@ -82,6 +104,8 @@ const Index = ({navigation}) => {
     const darkModeSelector = useSelector(state => state.theme.darkMode);
     // console.log(expoPushToken)
     const {t} = useTranslation();
+    console.log(expoPushToken)
+
     return (
         <>
             <Provider>

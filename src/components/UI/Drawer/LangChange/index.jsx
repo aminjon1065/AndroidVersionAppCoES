@@ -17,6 +17,7 @@ const Index = ({props}) => {
             const storageLng = await AsyncStorage.getItem("lng");
             storageLng === "tj" ? await changeTj() : await changeRu()
         }
+
         getLng();
     }, []);
     const dispatch = useDispatch();
@@ -43,7 +44,7 @@ const Index = ({props}) => {
                 {lang === "tj"
                     ?
                     <Badge size={15} className={"bg-coes-blue"}>
-                        <CheckIcon size={10} name={"check"}/>
+                        <CheckIcon size={10} name={"check"} color={"white"}/>
                     </Badge>
                     :
                     null
@@ -54,7 +55,7 @@ const Index = ({props}) => {
                 {lang === "ru"
                     ?
                     <Badge size={15} className={"bg-coes-blue"}>
-                        <CheckIcon size={10} name={"check"}/>
+                        <CheckIcon size={10} name={"check"} color={"white"}/>
                     </Badge>
                     :
                     null
