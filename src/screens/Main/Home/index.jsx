@@ -25,6 +25,7 @@ const Index = (props) => {
     const [result, setResult] = useState([]);
     const [data, setData] = useState([]);
     const dispatch = useDispatch();
+    const [isLoading, setIsLoading] = useState(true);
     const {t} = useTranslation();
     // const FontSize = useSelector(state => state.font.fontSize)
     const langStore = useSelector(state => state.lang)
@@ -58,6 +59,7 @@ const Index = (props) => {
             setLng(storageLng);
             const boolTheme = themeMode === 'dark'
             await dispatch(darkMode(boolTheme))
+            setIsLoading(false)
 
         }
 

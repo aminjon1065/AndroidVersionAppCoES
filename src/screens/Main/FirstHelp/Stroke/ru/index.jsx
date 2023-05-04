@@ -1,11 +1,11 @@
 import React from 'react';
 import {View, Text, Image, ScrollView, TouchableWithoutFeedback, Linking} from "react-native";
 import img1 from './../assets/1.jpg';
-import img1p from './../assets/1.png';
+import img5 from '../assets/5.png';
 import img2 from './../assets/2.png';
 import img3 from './../assets/3.png';
 import img4 from './../assets/4.png';
-import img03 from './../assets/03.jpg';
+import img6 from '../assets/6.jpg';
 import CallIcon from "react-native-vector-icons/MaterialIcons";
 
 const Index = ({darkMode}) => {
@@ -39,7 +39,7 @@ const Index = ({darkMode}) => {
                 </Text>
                 <TouchableWithoutFeedback onPress={() => call('103')}>
                     <View className="mx-auto mt-2">
-                        <Image source={img03} className="w-44 h-32"/>
+                        <Image source={img6} className="w-44 h-32"/>
                     </View>
                 </TouchableWithoutFeedback>
                 <Text className={"text-center text-xl text-blue-600 mt-2"}>
@@ -71,7 +71,7 @@ const Index = ({darkMode}) => {
                     </Text>
                     <View className={"mb-2"}>
                         <View className={"mx-auto"}>
-                            <Image source={img1p} className={"h-44 w-44"}/>
+                            <Image source={img5} className={"h-44 w-44"}/>
                         </View>
                         <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                             Попросите пострадавшего УЛЫБНУТЬСЯ

@@ -8,7 +8,6 @@ import {Provider} from "react-redux";
 import {store} from "./src/state/store";
 
 const Stack = createNativeStackNavigator();
-// YaMap.init('87c50a75-a115-4df6-ae1c-001af89e44bd');
 export default function App() {
     return (
         <PaperProvider>

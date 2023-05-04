@@ -33,24 +33,25 @@ const Index = () => {
         <View className={`h-screen ${darkModeSelector ? 'bg-slate-800' : 'bg-white'}`}>
             <View>
                 <View>
-                    {
-                        loading
-                            ?
-                            <Animated/>
-                            :
-                            <>
-                                <Text
-                                    className={`text-center font-bold text-lg ${darkModeSelector ? 'text-white' : 'text-slate-900'}`}>
-                                    Настройка темы
-                                </Text>
-                                <View className={`flex- flex-row justify-around items-center `}>
-                                    <Text className={`font-bold ${darkModeSelector ? 'text-white' : 'text-slate-900'}`}>
-                                        Тёмная тема
-                                    </Text>
-                                    <Switch value={dark} onValueChange={onToggleSwitch}/>
-                                </View>
-                            </>
-                    }
+                    <Text>Lorem ipsum dolor sit amet.</Text>
+                    {/*{*/}
+                    {/*    loading*/}
+                    {/*        ?*/}
+                    {/*        <Animated/>*/}
+                    {/*        :*/}
+                    {/*        <>*/}
+                    {/*            <Text*/}
+                    {/*                className={`text-center font-bold text-lg ${darkModeSelector ? 'text-white' : 'text-slate-900'}`}>*/}
+                    {/*                Настройка темы*/}
+                    {/*            </Text>*/}
+                    {/*            <View className={`flex- flex-row justify-around items-center `}>*/}
+                    {/*                <Text className={`font-bold ${darkModeSelector ? 'text-white' : 'text-slate-900'}`}>*/}
+                    {/*                    Тёмная тема*/}
+                    {/*                </Text>*/}
+                    {/*                <Switch value={dark} onValueChange={onToggleSwitch}/>*/}
+                    {/*            </View>*/}
+                    {/*        </>*/}
+                    {/*}*/}
                 </View>
             </View>
         </View>

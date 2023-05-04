@@ -39,7 +39,7 @@ async function registerForPushNotificationsAsync() {
     }
     token = (await Notifications.getExpoPushTokenAsync()).data;
     // console.log(token);
-    console.log('token');
+    // console.log('token');
 
     Notifications.setNotificationChannelAsync('default', {
         name: 'default',
@@ -57,7 +57,7 @@ const Index = ({navigation}) => {
 
     const notificationListener = useRef();
     const responseListener = useRef();
-
+    // console.log(notification.request.content.title)
     const showModal = () => setVisible(true);
     const hideModal = () => setVisible(false);
     const redirectToNotifications = async () => {
@@ -70,9 +70,9 @@ const Index = ({navigation}) => {
             setNotification(notification);
             showModal();
         });
-        responseListener.current = Notifications.addNotificationResponseReceivedListener(response => {
-            // console.log(response);
-            console.log('response');
+        responseListener.current = Notifications.addNotificationResponseReceivedListener((response) => {
+            navigation.navigate("Notifications");
+            console.log(response);
         });
         return () => {
             Notifications.removeNotificationSubscription(notificationListener.current);
@@ -80,6 +80,7 @@ const Index = ({navigation}) => {
         };
     }, []);
     const darkModeSelector = useSelector(state => state.theme.darkMode);
+    // console.log(expoPushToken)
     const {t} = useTranslation();
     return (
         <>
@@ -140,12 +141,13 @@ const Index = ({navigation}) => {
                         <Portal>
                             <Modal visible={visible} onDismiss={hideModal} className={"items-center"}>
                                 <View
-                                    className={"flex justify-center bg-zinc-900/80 backdrop-blur-3xl px-5 py-2 rounded-xl"}>
-                                    <Text className={"text-white"}>Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit. Animi aspernatur
-                                        delectus, dolores ducimus, earum enim eos eum exercitationem ipsa ipsum
-                                        molestiae mollitia non, placeat quibusdam rem tempora totam ullam
-                                        voluptate!
+                                    className={`flex justify-center ${darkModeSelector ? 'bg-slate-900' : 'bg-white'} backdrop-blur-3xl px-5 py-2 rounded-xl`}>
+                                    <Text className={darkModeSelector ? "text-white" : "text-slate-950"}>
+                                        {notification.request.content.title}
+                                    </Text>
+
+                                    <Text className={darkModeSelector ? "text-white" : "text-slate-950"}>
+                                        {notification.request.content.body}
                                     </Text>
                                     <View className={"flex flex-row justify-around"}>
                                         <Button onPress={hideModal}>

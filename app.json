@@ -1,14 +1,15 @@
 {
   "expo": {
-    "name": "my-ver",
-    "slug": "my-ver",
+    "name": "Защита и спасение",
+    "description": "Действия при определённых ЧС",
+    "slug": "ProtectionAndRescue",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
+      "image": "./assets/splash-app.png",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": [
@@ -21,10 +22,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.aminjon1065.ProtectionAndRescue"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "477dd7e3-8a94-4c03-88a7-7f51357d8714"
+      }
     }
   }
 }

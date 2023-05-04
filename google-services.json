@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "100816787537",
+    "project_id": "protectionandrescue",
+    "storage_bucket": "protectionandrescue.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:100816787537:android:275529cdc56cabbfa0c070",
+        "android_client_info": {
+          "package_name": "com.aminjon1065.ProtectionAndRescue"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "100816787537-f4lcqc30e1tdm20tmtfc8te953p28a6s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aminjon1065.ProtectionAndRescue",
+            "certificate_hash": "479c89d2442ebcd214a0327668afdd7771d4f3a1"
+          }
+        },
+        {
+          "client_id": "100816787537-mpn4bcdui72j8j5j8c48sl8lvhn4bgs7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_aLmGCJm305PGaXYsKdCEIiN2yDRzkac"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "100816787537-mpn4bcdui72j8j5j8c48sl8lvhn4bgs7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

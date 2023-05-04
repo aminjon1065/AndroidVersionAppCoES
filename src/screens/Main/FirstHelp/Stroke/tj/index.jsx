@@ -1,11 +1,11 @@
 import React from 'react';
 import {View, Text, Image, ScrollView, TouchableWithoutFeedback, Linking} from "react-native";
 import img1 from './../assets/1.jpg';
-import img1p from './../assets/1.png';
+import img1p from '../assets/5.png';
 import img2 from './../assets/2.png';
 import img3 from './../assets/3.png';
 import img4 from './../assets/4.png';
-import img03 from './../assets/03.jpg';
+import img03 from '../assets/6.jpg';
 import CallIcon from "react-native-vector-icons/MaterialIcons";
 
 const Index = ({darkMode}) => {
