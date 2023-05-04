@@ -40,7 +40,6 @@ async function registerForPushNotificationsAsync() {
             return;
         }
         token = (await Notifications.getExpoPushTokenAsync()).data;
-        console.log(token)
         try {
             await fetch("https://only.tj/api/v1/store-token", {
                 method: "POST",
@@ -94,7 +93,7 @@ const Index = ({navigation}) => {
         });
         responseListener.current = Notifications.addNotificationResponseReceivedListener((response) => {
             navigation.navigate("Notifications");
-            console.log(response);
+            // console.log(response);
         });
         return () => {
             Notifications.removeNotificationSubscription(notificationListener.current);
@@ -104,7 +103,6 @@ const Index = ({navigation}) => {
     const darkModeSelector = useSelector(state => state.theme.darkMode);
     // console.log(expoPushToken)
     const {t} = useTranslation();
-    console.log(expoPushToken)
 
     return (
         <>
