@@ -1,10 +1,10 @@
 import React from 'react';
 import {ScrollView, View, Text} from "react-native";
 
-const Index = () => {
+const Index = ({darkMode}) => {
     return (
         <ScrollView>
-            <View>
+            <View className={'pl-2'}>
                 <Text className={"text-4xl text-center text-red-400 font-bold"}>
                     Действия при Паводоках
                 </Text>

@@ -52,10 +52,12 @@ const Index = ({darkMode}) => {
                         id="1"
                     >
                         <List.Item
-                            title={() => <View><Text className={"text-base text-red-700"}>ПОМОЩЬ, ОКАЗАННАЯ НЕ
+                            title={() => <View>
+                                <Text className={"text-base text-red-700"}>ПОМОЩЬ, ОКАЗАННАЯ НЕ
                                 СПЕЦИАЛИСТОМ,
                                 ДОЛЖНА БЫТЬ ТОЛЬКО ПОМОЩЬЮ,
-                                ПРОВЕДЕННОЙ ДО ВРАЧА, А НЕ ВМЕСТО ВРАЧА</Text></View>}
+                                ПРОВЕДЕННОЙ ДО ВРАЧА, А НЕ ВМЕСТО ВРАЧА</Text>
+                            </View>}
                             className={darkMode ? 'bg-slate-800' : `bg-slate-100`}
                             description={
                                 () =>

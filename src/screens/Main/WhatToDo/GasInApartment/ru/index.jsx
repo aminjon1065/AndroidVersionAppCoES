@@ -1,17 +1,17 @@
 import React from 'react';
 import {View, Text, ScrollView} from "react-native";
 
-const Index = () => {
+const Index = ({darkMode}) => {
     return (
         <ScrollView>
-            <View>
+            <View className={"pl-2"}>
                 <Text className={"text-4xl text-center text-red-400 font-bold"}>
                     Запах газа в квартире
                 </Text>
-                <Text className={"text-2xl text-center"}>
+                <Text className={`text-2xl text-center ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     Ваши действия при утечке газа в квартире:
                 </Text>
-                <Text className={"text-base mt-2 bg-slate-50 ml-1"}>
+                <Text className={`text-base mt-2 ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     • Не пытайтесь включать свет и электроприборы (лучше всего обесточить всю квартиру, отключив питание
                     на распределительном щите), чтобы искра не могла воспламенить скопившийся в квартире газ и вызвать
                     взрыв; Закройте нос и рот рукой;
@@ -19,7 +19,7 @@ const Index = () => {
                     передвигайте металлические стулья или столы;
                     Немедленно откройте все окна и двери;
                 </Text>
-                <Text className={"text-base mt-2 bg-slate-50 ml-1"}>
+                <Text className={`text-base mt-2 ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     • Выйдите из комнаты до того, как исчезнет запах газа. Если в квартире есть люди, вывести всех;
                     Если у окружающих вас людей наблюдаются признаки отравления газом, вынесите их на свежий воздух и
                     расположите так, чтобы их головы были выше ног. Вызовите скорую;
@@ -27,7 +27,7 @@ const Index = () => {
                     ,которая
                     работает круглосуточно.
                 </Text>
-                <Text className={"text-base mt-2 bg-slate-50 ml-1"}>
+                <Text className={`text-base mt-2 ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     • Если, несмотря на вентиляцию, в квартире по-прежнему присутствует запах газа, постарайтесь найти
                     его
                     источник. Еще раз проверьте плиту, загляните в духовку. Не забудьте закрыть вентиль на газовой

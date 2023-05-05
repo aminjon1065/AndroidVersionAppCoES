@@ -127,5 +127,19 @@ export const routesDataTj =
                 category: "Кумаки аввал",
                 category_slug: "FirstHelp",
             },
+            {
+                title: "Газидани мор",
+                slug: "SnakeBite",
+                icon: require('./WhatToDoIcons/snake.png'),
+                category: "Кумаки аввал",
+                category_slug: "FirstHelp",
+            },
+            {
+                title: "Истифодаи компас",
+                slug: "Compass",
+                icon: require('./FirstHelpIcons/compass.png'),
+                category: "Кумаки аввал",
+                category_slug: "FirstHelp",
+            },
         ]
     }

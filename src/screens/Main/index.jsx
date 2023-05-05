@@ -37,6 +37,7 @@ import SignsFracture from "./FirstHelp/SignsFracture";
 import Hydrargyrum from "./FirstHelp/Hydrargyrum";
 import Lightning from "./FirstHelp/Lightning";
 import SnakeBite from "./FirstHelp/SnakeBite";
+import Compass from "./FirstHelp/Compass";
 
 const Stack = createNativeStackNavigator();
 
@@ -78,6 +79,7 @@ const Index = () => {
                 <Stack.Screen name={"Hydrargyrum"} component={Hydrargyrum}/>
                 <Stack.Screen name={"Lightning"} component={Lightning}/>
                 <Stack.Screen name={"SnakeBite"} component={SnakeBite}/>
+                <Stack.Screen name={"Compass"} component={Compass}/>
                 {/* / First Help Screens */}
 
                 {/*What ToDo Items start*/}

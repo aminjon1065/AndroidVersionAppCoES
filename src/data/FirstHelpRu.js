@@ -141,6 +141,13 @@ export const routesDataRu =
                 category: "Помощь",
                 category_slug: "FirstHelp",
             },
+            {
+                title: "Использование компаса",
+                slug: "Compass",
+                icon: require('./FirstHelpIcons/compass.png'),
+                category: "Помощь",
+                category_slug: "FirstHelp",
+            },
 
         ]
     }
