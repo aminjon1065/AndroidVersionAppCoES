@@ -1,6 +1,6 @@
 import React from 'react';
-import {View, Text, ScrollView, Image} from "react-native";
-import {List} from "react-native-paper";
+import {View, Text, ScrollView, Image, Share} from "react-native";
+import {Button, List, FAB} from "react-native-paper";
 import Apte4ka from './../assets/img/apte4ka.jpg'
 import Image1 from './../assets/img/image1.png'
 import Image2 from './../assets/img/image2.jpg'
@@ -20,12 +20,32 @@ import Image15 from './../assets/img/image15.png'
 import Image16 from './../assets/img/image16.jpg'
 
 const Index = ({darkMode}) => {
+    const onShare = async () => {
+        try {
+            const result = await Share.share({
+                message:
+                    'React Native | A framework for building native apps using React',
+            });
+            if (result.action === Share.sharedAction) {
+                if (result.activityType) {
+                    // shared with activity type of result.activityType
+                } else {
+                    // shared
+                }
+            } else if (result.action === Share.dismissedAction) {
+                // dismissed
+            }
+        } catch (error) {
+            console.log(error.message);
+        }
+    };
     return (
         <ScrollView>
-            <View className={"mb-5"}>
+            <View className={"mb-32"}>
                 <Text className={"text-4xl text-center text-red-400 font-bold"}>
                     Первая помощь.
                 </Text>
+
                 <Text className={`text-base ${darkMode ? 'text-white' : "text-slate-950"}`}>
                     При авариях, катастрофах и стихийных бедствиях значительное количество людей может нуждаться в
                     первой
@@ -54,9 +74,9 @@ const Index = ({darkMode}) => {
                         <List.Item
                             title={() => <View>
                                 <Text className={"text-base text-red-700"}>ПОМОЩЬ, ОКАЗАННАЯ НЕ
-                                СПЕЦИАЛИСТОМ,
-                                ДОЛЖНА БЫТЬ ТОЛЬКО ПОМОЩЬЮ,
-                                ПРОВЕДЕННОЙ ДО ВРАЧА, А НЕ ВМЕСТО ВРАЧА</Text>
+                                    СПЕЦИАЛИСТОМ,
+                                    ДОЛЖНА БЫТЬ ТОЛЬКО ПОМОЩЬЮ,
+                                    ПРОВЕДЕННОЙ ДО ВРАЧА, А НЕ ВМЕСТО ВРАЧА</Text>
                             </View>}
                             className={darkMode ? 'bg-slate-800' : `bg-slate-100`}
                             description={
@@ -80,7 +100,8 @@ const Index = ({darkMode}) => {
                                                 • 5. перенос и перевозка пострадавших.
                                             </Text>
                                             <View>
-                                                <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
+                                                <Text
+                                                    className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                                                     • Каждый работник должен владеть приемами первой помощи
                                                     пострадавшему и
                                                     умело их выполнять до оказания врачебной помощи. Первая доврачебная
@@ -90,14 +111,16 @@ const Index = ({darkMode}) => {
                                                 <View className={"flex flex-row justify-center mb-2"}>
                                                     <Image source={Apte4ka} className={"w-10/12 h-56"}/>
                                                 </View>
-                                                <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
+                                                <Text
+                                                    className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                                                     • Неправильное или неумелое оказание первой медицинской помощи может
                                                     явиться причиной осложнений, затягивающих выздоровление
                                                     пострадавшего или даже ведущих к инвалидности, а в некоторых случаях
                                                     (ранение с большой кровопотерей, поражение электрическим током,
                                                     ожоги) может привести к смерти пострадавшего на месте травмирования.
                                                 </Text>
-                                                <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
+                                                <Text
+                                                    className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                                                     • Никогда не следует из-за отсутствия дыхания, сердцебиения или
                                                     пульса у пострадавшего считать его умершим и отказываться от
                                                     оказания ему помощи. Дать заключение о смерти пострадавшего и решить
@@ -108,7 +131,8 @@ const Index = ({darkMode}) => {
                                                     настойчивые действия по оживлению (искусственное дыхание, массаж и
                                                     др.) спасали ему жизнь.
                                                 </Text>
-                                                <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
+                                                <Text
+                                                    className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                                                     • При несчастном случае необходимо оказать пострадавшему первую
                                                     медицинскую помощь и, в зависимости от состояния пострадавшего,
                                                     вызвать медицинскую помощь по телефону 03.
@@ -284,25 +308,25 @@ const Index = ({darkMode}) => {
                             description={
                                 () =>
                                     <View>
-                                            <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                                             • производят при остановке сердечной деятельности, характеризующейся:
                                         </Text>
-                                            <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                                             • бледностью или синюшностью кожных покровов;
                                         </Text>
-                                            <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                                             • отсутствием пульса на сонных артериях;
                                         </Text>
-                                            <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                                             • потерей сознания;
                                         </Text>
-                                            <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                                             • прекращением или нарушением дыхания (судорожные вдохи).
                                         </Text>
-                                            <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                                             • уложить пострадавшего на ровное жесткое основание (пол, скамья и т.п.);
                                         </Text>
-                                            <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                                             • расположиться сбоку от пострадавшего и (если помощь оказывает один
                                             человек) сделать два быстрых энергичных вдувания способом "изо рта в рот"
                                             или "изо рта в нос"
@@ -312,7 +336,7 @@ const Index = ({darkMode}) => {
                                         </View>
                                         <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
 
-                                        • положить ладонь одной руки (чаще левой) на нижнюю половину грудины
+                                            • положить ладонь одной руки (чаще левой) на нижнюю половину грудины
                                             (отступив на 3 поперечных пальца выше ее нижнего края). Ладонь второй руки
                                             наложить поверх первой. Пальцы рук не касаются поверхности тела
                                             пострадавшего
@@ -324,21 +348,21 @@ const Index = ({darkMode}) => {
                                                 <Image source={Image14}/>
                                             </View>
                                         </ScrollView>
-                                            <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                                             • надавливать быстрыми толчками (руки выпрямлены в локтевых суставах) на
                                             грудину, смещая ее строго вертикально вниз на 4 - 5 см, с продолжительностью
                                             надавливания не более 0,5 сек. и с интервалом надавливания не более 0,5 с;
                                         </Text>
-                                            <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                                             • на каждые 2 глубоких вдувания воздуха производить 15 надавливаний на
                                             грудину (при оказании помощи одним человеком);
                                         </Text>
-                                            <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                                             • при участии в реанимации двух человек проводить соотношение "дыхание -
                                             массаж" как 1:5 (т.е. после глубокого вдувания проводить пять надавливаний
                                             на грудную клетку);
                                         </Text>
-                                            <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                                             • при проведении реанимации одним человеком через каждые 2 минуты прерывать
                                             массаж сердца на 2 - 3 с и проверять пульс на сонной артерии пострадавшего;
                                         </Text>
@@ -347,7 +371,7 @@ const Index = ({darkMode}) => {
                                                 <Image source={Image15}/>
                                             </View>
                                         </ScrollView>
-                                            <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
+                                        <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                                             • при появлении пульса прекратить наружный массаж сердца и продолжать
                                             искусственное дыхание до появления самостоятельного дыхания.
                                         </Text>
@@ -360,6 +384,14 @@ const Index = ({darkMode}) => {
                         </List.Item>
                     </List.Accordion>
                 </List.AccordionGroup>
+                <View className={"items-end"}>
+                    <FAB
+                        icon="share"
+                        className={" w-36 bg-blue-700 mt-2"}
+                        onPress={onShare}
+                        label={"Поделиться"}
+                    />
+                </View>
             </View>
         </ScrollView>
     );
