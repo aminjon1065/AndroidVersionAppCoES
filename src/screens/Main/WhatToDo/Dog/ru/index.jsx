@@ -1,17 +1,17 @@
 import React from 'react';
 import {ScrollView, Text, View} from "react-native";
 
-const Index = () => {
+const Index = ({darkMode}) => {
     return (
         <ScrollView>
             <View>
                 <Text className={"text-4xl text-center text-red-400 font-bold"}>
                     Действия если укусила собака
                 </Text>
-                <Text className={"text-slate-900 ml-0.5 text-red-500 text-xl"}>
+                <Text className={"ml-0.5 text-red-500 text-xl"}>
                     Действия при укусе собаки:
                 </Text>
-                <Text className={"text-base ml-1"}>
+                <Text className={`text-base ml-1 ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     Если вас укусила собака, при необходимости остановите кровотечение непосредственным давлением на
                     рану,
                     давящей повязкой, пальцевым давлением на артерию (об этих способах остановки кровотечения вы можете
@@ -25,7 +25,7 @@ const Index = () => {
                 <Text className={"text-slate-900 ml-0.5 text-red-500 text-xl"}>
                     Как действовать если собака готова напасть:
                 </Text>
-                <Text className={"text-base ml-1"}>
+                <Text className={`text-base ml-1 ${darkMode ? 'text-white' : 'text-slate-950'} mb-32`}>
                     Остановиться и давать команды твердым голосом: «Место!», «Стоять!», «Сидеть!» или «Фу!». В некоторых
                     случаях срабатывает ряд команд, приводящих животное в замешательство. Для защиты используйте зонт,
                     камни, палки, при этом отступайте спиной к укрытию, забору или дому и зовите на помощь окружающих.
