@@ -42,7 +42,6 @@ import Compass from "./FirstHelp/Compass";
 const Stack = createNativeStackNavigator();
 
 const Index = () => {
-
     return (
         <>
             <Stack.Navigator initialRouteName='Home' screenOptions={{

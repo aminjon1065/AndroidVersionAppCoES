@@ -1,5 +1,5 @@
-import React, {useEffect, useRef, useState} from 'react';
-import {Alert, Image, Platform, TouchableOpacity, View} from "react-native";
+import React, {useCallback, useEffect, useRef, useState} from 'react';
+import {Image, Platform, TouchableOpacity, View} from "react-native";
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import Main from "./Main/";
 import Settings from "./Settings/";
@@ -9,11 +9,17 @@ import Logo from './../assets/img/logo.png';
 import CustomDrawer from './../components/UI/Drawer/customDrawer';
 import MainPageIcon from 'react-native-vector-icons/AntDesign';
 import SettingsIcon from 'react-native-vector-icons/AntDesign';
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {useTranslation} from "react-i18next";
 import * as Notifications from 'expo-notifications';
 import * as Device from "expo-device";
 import {Modal, Portal, Text, Button, Provider} from 'react-native-paper';
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import {darkMode} from "../state/slices/theme";
+import {routesDataTj} from "../data/routesDataTj";
+import {routesDataRu} from "../data/routesDataRu";
+import * as SplashScreen from "expo-splash-screen";
+import Lottie from 'lottie-react-native';
 
 const Drawer = createDrawerNavigator();
 Notifications.setNotificationHandler({
@@ -23,7 +29,6 @@ Notifications.setNotificationHandler({
         shouldSetBadge: false,
     }),
 });
-
 
 async function registerForPushNotificationsAsync() {
     let token;
@@ -75,7 +80,15 @@ const Index = ({navigation}) => {
     const [expoPushToken, setExpoPushToken] = useState('');
     const [notification, setNotification] = useState(false);
     const [visible, setVisible] = React.useState(false);
-
+    const [appIsReady, setAppIsReady] = useState(false);
+    const [searchText, setSearchText] = useState("")
+    const [lng, setLng] = useState('');
+    const [result, setResult] = useState([]);
+    const [data, setData] = useState([]);
+    const dispatch = useDispatch();
+    const [isLoading, setIsLoading] = useState(true);
+    // const FontSize = useSelector(state => state.font.fontSize)
+    const langStore = useSelector(state => state.lang)
     const notificationListener = useRef();
     const responseListener = useRef();
     // console.log(notification.request.content.title)
@@ -104,6 +117,46 @@ const Index = ({navigation}) => {
     // console.log(expoPushToken)
     const {t} = useTranslation();
 
+    useEffect(() => {
+        async function getLng() {
+            try {
+                const storageLng = await AsyncStorage.getItem("lng");
+                const themeMode = await AsyncStorage.getItem('darkMode');
+                setLng(storageLng);
+                const boolTheme = themeMode === 'dark'
+                await dispatch(darkMode(boolTheme))
+                setIsLoading(false)
+            } catch (e) {
+                console.log(e)
+            } finally {
+                // Tell the application to render
+                setAppIsReady(true);
+            }
+        }
+
+        setData(langStore.langInterface === "tj" ? routesDataTj.items : routesDataRu.items)
+        setResult(langStore.langInterface === "tj" ? routesDataTj.items : routesDataRu.items)
+        getLng();
+    }, [langStore]);
+    const onLayoutRootView = useCallback(async () => {
+        if (appIsReady) {
+            // This tells the splash screen to hide immediately! If we call this after
+            // `setAppIsReady`, then we may see a blank screen while the app is
+            // loading its initial state and rendering its first pixels. So instead,
+            // we hide the splash screen once we know the root view has already
+            // performed layout.
+            await SplashScreen.hideAsync();
+        }
+    }, [appIsReady]);
+    if (!appIsReady) {
+        return (
+            <View className={"mx-auto h-screen w-screen justify-center items-center bg-slate-600"}>
+                <Text>
+                    ......
+                </Text>
+            </View>
+        );
+    }
     return (
         <>
             <Provider>
