@@ -9,7 +9,11 @@ const Index = () => {
     return (
         <View className={`h-screen ${darkModeSelector ? 'bg-slate-800' : 'bg-white'}`}>
             <ScrollView>
-                
+                <View>
+                    <Text className={darkModeSelector ? `text-white` : 'text-slate-950'}>
+                        Тут будут все новости и уведомление
+                    </Text>
+                </View>
             </ScrollView>
         </View>
     );

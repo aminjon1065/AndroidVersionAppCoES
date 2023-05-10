@@ -1,6 +1,10 @@
 {
   "translation": {
     "Interface": {
+      "Call": "Позвонить",
+      "Review": "Оставить отзыв",
+      "HelpSpecialist": "Нужна помощь специалиста КЧС?",
+      "CopyCoordinateSuccess": "Ваши координаты скопированы",
       "Drawer": {
         "Home": "Главная",
         "About": "О приложении",
@@ -9,12 +13,12 @@
       },
       "Cards": {
         "WhatToDo": "Что делать если?",
-        "WhatToDoDescription": "Что делать если произошла какая-то ситуация",
+        "WhatToDoDescription": "Что делать в экстренных ситуациях",
         "FirstHelp": "Помощь",
         "FirstHelpDescription": "Первая помощь пострадавшему",
         "RiskMap": "Карта рисков",
         "CoESForKids": "КЧС Детям",
-        "CoESForKidsDescription": "Учить детей основы безопасности"
+        "CoESForKidsDescription": "Основы безопасности детям"
       },
       "List": {
         "Recommended": "КЧС рекомендует",

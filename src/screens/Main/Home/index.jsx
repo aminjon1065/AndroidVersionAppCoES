@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {View, Text, Image, TouchableWithoutFeedback, ImageBackground, Linking} from "react-native";
 import {LinearGradient} from 'expo-linear-gradient';
 import FirstHelpIcon from './../../../assets/img/Icons/Frame.png';
@@ -134,19 +134,25 @@ const Index = (props) => {
                                 ))
                                 :
                                 <View>
-                                    <Text className="text-center text-xl text-slate-800">
-                                        Вы можете спросить о
-                                        <Text className={"text-red-500 bg-slate-400 py-3"}>
+                                    <View className={"flex flex-row"}>
+                                        <Text
+                                            className={`text-center text-xl ${darkModeSelector ? 'text-white' : 'text-slate-950'}`}>
+                                            Вы можете спросить о </Text>
+                                        <Text className={"text-red-500 py-3 mr-5"}>
                                             {searchText}
-                                        </Text> у наших специалистов
-                                    </Text>
+                                        </Text>
+                                        <Text
+                                            className={`text-center text-xl ${darkModeSelector ? 'text-white' : 'text-slate-950'}`}>
+                                            у наших специалистов
+                                        </Text>
+                                    </View>
                                     <View className="flex flex-row pt-2">
                                         <TouchableWithoutFeedback onPress={call}>
                                             <View
                                                 className="flex flex-row flex-1 mr-1 items-center justify-center rounded-xl py-3 bg-red-500">
                                                 <CallIcon name='phone' size={32} color={"white"}/>
                                                 <Text className="text-center text-white ml-3">
-                                                    Позвонить
+                                                    {t('Interface.Call')}
                                                 </Text>
                                             </View>
                                         </TouchableWithoutFeedback>
@@ -155,7 +161,7 @@ const Index = (props) => {
                                                 className="flex flex-row flex-1 ml-1 items-center justify-center rounded-xl py-3 bg-cyan-800">
                                                 <MessageIcon name='message' size={32} color={"white"}/>
                                                 <Text className="text-center text-white ml-3">
-                                                    Написать
+                                                    {t('Interface.Review')}
                                                 </Text>
                                             </View>
                                         </TouchableWithoutFeedback>
@@ -177,10 +183,10 @@ const Index = (props) => {
                                             </View>
                                             <View className={"flex-1 justify-center "}>
                                                 <Text className={"text-2xl text-center text-white"}>
-                                                    Помощь
+                                                    {t('Interface.Cards.FirstHelp')}
                                                 </Text>
                                                 <Text className={"text-center text-white"}>
-                                                    Первая помощь пострадавшему
+                                                    {t('Interface.Cards.FirstHelpDescription')}
                                                 </Text>
                                             </View>
                                         </View>
@@ -203,10 +209,10 @@ const Index = (props) => {
                                                 </View>
                                                 <View className={"justify-center "}>
                                                     <Text className={"text-2xl text-center text-white"}>
-                                                        Что делать?
+                                                        {t('Interface.Cards.WhatToDo')}
                                                     </Text>
                                                     <Text className={"text-center text-white"}>
-                                                        Что делать в экстренных ситуациях
+                                                        {t('Interface.Cards.WhatToDoDescription')}
                                                     </Text>
                                                 </View>
                                             </View>
@@ -229,10 +235,10 @@ const Index = (props) => {
                                                 <View className={" justify-center "}>
 
                                                     <Text className={"text-2xl text-center text-white"}>
-                                                        КЧС для детей
+                                                        {t('Interface.Cards.CoESForKids')}
                                                     </Text>
                                                     <Text className={"text-center text-white"}>
-                                                        Основы безопасности детям
+                                                        {t('Interface.Cards.CoESForKidsDescription')}
                                                     </Text>
                                                 </View>
                                             </View>
@@ -242,7 +248,7 @@ const Index = (props) => {
                                 <View className={"mt-4"}>
                                     <Text
                                         className={`text-center text-xl ${darkModeSelector ? 'text-slate-100' : 'text-slate-800'}`}>
-                                        Нужна помощь специалиста КЧС?
+                                        {t('Interface.HelpSpecialist')}
                                     </Text>
                                     <View className="flex flex-row pt-2">
                                         <TouchableWithoutFeedback onPress={call}>
@@ -250,7 +256,8 @@ const Index = (props) => {
                                                 className="flex flex-row flex-1 mr-1 items-center justify-center rounded-xl py-3 bg-red-500">
                                                 <CallIcon name='phone' size={32} color={"white"}/>
                                                 <Text className="text-center text-white ml-3">
-                                                    Позвонить
+                                                    {t('Interface.Call')}
+
                                                 </Text>
                                             </View>
                                         </TouchableWithoutFeedback>
@@ -259,7 +266,7 @@ const Index = (props) => {
                                                 className="flex flex-row flex-1 ml-1 items-center justify-center rounded-xl py-3 bg-cyan-800">
                                                 <MessageIcon name='message' size={32} color={"white"}/>
                                                 <Text className="text-center text-white ml-3">
-                                                    Написать
+                                                    {t('Interface.Review')}
                                                 </Text>
                                             </View>
                                         </TouchableWithoutFeedback>

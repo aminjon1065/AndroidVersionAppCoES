@@ -150,7 +150,8 @@ const Index = (props) => {
                 onDismiss={onDismissSnackBar}
                 duration={3000}
             >
-                Ваши координаты скопированы
+                {t('Interface.CopyCoordinateSuccess')}
+
             </Snackbar>
         </View>
     );

@@ -6,7 +6,7 @@ const Index = ({darkMode}) => {
         <ScrollView>
             <View className={'pl-2'}>
                 <Text className={"text-4xl text-center text-red-400 font-bold"}>
-                    Действия при Паводоках
+                    Действия при Паводках
                 </Text>
                 <Text className={"ml-0.5 text-red-500 text-xl"}>
                     Правила поведения при паводке:

@@ -6,7 +6,6 @@ import i18n from "./src/localization/i18n";
 import {Provider as PaperProvider} from "react-native-paper";
 import {Provider} from "react-redux";
 import {store} from "./src/state/store";
-
 const Stack = createNativeStackNavigator();
 export default function App() {
 

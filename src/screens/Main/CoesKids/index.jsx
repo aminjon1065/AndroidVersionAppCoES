@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { routesDataTj } from "./../../../data/FirstHelpTj";
 import { routesDataRu } from "./../../../data/FirstHelpRu";
+import {useTranslation} from "react-i18next";
 
 const Index = (props) => {
     const ref = React.useRef(null);
@@ -40,18 +41,21 @@ const Index = (props) => {
         setResult(langStore.langInterface === "tj" ? routesDataTj.items : routesDataRu.items)
         getLng();
     }, [langStore]);
+    const {i18n} = useTranslation();
+    const darkModeSelector = useSelector(state => state.theme.darkMode);
+
     return (
         <>
-            <View className="h-screen bg-white">
+            <View className={`h-screen ${darkModeSelector ? 'bg-slate-800' : 'bg-white'}`}>
                 <View className={"px-2"}>
-                    <View className={"flex flex-row items-center"}>
+                    <View className={"flex flex-row items-center mb-2"}>
                         <View className="mr-1">
                             <TouchableOpacity
                                 className=" items-center"
                                 onPress={() => props.navigation.goBack()}
                             >
-                                <ArrowLeftIcon name='arrow-left' size={28} color={'#146C94'} />
-                                <Text className="text-[#146C94]">
+                                <ArrowLeftIcon name='arrow-left' size={28} color={darkModeSelector ? 'white' : '#146C94'}/>
+                                <Text className={darkModeSelector ? 'text-white' : `text-[#146C94]`}>
                                     Назад
                                 </Text>
                             </TouchableOpacity>
@@ -61,7 +65,7 @@ const Index = (props) => {
                                 icon={() => null
                                 }
                                 onIconPress={() => Keyboard.dismiss}
-                                className={"bg-slate-100 rounded text-slate-300"}
+                                className={`rounded text-slate-300 ${darkModeSelector ? 'bg-slate-600' : 'bg-slate-100 '}`}
                                 // onIconPress={() => ref.current.focus()}
                                 // ref={ref}
                                 placeholder="Поиск"
@@ -69,7 +73,7 @@ const Index = (props) => {
                                 onChangeText={onChangeSearchText}
                                 value={searchText}
                                 iconColor={'#146C94'}
-                            // clearIcon={'close'}
+                                // clearIcon={'close'}
                             />
                         </View>
                     </View>

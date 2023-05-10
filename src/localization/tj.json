@@ -1,13 +1,15 @@
 {
   "translation": {
     "Interface": {
+      "Call": "Занг задан",
+      "Review": "Фикри худро нависед",
+      "HelpSpecialist": "Кумаки мутахассис лозим?",
+      "CopyCoordinateSuccess": "Координатхоятон нусхабардор шудан",
       "Drawer": {
         "Home": "Асосӣ",
         "About": "Дар бораи барнома",
         "Settings": "Танзимот",
         "Socials": "Мо дар шабакаҳои иҷтимоӣ"
-
-
       },
       "Cards": {
         "WhatToDo": "Чи бояд кард?",

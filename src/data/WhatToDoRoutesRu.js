@@ -37,7 +37,7 @@ export const routesDataRu =
                 category_slug: "WhatToDo",
             },
             {
-                title: "Действия при Паводоке",
+                title: "Действия при паводках",
                 slug: "FloodAction",
                 icon: require('./WhatToDoIcons/flood.png'),
                 category: "Что делать если?",

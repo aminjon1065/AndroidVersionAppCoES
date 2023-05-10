@@ -220,7 +220,6 @@ const Index = ({navigation}) => {
                                     <Text className={darkModeSelector ? "text-white" : "text-slate-950"}>
                                         {notification.request.content.title}
                                     </Text>
-
                                     <Text className={darkModeSelector ? "text-white" : "text-slate-950"}>
                                         {notification.request.content.body}
                                     </Text>
