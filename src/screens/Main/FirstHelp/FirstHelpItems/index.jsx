@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text, View} from 'react-native';
-import Ru from './ru';
+import Ru from './ru/index';
 import {useTranslation} from "react-i18next";
 import Tj from "./tj";
 import {useSelector} from "react-redux";

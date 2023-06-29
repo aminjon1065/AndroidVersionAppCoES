@@ -19,6 +19,7 @@ import ShowItem from "../../../components/showItem";
 import {darkMode, themeMode} from "../../../state/slices/theme";
 import * as SplashScreen from "expo-splash-screen";
 import {Animated} from "react-native-maps";
+import SOSCALL from "../../../components/SOSCALL";
 
 const Index = (props) => {
     const [appIsReady, setAppIsReady] = useState(false);
@@ -37,13 +38,7 @@ const Index = (props) => {
         setSearchText(text)
         searchFilterFunction(text);
     }
-    const call = async () => {
-        try {
-            await Linking.openURL(`tel:112`)
-        } catch (e) {
-            console.log('error')
-        }
-    }
+
     const searchFilterFunction = (text) => {
         if (text) {
             const newData = data.filter(item => {
@@ -251,16 +246,7 @@ const Index = (props) => {
                                         {t('Interface.HelpSpecialist')}
                                     </Text>
                                     <View className="flex flex-row pt-2">
-                                        <TouchableWithoutFeedback onPress={call}>
-                                            <View
-                                                className="flex flex-row flex-1 mr-1 items-center justify-center rounded-xl py-3 bg-red-500">
-                                                <CallIcon name='phone' size={32} color={"white"}/>
-                                                <Text className="text-center text-white ml-3">
-                                                    {t('Interface.Call')}
-
-                                                </Text>
-                                            </View>
-                                        </TouchableWithoutFeedback>
+                                        <SOSCALL />
                                         <TouchableWithoutFeedback onPress={() => console.log("message")}>
                                             <View
                                                 className="flex flex-row flex-1 ml-1 items-center justify-center rounded-xl py-3 bg-cyan-800">
