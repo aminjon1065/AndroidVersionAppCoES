@@ -17,7 +17,7 @@ function Index({darkMode}) {
                     дну! Вы должны учитывать это обстоятельство при спасении на воде.
                 </Text>
                 <View className="mx-auto">
-                    <Image source={img1} className=" h-44 w-64"/>
+                    <Image source={img1} className="h-48 w-72 rounded-xl"/>
                 </View>
                 <Text className="text-lg text-blue-600 text-center">
                     ВИДЫ УТОПЛЕНИЙ
@@ -87,8 +87,8 @@ function Index({darkMode}) {
                         6. Дать теплое питьё.
                     </Text>
                     <ScrollView horizontal={true}>
-                        <Image source={img2}/>
-                        <Image source={img3}/>
+                        <Image source={img2} className={"rounded-xl"}/>
+                        <Image source={img3} className={"rounded-xl"}/>
                     </ScrollView>
                 </View>
             </View>

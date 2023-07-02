@@ -22,29 +22,29 @@ function Index({darkMode}) {
                 <Text className={`text-center text-lg font-bold ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     I дараҷа – сурхшавии пӯст.
                 </Text>
-                <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
-                    Сурхшавии ҷои сӯхта ва пайдоиши варамҳо, дарди сӯзишнок.
-                </Text>
+                {/*<Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>*/}
+                {/*    Сурхшавии ҷои сӯхта ва пайдоиши варамҳо, дарди сӯзишнок.*/}
+                {/*</Text>*/}
                 <View className="mx-auto">
                     <Image source={img2} className="w-56 h-56"/>
                 </View>
                 <Text className={`text-center text-lg font-bold ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     II дараҷа –дар пуст пайдошавии обилаҳо (блистерҳои пур аз моеъи шаффоф) ва зиёдшавии дард.
                 </Text>
-                <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
-                    Сухтани пуст – рангаш сурх буда, бо обилаҳои аз моеъи шаффоф пур буда ва дарди сахт.
-                </Text>
+                {/*<Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>*/}
+                {/*    Сухтани пуст – рангаш сурх буда, бо обилаҳои аз моеъи шаффоф пур буда ва дарди сахт.*/}
+                {/*</Text>*/}
                 <View className="mx-auto">
                     <Image source={img3} className="w-56 h-44"/>
                 </View>
                 <Text className={`text-center text-lg font-bold ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     III – IV дараҷа – пурра нобуд шудани пӯст ва қабати мушакҳо.
                 </Text>
-                <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
-                    Ранги зардтоби сурхшудаи пуст (мурдани асабҳои пуст, некроз) зиёдшавии дард, саршавии аломатҳои
-                    беҳушшавӣ.
-                    Пурра сӯхта сиёҳшавии пуст ва устухони зери он.
-                </Text>
+                {/*<Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>*/}
+                {/*    Ранги зардтоби сурхшудаи пуст (мурдани асабҳои пуст, некроз) зиёдшавии дард, саршавии аломатҳои*/}
+                {/*    беҳушшавӣ.*/}
+                {/*    Пурра сӯхта сиёҳшавии пуст ва устухони зери он.*/}
+                {/*</Text>*/}
                 <Text className={`text-2xl text-center font-bold ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     ЁРИИ ТАЪҶИЛӢ ҲАНГОМИ СӮХТАН.
                 </Text>
@@ -67,16 +67,16 @@ function Index({darkMode}) {
                     5. Пеш аз омадан ва муддати дароз интизори мошини ёрии таъҷилӣ нӯшокии гарми фаровон диҳед.
                 </Text>
                 <View className={"mx-auto mb-5"}>
-                    <Image source={img4} className={"w-64 h-44 mb-3"}/>
-                    <Image source={img5} className={"w-64 h-44"}/>
+                    <Image source={img4} className={"w-64 h-44 mb-3 rounded-xl"}/>
+                    <Image source={img5} className={"w-64 h-44 rounded-xl"}/>
                 </View>
                 <Text className={`text-2xl text-center font-bold ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     ҶОЙИ СУХТАГИРО БО ЯХ ХУНУК КУНЕД
                 </Text>
                 <ScrollView horizontal={true} className={"mb-5"}>
-                    <Image source={img6} className={"w-64 h-56 mr-1"}/>
-                    <Image source={img7} className={"w-64 h-56 mr-1"}/>
-                    <Image source={img8} className={"w-64 h-56"}/>
+                    <Image source={img6} className={"w-64 h-56 mr-1 rounded-xl"}/>
+                    <Image source={img7} className={"w-64 h-56 mr-1 rounded-xl"}/>
+                    <Image source={img8} className={"w-64 h-56 rounded-xl"}/>
                 </ScrollView>
                 <Text className={"text-2xl text-center font-bold text-red-500"}>
                     ДАР ХОТИР ДОРЕД! МУМКИН НЕСТ!

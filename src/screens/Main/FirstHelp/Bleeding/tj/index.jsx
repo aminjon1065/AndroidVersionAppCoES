@@ -49,7 +49,7 @@ const Index = ({darkMode}) => {
                     МАЪН КАРДАНИ ХУНРАВИИ ШАРАЁНӢ.
                 </Text>
                 <View className={'mx-auto'}>
-                    <Image source={imgT} className={"w-64 h-64"}/>
+                    <Image source={imgT} className={"w-72 h-64"}/>
                 </View>
                 <Text className={`mb-2 text-base ml-1 ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     1. Бо ангушт пахш кардани рагро болотар аз захм анҷом диҳед.
@@ -70,7 +70,7 @@ const Index = ({darkMode}) => {
                     МАЪН КАРДАНИ ХУНРАВИИ ВЕНОЗӢ.
                 </Text>
                 <View className={"mx-auto"}>
-                    <Image source={imgTT} className={"w-64 h-64"}/>
+                    <Image source={imgTT} className={"w-72 h-64"}/>
                 </View>
                 <View className={"ml-1"}>
                     <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
@@ -98,10 +98,13 @@ const Index = ({darkMode}) => {
                 <Text className="text-center text-blue-600 text-xl">
                     МАЪН КАРДАНИ ХУНРАВИИ КАПИЛЛЯРӢ.
                 </Text>
-                <ScrollView horizontal={true} className={"flex flex-row"}>
-                    <Image source={imgT1} className={"w-64 h-64 mr-2"}/>
-                    <Image source={imgT2} className={"w-64 h-64"}/>
-                </ScrollView>
+                <View className={"mx-auto"}>
+                    <Image source={imgT2} className={"w-72 h-64"}/>
+                </View>
+                {/*<ScrollView horizontal={true} className={"flex flex-row"}>*/}
+                {/*    <Image source={imgT1} className={"w-64 h-64 mr-2"}/>*/}
+                {/*    <Image source={imgT2} className={"w-64 h-64"}/>*/}
+                {/*</ScrollView>*/}
                 <View className={"ml-1"}>
                     <Text className={`text-base ml-1 ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         1. Захмро бо перекис бишӯед ё захмро дезинфексия кунед.

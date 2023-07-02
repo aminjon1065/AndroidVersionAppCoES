@@ -16,12 +16,19 @@ export const routesDataRu =
                 category_slug: "FirstHelp",
             },
             {
-                title: "Серлечно-легочная реанимация",
-                slug: "CardioPulmonaryReanimation",
-                icon: require('./FirstHelpIcons/cardio.png'),
+                title: "Эпилепсия",
+                slug: "Epilepsy",
+                icon: require('./FirstHelpIcons/epilepsy.png'),
                 category: "Помощь",
                 category_slug: "FirstHelp",
             },
+            // {
+            //     title: "Серлечно-легочная реанимация",
+            //     slug: "CardioPulmonaryReanimation",
+            //     icon: require('./FirstHelpIcons/cardio.png'),
+            //     category: "Помощь",
+            //     category_slug: "FirstHelp",
+            // },
             {
                 title: "Инсульт",
                 slug: "Stroke",
@@ -65,7 +72,7 @@ export const routesDataRu =
                 category_slug: "FirstHelp",
             },
             {
-                title: "Обморожений",
+                title: "Обморожения",
                 slug: "Frostbite",
                 icon: require('./FirstHelpIcons/cold.png'),
                 category: "Помощь",

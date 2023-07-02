@@ -49,26 +49,25 @@ const Index = ({darkMode}) => {
                 <Text className="text-center text-blue-600 text-xl">
                     УСТАНОВЛЕНИЕ ФАКТА ОСТАНОВКИ КРОВООБРАЩЕНИЯ
                 </Text>
-                <View className={"w-3/6 mx-auto p-5"}>
+                <View className={"w-full mx-auto p-5"}>
                     <View className={"mx-auto"}>
-                        <Image source={image1}/>
+                        <Image source={image1} className={"w-52 h-44 rounded-lg"}/>
                     </View>
                     <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         Отсутствие сознания
                     </Text>
                 </View>
-                <View className={"w-3/6 mx-auto p-5"}>
-
+                <View className={"w-full mx-auto p-5"}>
                     <View className={"mx-auto mt-2"}>
-                        <Image source={image2}/>
+                        <Image source={image2} className={"w-52 h-44 rounded-lg"}/>
                     </View>
                     <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         Отсутствие дыхания
                     </Text>
                 </View>
-                <View className={"w-5/6 mx-auto p-5"}>
+                <View className={"w-full mx-auto p-5"}>
                     <View className={"mx-auto"}>
-                        <Image source={image3} className={"w-32 h-32"}/>
+                        <Image source={image3} className={"w-52 h-44 rounded-lg"}/>
                     </View>
                     <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         Отсутствие пульса на сонных артериях:
@@ -80,9 +79,9 @@ const Index = ({darkMode}) => {
                         2 Расширение зрачка
                     </Text>
                 </View>
-                <View className={"w-5/6 mx-auto p-5"}>
+                <View className={"w-full mx-auto p-5"}>
                     <View className={"mx-auto"}>
-                        <Image source={image4} className={"w-32 h-32"}/>
+                        <Image source={image4} className={"w-52 h-44 rounded-xl"}/>
                     </View>
                     <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         Проверить наличие сознания (окликнуть пострадавшего, потрясти за плечо.
@@ -91,7 +90,7 @@ const Index = ({darkMode}) => {
 
                 <View className={"w-5/6 mx-auto p-5"}>
                     <View className={"mx-auto"}>
-                        <Image source={image5} className={"w-32 h-32"}/>
+                        <Image source={image5} className={"w-52 h-44 rounded-xl"}/>
                     </View>
                     <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         Проверить наличие дыхания (на слух, при помощи зеркала).
@@ -99,7 +98,7 @@ const Index = ({darkMode}) => {
                 </View>
                 <View className={"w-5/6 mx-auto p-5"}>
                     <View className={"mx-auto"}>
-                        <Image source={image6} className={"w-32 h-32"}/>
+                        <Image source={image6} className={"w-52 h-44 rounded-xl"}/>
                     </View>
                     <Text className={`text-center text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         Проверить пульс на сонной

@@ -16,12 +16,19 @@ export const routesDataTj =
                 category_slug: "FirstHelp",
             },
             {
-                title: "Эҳёи дилу шуш",
-                slug: "CardioPulmonaryReanimation",
-                icon: require('./FirstHelpIcons/cardio.png'),
+                title: "Саръ(эпилепсия)",
+                slug: "Epilepsy",
+                icon: require('./FirstHelpIcons/epilepsy.png'),
                 category: "Кумаки аввал",
                 category_slug: "FirstHelp",
             },
+            // {
+            //     title: "Эҳёи дилу шуш",
+            //     slug: "CardioPulmonaryReanimation",
+            //     icon: require('./FirstHelpIcons/cardio.png'),
+            //     category: "Кумаки аввал",
+            //     category_slug: "FirstHelp",
+            // },
             {
                 title: "Сактаи майнаи сар",
                 slug: "Stroke",
@@ -65,7 +72,7 @@ export const routesDataTj =
                 category_slug: "FirstHelp",
             },
             {
-                title: "Хунукзани",
+                title: "Хунукзанӣ",
                 slug: "Frostbite",
                 icon: require('./FirstHelpIcons/cold.png'),
                 category: "Кумаки аввал",

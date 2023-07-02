@@ -13,14 +13,22 @@ import image10 from './../assets/10.jpg';
 import image11 from './../assets/11.jpg';
 import image12 from './../assets/12.jpg';
 import image13 from './../assets/13.jpg';
+import image14 from './../assets/14.jpg';
+import image15 from './../assets/15.jpg';
+import image16 from './../assets/16.png';
 
 const Index = ({darkMode}) => {
     return (
         <View className={"pl-2"}>
             <ScrollView>
                 <Text className={"text-center text-xl text-red-500 font-bold"}>
-                    ИНОРОДНЫЕ ТЕЛА.
+                    ПЕРВАЯ ПОМОЩЬ ПРИ ПОПАДАНИИ ИНОРОДНОГО ТЕЛА В ВЕРХНИЕ ДЫХАТЕЛЬНЫЕ ПУТИ.
                 </Text>
+                <ScrollView horizontal>
+                    <Image source={image14} className={"w-72 h-48 rounded-xl"}/>
+                    <Image source={image15} className={"w-72 h-48 mx-2 rounded-xl"}/>
+                    <Image source={image16} className={"w-72 h-48 rounded-xl"}/>
+                </ScrollView>
                 <Text className={`text-base mb-3 ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     Предсказать заранее, какой предмет окажется «не в том горле»,
                     невозможно. Трагедия может разыграться в столовой или на улице, в машине или самолете. Разнообразию

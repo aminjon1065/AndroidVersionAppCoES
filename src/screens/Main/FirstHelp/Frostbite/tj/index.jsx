@@ -8,11 +8,11 @@ const Index = ({darkMode}) => {
         <ScrollView>
             <View className={"pl-2"}>
                 <Text className={"text-xl text-red-500 text-center font-bold"}>
-                    ЁРИИ АВВАЛИН БА ХУНУКГУЗАРОНӢ.
+                    Хунукзанӣ
                 </Text>
                 <View>
                     <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
-                        <Text className={"text-red-500 text-base font-bold"}>Хунукгузаронӣ</Text> –
+                        <Text className={"text-red-500 text-base font-bold"}>Хунукзанӣ</Text> –
                         осеби бофтаест, ки дар натиҷаи таъсири ҳарорати паст ба вуҷуд меояд. Сабабҳои
                         сармохӯрӣ гуногун буда, дар шароити мувофиқ (дарозии тӯлонӣ дар сардӣ, шамол, намии баланд,
                         пойафзоли танг ё тар, ҳаракат надоштан, ҳолати бади умумии ҷабрдида – беморӣ, хастагӣ, мастии

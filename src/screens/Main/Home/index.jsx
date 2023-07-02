@@ -114,26 +114,28 @@ const Index = (props) => {
                             ?
                             result.length >= 1
                                 ?
-                                result.map((item, index) => (
-                                    <View key={index} className={"mt-2 py-2 bg-slate-200 rounded-lg pl-1"}>
-                                        {
-                                            searchText && <Text>{item.category}</Text>
-                                        }
-                                        <ShowItem
-                                            title={item.title}
-                                            icon={item.icon}
-                                            slug={item.slug}
-                                            navigation={props.navigation}
-                                        />
-                                    </View>
-                                ))
+                                result.map((item, index) =>
+                                    item.find(elem => elem === searchText)(
+                                        <View key={index} className={"mt-2 py-2 bg-slate-200 rounded-lg pl-1"}>
+                                            {
+                                                searchText && <Text>{item.category}</Text>
+                                            }
+                                            <ShowItem
+                                                title={item.title}
+                                                icon={item.icon}
+                                                slug={item.slug}
+                                                navigation={props.navigation}
+                                            />
+                                        </View>
+                                    )
+                                )
                                 :
                                 <View>
                                     <View className={"flex flex-row"}>
                                         <Text
                                             className={`text-center text-xl ${darkModeSelector ? 'text-white' : 'text-slate-950'}`}>
                                             Вы можете спросить о </Text>
-                                        <Text className={"text-red-500 py-3 mr-5"}>
+                                        <Text className={"text-white bg-red-500 px-2 text-xl mr-3"}>
                                             {searchText}
                                         </Text>
                                         <Text
@@ -142,15 +144,7 @@ const Index = (props) => {
                                         </Text>
                                     </View>
                                     <View className="flex flex-row pt-2">
-                                        <TouchableWithoutFeedback onPress={call}>
-                                            <View
-                                                className="flex flex-row flex-1 mr-1 items-center justify-center rounded-xl py-3 bg-red-500">
-                                                <CallIcon name='phone' size={32} color={"white"}/>
-                                                <Text className="text-center text-white ml-3">
-                                                    {t('Interface.Call')}
-                                                </Text>
-                                            </View>
-                                        </TouchableWithoutFeedback>
+                                        <SOSCALL/>
                                         <TouchableWithoutFeedback onPress={() => console.log("message")}>
                                             <View
                                                 className="flex flex-row flex-1 ml-1 items-center justify-center rounded-xl py-3 bg-cyan-800">
@@ -246,7 +240,7 @@ const Index = (props) => {
                                         {t('Interface.HelpSpecialist')}
                                     </Text>
                                     <View className="flex flex-row pt-2">
-                                        <SOSCALL />
+                                        <SOSCALL/>
                                         <TouchableWithoutFeedback onPress={() => console.log("message")}>
                                             <View
                                                 className="flex flex-row flex-1 ml-1 items-center justify-center rounded-xl py-3 bg-cyan-800">

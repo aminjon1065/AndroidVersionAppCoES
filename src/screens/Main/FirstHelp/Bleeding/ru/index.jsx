@@ -49,7 +49,7 @@ const Index = ({darkMode}) => {
                     ОСТАНОВКА АРТЕРИАЛЬНОГО КРОВОТЕЧЕНИЯ.
                 </Text>
                 <View className={'mx-auto'}>
-                    <Image source={imgT} className={"w-64 h-64 rounded-xl"}/>
+                    <Image source={imgT} className={"w-72 h-64 rounded-xl"}/>
                 </View>
                 <Text className={`mb-2 text-base ml-1 ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     1. Выполнить пальцевое прижатие сосуда выше раны.
@@ -70,7 +70,7 @@ const Index = ({darkMode}) => {
                     ОСТАНОВКА ВЕНОЗНОГО КРОВОТЕЧЕНИЯ.
                 </Text>
                 <View className={"mx-auto"}>
-                    <Image source={imgTT} className={"w-64 h-64 rounded-xl"}/>
+                    <Image source={imgTT} className={"w-72 h-64 rounded-xl"}/>
                 </View>
                 <View className={"ml-1"}>
                     <Text className={"text-base"}>
@@ -99,10 +99,13 @@ const Index = ({darkMode}) => {
                 <Text className="text-center text-blue-600 text-xl">
                     ОСТАНОВКА КАПИЛЛЯРНОГО КРОВОТЕЧЕНИЯ.
                 </Text>
-                <ScrollView horizontal={true} className={"flex flex-row"}>
-                    <Image source={imgT1} className={"w-64 h-64 mr-2 rounded-xl"}/>
-                    <Image source={imgT2} className={"w-64 h-64 rounded-xl"}/>
-                </ScrollView>
+                <View className={"mx-auto"}>
+                    <Image source={imgT2} className={"w-72 h-64 rounded-xl"}/>
+                </View>
+                {/*<ScrollView horizontal={true} className={"flex flex-row"}>*/}
+                {/*    <Image source={imgT1} className={"w-72 h-64 mr-2 rounded-xl"}/>*/}
+                {/*    <Image source={imgT2} className={"w-72 h-64 rounded-xl"}/>*/}
+                {/*</ScrollView>*/}
                 <View className={"ml-1"}>
                     <Text className={`text-base ml-1 ${darkMode ? "text-white" : 'text-slate-950'}`}>
                         1.Промыть рану перекисью водорода или продезинфицировать рану

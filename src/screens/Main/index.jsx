@@ -38,6 +38,7 @@ import Hydrargyrum from "./FirstHelp/Hydrargyrum";
 import Lightning from "./FirstHelp/Lightning";
 import SnakeBite from "./FirstHelp/SnakeBite";
 import Compass from "./FirstHelp/Compass";
+import Epilepsy from "./FirstHelp/Epilepsy";
 
 const Stack = createNativeStackNavigator();
 
@@ -60,6 +61,7 @@ const Index = () => {
                 {/* First Help Screens */}
                 <Stack.Screen name={"FirstHelpItem"} component={FirstHelpItemsScreen}/>
                 <Stack.Screen name={"Bleeding"} component={BleedingScreen}/>
+                <Stack.Screen name={"Epilepsy"} component={Epilepsy}/>
                 <Stack.Screen name={"CardioPulmonaryReanimation"} component={CardioPulmonaryReanimationScreen}/>
                 <Stack.Screen name={"Stroke"} component={StrokeScreen}/>
                 <Stack.Screen name={"AMMONIA"} component={AmmoniScreen}/>

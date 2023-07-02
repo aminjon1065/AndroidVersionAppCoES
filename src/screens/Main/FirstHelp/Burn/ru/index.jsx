@@ -22,28 +22,28 @@ function Index({darkMode}) {
                 <Text className={`text-center text-lg font-bold ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     I степень – покраснение кожи.
                 </Text>
-                <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
-                    ПОВРЕЖДЕНИЯ РОГОВОГО СЛОЯ КЛЕТОК КОЖИ. НЕЗНАЧИТЕЛЬНЫЙ ОТЕК И ЖГУЧИЕ БОЛИ, БЫСТРО ПРОХОДЯЩИЕ.
-                </Text>
+                {/*<Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>*/}
+                {/*    ПОВРЕЖДЕНИЯ РОГОВОГО СЛОЯ КЛЕТОК КОЖИ. НЕЗНАЧИТЕЛЬНЫЙ ОТЕК И ЖГУЧИЕ БОЛИ, БЫСТРО ПРОХОДЯЩИЕ.*/}
+                {/*</Text>*/}
                 <View className="mx-auto">
                     <Image source={img2} className="w-56 h-56"/>
                 </View>
                 <Text className={`text-center text-lg font-bold ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     II степень – появление пузырей, заполненных прозрачной жидкостью.
                 </Text>
-                <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
-                    ОБОЖЖЕННАЯ КОЖА – ИНТЕНСИВНО КРАСНОГО ЦВЕТА. ПУЗЫРИ НАПОЛНЕНЫ ПРОЗРАЧНОЙ ЖИДКОСТЬЮ. РЕЗКАЯ БОЛЬ.
-                </Text>
+                {/*<Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>*/}
+                {/*    ОБОЖЖЕННАЯ КОЖА – ИНТЕНСИВНО КРАСНОГО ЦВЕТА. ПУЗЫРИ НАПОЛНЕНЫ ПРОЗРАЧНОЙ ЖИДКОСТЬЮ. РЕЗКАЯ БОЛЬ.*/}
+                {/*</Text>*/}
                 <View className="mx-auto">
                     <Image source={img3} className="w-56 h-44"/>
                 </View>
                 <Text className={`text-center text-lg font-bold ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     III – IV степени – полное разрушение кожи и подлежащего мышечного слоя.
                 </Text>
-                <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
-                    ПОВРЕЖДЕНИЯ БОЛЕЕ ГЛУБОКИХ СЛОЕВ КОЖИ. ОБРАЗУЮТСЯ ПУЗЫРИ И КОРОЧКИ-СТРУПЬЯ.
-                    ОБУГЛИВАНИЕ КОЖИ, ПОДКОЖНОЙ КЛЕТЧАТКИ И ПОДЛЕЖАЩИХ ТКАНЕЙ ВПЛОТЬ ДО КОСТЕЙ.
-                </Text>
+                {/*<Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>*/}
+                {/*    ПОВРЕЖДЕНИЯ БОЛЕЕ ГЛУБОКИХ СЛОЕВ КОЖИ. ОБРАЗУЮТСЯ ПУЗЫРИ И КОРОЧКИ-СТРУПЬЯ.*/}
+                {/*    ОБУГЛИВАНИЕ КОЖИ, ПОДКОЖНОЙ КЛЕТЧАТКИ И ПОДЛЕЖАЩИХ ТКАНЕЙ ВПЛОТЬ ДО КОСТЕЙ.*/}
+                {/*</Text>*/}
                 <Text className={`text-center text-2xl font-bold ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     Оказание неотложной помощи при термических ожогах.
                 </Text>
@@ -66,16 +66,16 @@ function Index({darkMode}) {
                     5. До прибытия и при длительном ожидании «Скорой помощи» дайте обильное теплое питье.
                 </Text>
                 <View className={"mx-auto mb-5"}>
-                    <Image source={img4} className={"w-64 h-44 mb-3"}/>
-                    <Image source={img5} className={"w-64 h-44"}/>
+                    <Image source={img4} className={"w-64 h-44 mb-3 rounded-xl"}/>
+                    <Image source={img5} className={"w-64 h-44 rounded-xl"}/>
                 </View>
                 <Text className={`text-2xl text-center font-bold ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     ОХЛАДИТЬ МЕСТО ОЖОГА
                 </Text>
                 <ScrollView horizontal={true} className={"mb-5"}>
-                    <Image source={img6} className={"w-64 h-56 mr-1"}/>
-                    <Image source={img7} className={"w-64 h-56 mr-1"}/>
-                    <Image source={img8} className={"w-64 h-56"}/>
+                    <Image source={img6} className={"w-64 h-56 mr-1 rounded-xl"}/>
+                    <Image source={img7} className={"w-64 h-56 mr-1 rounded-xl"}/>
+                    <Image source={img8} className={"w-64 h-56 rounded-xl"}/>
                 </ScrollView>
                 <Text className={"text-2xl text-center font-bold text-red-500"}>
                     Запомните! Недопустимо!

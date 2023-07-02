@@ -17,7 +17,7 @@ function Index({darkMode}) {
                     Ҳангоми наҷотдиҳӣ Шумо бояд инро ба назар гиред.
                 </Text>
                 <View className="mx-auto">
-                    <Image source={img1} className=" h-44 w-64"/>
+                    <Image source={img1} className="h-48 w-72 rounded-xl"/>
                 </View>
                 <Text className="text-lg text-blue-600 text-center">
                     НАВЪҲОИ ҒАРҚШАВӢ.
@@ -87,8 +87,8 @@ function Index({darkMode}) {
                         6. Нӯшокии гарм диҳед.
                     </Text>
                     <ScrollView horizontal={true}>
-                        <Image source={img2}/>
-                        <Image source={img3}/>
+                        <Image source={img2} className={"rounded-xl"}/>
+                        <Image source={img3} className={"rounded-xl"}/>
                     </ScrollView>
                 </View>
             </View>

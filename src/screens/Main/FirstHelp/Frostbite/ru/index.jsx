@@ -8,11 +8,11 @@ const Index = ({darkMode}) => {
         <ScrollView>
             <View className={"pl-2"}>
                 <Text className={"text-xl text-red-500 text-center font-bold"}>
-                    ПЕРВАЯ ПОМОЩЬ ПРИ ОТМОРОЖЕНИЯХ.
+                    ОБМОРОЖЕНИЯ
                 </Text>
                 <View>
                     <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
-                        <Text className={"text-red-500 text-base font-bold"}>Отморожение</Text> – повреждение тканей в
+                        <Text className={"text-red-500 text-base font-bold"}>Обморожения</Text> – повреждение тканей в
                         результате
                         воздействия низкой температуры. Причины отморожения
                         различны, и при соответствующих условиях (длительное воздействие холода, ветра, повышенная
