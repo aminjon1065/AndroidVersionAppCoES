@@ -142,6 +142,13 @@ export const routesDataTj =
                 category_slug: "FirstHelp",
             },
             {
+                title: "Газидани саг",
+                slug: "DogBite",
+                icon: require('./WhatToDoIcons/angry-dog.png'),
+                category: "Кумаки аввал",
+                category_slug: "FirstHelp",
+            },
+            {
                 title: "Истифодаи компас",
                 slug: "Compass",
                 icon: require('./FirstHelpIcons/compass.png'),

@@ -149,6 +149,13 @@ export const routesDataRu =
                 category_slug: "FirstHelp",
             },
             {
+                title: "Укус собаки",
+                slug: "DogBite",
+                icon: require('./WhatToDoIcons/angry-dog.png'),
+                category: "Помощь",
+                category_slug: "FirstHelp",
+            },
+            {
                 title: "Использование компаса",
                 slug: "Compass",
                 icon: require('./FirstHelpIcons/compass.png'),
