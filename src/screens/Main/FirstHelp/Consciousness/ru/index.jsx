@@ -10,8 +10,23 @@ import image7 from './../assets/7.png';
 import image8 from './../assets/8.jpg';
 import image9 from './../assets/9.jpg';
 import image10 from './../assets/10.jpg';
+import onShare from "../../../../../components/onShare";
+import {FAB} from "react-native-paper";
 
 const Index = ({darkMode}) => {
+    const handleShare = async () => {
+        const message = 'ОКАЗАНИЕ ПЕРВОЙ ПОМОЩИ ПРИ ОТСУТСТВИИ СОЗНАНИЯ, ОСТАНОВКЕ ДЫХАНИЯ И КРОВООБРАЩЕНИЯ\n' +
+            'ОБЕСПЕЧЕНИЕ БЕЗОПАСНОСТИ\n' +
+            'ПРОВЕРКА СОЗНАНИЯ\n' +
+            'ОТКРЫТИЕ ДЫХАТЕЛЬНЫХ ПУТЕЙ\n' +
+            'ПРОВЕРКА ДЫХАНИЯ\n' +
+            'ВЫЗОВ СКОРОЙ МЕДИЦИНСКОЙ ПОМОЩИ\n' +
+            'ДАВЛЕНИЕ НА ГРУДИНУ\n' +
+            'ИСКУССТВЕННОЕ ДЫХАНИЕ\n' +
+            '\n' +
+            '\n'; // Здесь вы можете указать свое сообщение
+        await onShare(message);
+    };
     return (
         <ScrollView>
             <View className={"pl-2"}>
@@ -61,6 +76,15 @@ const Index = ({darkMode}) => {
                 <View className={"mx-auto mb-5"}>
                     <Image source={image10} className={"w-64 h-56"}/>
                 </View>
+            </View>
+            <View className={"items-end mb-5"}>
+                <FAB
+                    icon="share"
+                    className={" w-36 bg-slate-800 mt-2 text-white"}
+                    onPress={handleShare}
+                    color={"#fff"}
+                    label={"Поделиться"}
+                />
             </View>
         </ScrollView>
     );

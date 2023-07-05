@@ -10,8 +10,20 @@ import image7 from './../assets/7.png';
 import image8 from './../assets/8.jpg';
 import image9 from './../assets/9.jpg';
 import image10 from './../assets/10.jpg';
+import {FAB} from "react-native-paper";
+import onShare from "../../../../../components/onShare";
 
 const Index = (darkMode) => {
+    const handleShare = async () => {
+        const message = 'РАСОНДАНИ ЁРИИ АВВАЛИН БЕХАТАРӢ\n' +
+            'САНҶИШИ ҲУШ\n' +
+            'КУШОДАНИ РОҲҲОИ НАФАС\n' +
+            'САНҶИШИ НАФАС\n' +
+            'БА ЁРИИ ТАЪҶИЛӢ ЗАНГ ЗАНЕД\n' +
+            'ФИШОР БА ҚАФАСИ СИНА\n' +
+            'ДОДАНИ НАФАСИ СУНЪӢ\n'; // Здесь вы можете указать свое сообщение
+        await onShare(message);
+    };
     return (
         <ScrollView>
             <View className={"pl-2"}>
@@ -61,6 +73,15 @@ const Index = (darkMode) => {
                 <View className={"mx-auto mb-5"}>
                     <Image source={image10} className={"w-64 h-56"}/>
                 </View>
+            </View>
+            <View className={"items-end mb-5"}>
+                <FAB
+                    icon="share"
+                    className={" w-36 bg-slate-800 mt-2 text-white"}
+                    onPress={handleShare}
+                    color={"#fff"}
+                    label={"Равон кардан"}
+                />
             </View>
         </ScrollView>
     );

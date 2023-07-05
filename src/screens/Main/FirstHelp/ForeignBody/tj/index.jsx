@@ -1,13 +1,5 @@
 import React from 'react';
 import {View, Text, ScrollView, Image} from "react-native";
-import image1 from './../assets/1.jpg';
-import image2 from './../assets/2.jpg';
-import image3 from './../assets/3.png';
-import image4 from './../assets/4.png';
-import image5 from './../assets/5.jpg';
-import image6 from './../assets/6.jpg';
-import image7 from './../assets/7.jpg';
-import image8 from './../assets/8.jpg';
 import image9 from './../assets/9.jpg';
 import image10 from './../assets/10.jpg';
 import image11 from './../assets/11.jpg';
@@ -17,8 +9,34 @@ import image14 from "../assets/14.jpg";
 import image15 from "../assets/15.jpg";
 import image16 from "../assets/16.png";
 import image17 from "../assets/17.jpg";
+import {FAB} from "react-native-paper";
+import onShare from "../../../../../components/onShare";
 
 const Index = ({darkMode}) => {
+    const handleShare = async () => {
+        const message = 'ЁРИИ АВВАЛ ҲАНГОМИ ВОРИДШАВИИ ҶИСМҲОИ БЕГОНА \n' +
+            'ДАР РОҲИ НАФАС.\n' +
+            'ЁРИИ ТАЪҶИЛӢ:\n' +
+            '-\t«Зарба ба пушт»;\n' +
+            '-\tУсули Геймлих;\n' +
+            '-\tИстихроҷ бо ангушт;\n' +
+            '-\tУсули «Буратино» (ҷисмҳои бегона дар кӯдакони то 1 сола)\n' +
+            '-\tТрахеотомия ё коникотомияи таъҷилӣ\n' +
+            'ШУШТАНИ ГУШ БО ШПРИЦИ ҶАНЕ.\n' +
+            'Нақшаи ёрии аввалин ҳангоми ворид шудани ҷисми бегона ба ҳалқ ё трахея.\n' +
+            '1. Кӯдакро (кӯдаки то 5 сола) сарашро ба поён хам карда, аз харду пояш бардоред.\n' +
+            '2. Шахси калонсолро дар болои курсӣ, ё дар рони худ хам кунед.\n' +
+            '3. Бо кафи даст дар байни шонахо чанд маротиба занед.\n' +
+            '4. Дар ҳолати нокомӣ ва ё бо ҳуш будани чабрдида яке аз кисмҳои усули «полиси амрикоӣ»-ро истифода баред.\n' +
+            '5. Хангоми аз хуш рафтан шахси нафасгирандаро ба пахлу гардонед ва бо кафи кушодаи даст ба пушташ чанд маротиба занед.\n' +
+            '6. Агар усулҳои қаблӣ бесамар бошанд ва дар ҳолати нафасгир шудани чабрдида  коникотомияи фаврӣ анҷом додан лозим. Гузаронидани чунин корро танҳо табибон ҳақ доранд.  \n' +
+            '7. Ҳатто пас аз бомуваффақият баровардани ҷисми бегона, ҳатман ба духтур муроҷиат кардан лозим аст.\n' +
+            'Дар хотир доред! \n' +
+            '1. Гирифтани ҷисми бегона (бо ангушт ё пинцет).\n' +
+            '2. бо мушт задан ба сутунмӯҳра.\n' +
+            '3. Ҳангоми гузаронидани усули «полиси амрикоӣ» (зарба ба ин минтақа метавонад боиси боздошти ногаҳонии дил гардад) фавран дастони худро кушоед.\n'; // Здесь вы можете указать свое сообщение
+        await onShare(message);
+    };
     return (
         <View className={"pl-2"}>
             <ScrollView>
@@ -103,6 +121,15 @@ const Index = ({darkMode}) => {
                 </Text>
                 <View className={"mx-auto w-full"}>
                     <Image source={image17} className={"w-96 h-60 rounded-xl"}/>
+                </View>
+                <View className={"items-end mb-5"}>
+                    <FAB
+                        icon="share"
+                        className={" w-36 bg-slate-800 mt-2 text-white"}
+                        onPress={handleShare}
+                        color={"#fff"}
+                        label={"Равон кардан"}
+                    />
                 </View>
             </ScrollView>
         </View>

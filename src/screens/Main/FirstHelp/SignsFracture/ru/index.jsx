@@ -1,6 +1,5 @@
 import React from 'react';
 import {ScrollView, View, Text, Image} from "react-native";
-import img1 from './../assets/1.jpg';
 import img2 from './../assets/2.jpg';
 import img3 from './../assets/3.jpg';
 import img4 from './../assets/4.jpg';
@@ -8,8 +7,23 @@ import img5 from './../assets/5.jpg';
 import img6 from './../assets/6.jpg';
 import img7 from './../assets/7.jpg';
 import img8 from './../assets/8.jpg';
+import {FAB} from "react-native-paper";
+import onShare from "../../../../../components/onShare";
 
 const Index = ({darkMode}) => {
+    const handleShare = async () => {
+        const message = 'ПЕРЕЛОМЫ \n' +
+            'Перелом – нарушение целости кости. \n' +
+            'Перелом сопровождается сильной болью, иногда – обмороком или шоком, кровотечением. \n' +
+            'Различают открытые и закрытые переломы. Первый сопровождается ранением мягких тканей, в ране иногда заметны отломки кости.\n' +
+            'ПЕРВАЯ ПОМОЩЬ ПРИ ПЕРЕЛОМЕ: \n' +
+            '1. Оцените тяжесть состояния пострадавшего, определите локализацию перелома. \n' +
+            '2. При наличии кровотечения, остановите его. \n' +
+            '3. Определите, возможно ли перемещение пострадавшего до прибытия специалистов. Не переносите пострадавшего и не меняйте его положения при травмах позвоночника! \n' +
+            '4. Обеспечьте неподвижность кости в области перелома – иммобилизация. Для этого необходимо обездвижить суставы, расположенные выше и ниже перелома. \n' +
+            '5. Наложите шину. В качестве шины можно использовать плоские палки, доски, линейки, прутья и прочее. Шину необходимо плотно, но не туго, зафиксировать бинтами или пластырем. При закрытом переломе иммобилизация производится поверх одежды; при открытом нельзя прикладывать шину к местам, где кость выступает наружу.\n'; // Здесь вы можете указать свое сообщение
+        await onShare(message);
+    };
     return (
         <ScrollView>
             <View className={"pl-2"}>
@@ -64,49 +78,6 @@ const Index = ({darkMode}) => {
                 <View className={"mx-auto"}>
                     <Image source={img8} className={"w-72 h-44 rounded-xl"}/>
                 </View>
-                {/*<Text className={`${darkMode ? 'text-white' : 'text-slate-950'} text-base`}>*/}
-                {/*    - Болезненные ощущения в месте перелома при обездвиженном состоянии или во время движений. Также,*/}
-                {/*    если сделать осевую нагрузку, то боль усиливается*/}
-                {/*</Text>*/}
-                {/*<Text className={`${darkMode ? 'text-white' : 'text-slate-950'} text-base`}>*/}
-                {/*    - Отечность в месте перелома может возникнуть быстро (в течение 15 минут после травмы) или*/}
-                {/*    развиваться в течение нескольких часов.*/}
-                {/*</Text>*/}
-                {/*<Text className={`${darkMode ? 'text-white' : 'text-slate-950'} text-base`}>*/}
-                {/*    - Гематома. Она может и отсутствовать, но зачастую все же возникает на месте перелома, при чем не*/}
-                {/*    всегда сразу. Если она пульсирует, значит, кровотечение продолжается.*/}
-                {/*</Text>*/}
-                {/*<Text className={`${darkMode ? 'text-white' : 'text-slate-950'} text-base`}>*/}
-                {/*    - Ограничение подвижности. Как правило, поврежденная часть не может функционировать либо вовсе, либо*/}
-                {/*    частично.*/}
-                {/*</Text>*/}
-                {/*<Text className={`${darkMode ? 'text-white' : 'text-slate-950'} text-base`}>*/}
-                {/*    - может наблюдаться движение кости не в области сустава*/}
-                {/*</Text>*/}
-                {/*<Text className={`${darkMode ? 'text-white' : 'text-slate-950'} text-base`}>*/}
-                {/*    - Деформация конечности или неестественная подвижность сустава.*/}
-                {/*</Text>*/}
-                {/*<Text className={"text-blue-600 text-center text-xl"}>*/}
-                {/*    ПОРЯДОК ДЕЙСТВИЙ ПРИ НАЛИЧИИ РАНЫ:*/}
-                {/*</Text>*/}
-                {/*<Text className={`${darkMode ? 'text-white' : 'text-slate-950'} text-base`}>*/}
-                {/*    - ОСТАНОВИТЬ КРОВОТЕЧЕНИЕ;*/}
-                {/*</Text>*/}
-                {/*<Text className={`${darkMode ? 'text-white' : 'text-slate-950'} text-base`}>*/}
-                {/*    - ОСВОБОДИТЬ ОТ ОДЕЖДЫ;*/}
-                {/*</Text>*/}
-                {/*<Text className={`${darkMode ? 'text-white' : 'text-slate-950'} text-base`}>*/}
-                {/*    - ЗАКРЫТЬ СТЕРИЛЬНОЙ ПОВЯЗКОЙ;*/}
-                {/*</Text>*/}
-                {/*<Text className={`${darkMode ? 'text-white' : 'text-slate-950'} text-base`}>*/}
-                {/*    - ВВЕСТИ ОБЕЗБОЛИВАЮЩЕЕ СРЕДСТВО (если пострадавший в сознании);*/}
-                {/*</Text>*/}
-                {/*<Text className={`${darkMode ? 'text-white' : 'text-slate-950'} text-base`}>*/}
-                {/*    - ПРИСТУПИТЬ К ИММОБИЛИЗАЦИИ.*/}
-                {/*</Text>*/}
-                {/*<ScrollView horizontal={true} className={"mb-5"}>*/}
-                {/*    <Image source={img1} classname={"w-56 h-56"}/>*/}
-                {/*</ScrollView>*/}
                 <Text className={"text-blue-600 text-center text-xl"}>
                     ИММОБИЛИЗАЦИЯ: НИЖНИЕ КОНЕЧНОСТИ.
                 </Text>
@@ -119,6 +90,15 @@ const Index = ({darkMode}) => {
                 <View className={"mx-auto"}>
                     <Image source={img4} className={"w-96 h-28"}/>
                 </View>
+            </View>
+            <View className={"items-end mb-5"}>
+                <FAB
+                    icon="share"
+                    className={" w-36 bg-slate-800 mt-2 text-white"}
+                    onPress={handleShare}
+                    color={"#fff"}
+                    label={"Поделиться"}
+                />
             </View>
         </ScrollView>
     );

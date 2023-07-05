@@ -3,8 +3,25 @@ import {View, Text, Image, ScrollView} from 'react-native';
 import img1 from './../assets/1.jpg'
 import img2 from './../assets/2.jpg'
 import img3 from './../assets/3.png'
+import {FAB} from "react-native-paper";
+import onShare from "../../../../../components/onShare";
 
 function Index({darkMode}) {
+    const handleShare = async () => {
+        const message = 'ЁРИИ АВВАЛИН ҲАНГОМИ ҒАРҚШАВӢ.\n' +
+            '- Ҳангоми наҷот додани шахс дар об шумо бояд:\n' +
+            '- аз қафо ба сӯи ғарқшуда шино кунед.\n' +
+            '- барои дастгир кардани шахси ғарқшуда аз мӯй ё як қисми либос (масалан, гиребон) гиред.\n' +
+            '- одами ғарқшударо ба пушт ва сарашро болои об рост карда ба соҳил расонед.\n' +
+            'ЁРИИ АВВАЛИН:\n' +
+            '1. ғарқшударо аз об ба масофаи бехатар баред;\n' +
+            '2. набзро санҷед;\n' +
+            '3. агар набз набошад, эҳёро сар кунед;\n' +
+            '4. агар набз ва нафаскашӣ пайдо шуд, ҷабрдидаро ба хонаи гарм гузаронед.\n' +
+            '5. либоси тарро бо либоси хушк иваз кунед;\n' +
+            '6. Нӯшокии гарм диҳед.\n'; // Здесь вы можете указать свое сообщение
+        await onShare(message);
+    };
     return (
         <ScrollView>
             <View className={"pl-2"}>
@@ -91,6 +108,15 @@ function Index({darkMode}) {
                         <Image source={img3} className={"rounded-xl"}/>
                     </ScrollView>
                 </View>
+            </View>
+            <View className={"items-end mb-5"}>
+                <FAB
+                    icon="share"
+                    className={" w-36 bg-slate-800 mt-2 text-white"}
+                    onPress={handleShare}
+                    color={"#fff"}
+                    label={"Равон кардан"}
+                />
             </View>
         </ScrollView>
     )

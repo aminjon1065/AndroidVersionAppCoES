@@ -3,8 +3,28 @@ import {View, Text, ScrollView, Image} from 'react-native';
 import img1 from './../assets/1.jpg'
 import img2 from './../assets/2.jpg'
 import img3 from './../assets/3.jpg'
+import {FAB} from "react-native-paper";
+import onShare from "../../../../../components/onShare";
 
 function index({darkMode}) {
+    const handleShare = async () => {
+        const message = 'СИМПТОМЫ ОТРАВЛЕНИЯ АММИАКОМ\n' +
+            'Основные пути проникновения аммиака в организм:\n' +
+            '- дыхательные пути;\n' +
+            '- контактно (поражение кожи);\n' +
+            '- посредством поражения глаз.\n' +
+            'ПЕРВАЯ ПОМОЩЬ ПРИ ОТРАВЛЕНИИ АММИАКОМ\n' +
+            'С целью предупреждения развития тяжёлых последствий при отравлении аммиаком, первая помощь должна быть оказана незамедлительно. Действовать необходимо в следующей последовательности.\n' +
+            '- Вызвать бригаду скорой помощи;\n' +
+            '- Вывести пострадавшего на улицу подышать свежим воздухом;\n' +
+            '- Промыть носоглотку, полость носа и рта слабой концентрацией лимонной кислоты;\n' +
+            '- Использовать раствор Дикаина для закапывания глаз, надеть солнцезащитные очки;\n' +
+            '- При поражении верхних отделов пищеварительного тракта следует промыть желудок слабым солевым раствором;\n' +
+            '- При повреждении кожи и видимых слизистых — промойте тщательно проточной водой и наложите повязку;\n' +
+            '- При появлении в помещении специфического запаха необходимо защитить дыхательные пути. Но простое закрывание лица марлевой повязкой не поможет — её необходимо прикладывать влажной. При отравлении аммиаком необходимо знать, чем нужно смачивать повязку — для этого подойдёт 2% раствор лимонной или уксусной кислоты.\n' +
+            '- Вдыхание паров через небулайзер (прибор для ингаляций) также может облегчить состояние пострадавшего.\n'; // Здесь вы можете указать свое сообщение
+        await onShare(message);
+    };
     return (
         <ScrollView>
             <View className={"pl-2 mb-2"}>
@@ -26,7 +46,7 @@ function index({darkMode}) {
                     </Text>
                 </View>
                 <View className="mx-auto mb-2">
-                    <Image source={img1} className="w-40 h-40"/>
+                    <Image source={img1} className="w-72 h-52 rounded-xl"/>
                 </View>
                 <Text className="text-center text-blue-600 text-xl font-bold">
                     К ПРИЗНАКАМ ОСТРОГО ОТРАВЛЕНИЯ ОТНОСЯТСЯ:
@@ -48,11 +68,11 @@ function index({darkMode}) {
                         - слезотечение;
                     </Text>
                     <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
-                    - повышенная саливация (слюноотделение);
-                </Text>
+                        - повышенная саливация (слюноотделение);
+                    </Text>
                     <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
-                    - першение и боль в горле;
-                </Text>
+                        - першение и боль в горле;
+                    </Text>
                     <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         - возникновение чувства давления в грудной клетке;
                     </Text>
@@ -86,7 +106,7 @@ function index({darkMode}) {
                         - при поражении глаз в большинстве случаев прогноз неблагоприятный, возможна потеря зрения.
                     </Text>
                     <View className={"mx-auto"}>
-                        <Image source={img2}/>
+                        <Image source={img2} className={"w-72 h-52 rounded-xl"}/>
                     </View>
                 </View>
                 <View>
@@ -97,8 +117,8 @@ function index({darkMode}) {
                         С целью предупреждения развития тяжёлых последствий при отравлении аммиаком, первая помощь
                         должна быть оказана незамедлительно. Действовать необходимо в следующей последовательности.
                     </Text>
-                    <View className={"mx-auto"}>
-                        <Image source={img3}/>
+                    <View className={"mx-auto my-2"}>
+                        <Image source={img3} className={"w-72 h-52 rounded-xl"}/>
                     </View>
                     <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                         - Вызвать бригаду скорой помощи.
@@ -131,6 +151,15 @@ function index({darkMode}) {
                         пострадавшего.
                     </Text>
                 </View>
+            </View>
+            <View className={"items-end mb-5"}>
+                <FAB
+                    icon="share"
+                    className={" w-36 bg-slate-800 mt-2 text-white"}
+                    onPress={handleShare}
+                    color={"#fff"}
+                    label={"Поделиться"}
+                />
             </View>
         </ScrollView>
     )

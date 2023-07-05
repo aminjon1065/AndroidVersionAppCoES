@@ -3,8 +3,25 @@ import {View, Text, Image, ScrollView} from 'react-native';
 import img1 from './../assets/1.jpg'
 import img2 from './../assets/2.jpg'
 import img3 from './../assets/3.png'
+import onShare from "../../../../../components/onShare";
+import {FAB} from "react-native-paper";
 
 function Index({darkMode}) {
+    const handleShare = async () => {
+        const message = 'ПЕРВАЯ ПОМОЩЬ УТОПАЮЩЕМУ.\n' +
+            '- Спасая человека в воде вы должны:\n' +
+            '- Подплывать к пострадавшему сзади.\n' +
+            '- Осуществлять захват утопающего за волосы или часть одежды (например, воротник).\n' +
+            '- Доставить утопающего на берег на спине, зафиксировав его голову над водой.\n' +
+            'ПЕРВАЯ ПОМОЩЬ УТОПАЮЩЕМУ\n' +
+            '1.\tПеренести тело от воды на безопасное расстояние;\n' +
+            '2.\tПроверить наличие пульса на сонной артерии;\n' +
+            '3.\tПри отсутствии пульса – приступить к реанимации;\n' +
+            '4.\tЕсли появился пульс и дыхание перенести пострадавшего в теплое помещение4\n' +
+            '5.\tПереодеть в сухую одежду;\n' +
+            '6.\tДать теплое питьё.\n'; // Здесь вы можете указать свое сообщение
+        await onShare(message);
+    };
     return (
         <ScrollView>
             <View className={"pl-2"}>
@@ -91,6 +108,15 @@ function Index({darkMode}) {
                         <Image source={img3} className={"rounded-xl"}/>
                     </ScrollView>
                 </View>
+            </View>
+            <View className={"items-end mb-5"}>
+                <FAB
+                    icon="share"
+                    className={" w-36 bg-slate-800 mt-2 text-white"}
+                    onPress={handleShare}
+                    color={"#fff"}
+                    label={"Поделиться"}
+                />
             </View>
         </ScrollView>
     )
