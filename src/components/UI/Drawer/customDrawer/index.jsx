@@ -21,6 +21,7 @@ import {useTranslation} from "react-i18next";
 const Index = (props) => {
     const darkModeSelector = useSelector(state => state.theme.darkMode);
     const [location, setLocation] = useState(null);
+    const [regionName, setRegionName] = useState("")
     const [errorMsg, setErrorMsg] = useState('');
     const [temperature, setTemperature] = useState(null);
     const [conditional, setConditional] = useState(null);
@@ -52,7 +53,9 @@ const Index = (props) => {
                 const json = await response.json();
                 setTemperature(json.main.temp);
                 setConditional(...json.weather);
+                setRegionName(json.name);
                 setLoading(false);
+                console.log(json);
             } catch (error) {
                 setErrorMsg(error);
                 setLoading(false);
@@ -92,6 +95,7 @@ const Index = (props) => {
 
                         :
                         <>
+                            <Text>({regionName})</Text>
                             <Weather
                                 temperature={temperature}
                                 condition={conditional}
@@ -99,6 +103,7 @@ const Index = (props) => {
                                 isLoading={isLoading}
                                 navigation={props.navigation}
                                 color={darkModeSelector ? 'white' : '#146C94'}
+                                regionName={regionName}
                             />
                             <View className={"flex flex-row justify-around"}>
                                 <Text

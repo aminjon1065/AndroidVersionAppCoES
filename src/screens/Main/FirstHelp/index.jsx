@@ -9,6 +9,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import {routesDataTj} from "../../../data/FirstHelpTj";
 import {routesDataRu} from "../../../data/FirstHelpRu";
 import ShowItem from './../../../components/showItem';
+import {t} from "i18next";
 
 const Index = (props) => {
     const darkModeSelector = useSelector(state => state.theme.darkMode);
@@ -39,6 +40,7 @@ const Index = (props) => {
             const storageLng = await AsyncStorage.getItem("lng");
             setLng(storageLng);
         }
+
         setData(langStore.langInterface === "tj" ? routesDataTj.items : routesDataRu.items)
         setResult(langStore.langInterface === "tj" ? routesDataTj.items : routesDataRu.items)
         getLng();
@@ -54,7 +56,7 @@ const Index = (props) => {
                         >
                             <ArrowLeftIcon name='arrow-left' size={28} color={darkModeSelector ? 'white' : '#146C94'}/>
                             <Text className={darkModeSelector ? 'text-white' : `text-[#146C94]`}>
-                                Назад
+                                {t('Interface.Functions.Back')}
                             </Text>
                         </TouchableOpacity>
                     </View>

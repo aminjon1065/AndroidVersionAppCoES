@@ -49,7 +49,8 @@ const Index = () => {
             <Stack.Navigator initialRouteName='Home' screenOptions={{
                 header: (props) => <NavigationBackBar props={props}/>,
                 animation: "slide_from_right",
-                animationDuration: 50,
+                animationDuration:30,
+
             }}>
                 {/* Main routes */}
                 <Stack.Screen name={"Home"} component={Home} options={{headerShown: false}}/>

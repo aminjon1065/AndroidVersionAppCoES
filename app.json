@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "Защита и спасение",
+    "name": "SOS",
     "description": "Действия при определённых ЧС",
-    "slug": "ProtectionAndRescue",
-    "version": "1.0.0",
+    "slug": "SOS",
+    "version": "0.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",

@@ -3,7 +3,7 @@ import {ActivityIndicator, StyleSheet, Text, TouchableOpacity, View} from "react
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import {useTranslation} from "react-i18next";
 
-const Index = ({error, condition, temperature, isLoading, navigation, color}) => {
+const Index = ({error, condition, temperature, isLoading, navigation, color, regionName}) => {
     const {t} = useTranslation();
     const weatherOption = {
         Thunderstorm: {
@@ -67,7 +67,7 @@ const Index = ({error, condition, temperature, isLoading, navigation, color}) =>
         )
     }
     return (
-        <View className={"mr-4"}>
+        <View>
             <>
                 <TouchableOpacity onPress={() => navigation.navigate("Weathers")}>
                     <Icon name={`${weatherOption[condition.main].iconName}`}
