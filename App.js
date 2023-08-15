@@ -9,7 +9,6 @@ import {store} from "./src/state/store";
 
 const Stack = createNativeStackNavigator();
 export default function App() {
-
     return (
         <PaperProvider>
             <Provider store={store}>

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {View, Text, Image, TouchableWithoutFeedback, ImageBackground, Linking} from "react-native";
 import {LinearGradient} from 'expo-linear-gradient';
 import FirstHelpIcon from './../../../assets/img/Icons/Frame.png';
@@ -20,6 +20,8 @@ import {darkMode, themeMode} from "../../../state/slices/theme";
 import * as SplashScreen from "expo-splash-screen";
 import {Animated} from "react-native-maps";
 import SOSCALL from "../../../components/SOSCALL";
+import Lottie from "lottie-react-native";
+import an from './../../../assets/animation.json'
 
 const Index = (props) => {
     const [appIsReady, setAppIsReady] = useState(false);
@@ -51,46 +53,44 @@ const Index = (props) => {
             setResult(data);
         }
     }
-    // useEffect(() => {
-    //     async function getLng() {
-    //         try {
-    //             const storageLng = await AsyncStorage.getItem("lng");
-    //             const themeMode = await AsyncStorage.getItem('darkMode');
-    //             setLng(storageLng);
-    //             const boolTheme = themeMode === 'dark'
-    //             await dispatch(darkMode(boolTheme))
-    //             setIsLoading(false)
-    //         } catch (e) {
-    //             console.log(e)
-    //         } finally {
-    //             // Tell the application to render
-    //             setAppIsReady(true);
-    //         }
-    //     }
-    //
-    //     setData(langStore.langInterface === "tj" ? routesDataTj.items : routesDataRu.items)
-    //     setResult(langStore.langInterface === "tj" ? routesDataTj.items : routesDataRu.items)
-    //     getLng();
-    // }, [langStore]);
-    // const onLayoutRootView = useCallback(async () => {
-    //     if (appIsReady) {
-    //         // This tells the splash screen to hide immediately! If we call this after
-    //         // `setAppIsReady`, then we may see a blank screen while the app is
-    //         // loading its initial state and rendering its first pixels. So instead,
-    //         // we hide the splash screen once we know the root view has already
-    //         // performed layout.
-    //         await SplashScreen.hideAsync();
-    //     }
-    // }, [appIsReady]);
-    // if (!appIsReady) {
-    //     return (
-    //         <View className={"mx-auto h-screen bg-slate-800"}>
-    //             <Text className={"text-white"}>
-    //                 Lorem ipsum dolor sit amet.
-    //             </Text>
-    //         </View>
-    //     );
-    // }
+    useEffect(() => {
+        async function getLng() {
+            try {
+                const storageLng = await AsyncStorage.getItem("lng");
+                const themeMode = await AsyncStorage.getItem('darkMode');
+                setLng(storageLng);
+                const boolTheme = themeMode === 'dark'
+                await dispatch(darkMode(boolTheme))
+                setIsLoading(false)
+            } catch (e) {
+                console.log(e)
+            } finally {
+                // Tell the application to render
+                setAppIsReady(true);
+            }
+        }
+
+        setData(langStore.langInterface === "tj" ? routesDataTj.items : routesDataRu.items)
+        setResult(langStore.langInterface === "tj" ? routesDataTj.items : routesDataRu.items)
+        getLng();
+    }, [langStore]);
+    const onLayoutRootView = useCallback(async () => {
+        if (appIsReady) {
+            // This tells the splash screen to hide immediately! If we call this after
+            // `setAppIsReady`, then we may see a blank screen while the app is
+            // loading its initial state and rendering its first pixels. So instead,
+            // we hide the splash screen once we know the root view has already
+            // performed layout.
+            // await SplashScreen.hideAsync();
+        }
+    }, [appIsReady]);
+    if (!appIsReady) {
+        return (
+            <View className={"mx-auto w-screen h-screen bg-slate-800 items-center"}>
+                <Lottie source={an} autoPlay={true} autoSize={true} />
+            </View>
+        );
+    }
     return (
         <ScrollView>
             <View
