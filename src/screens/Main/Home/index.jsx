@@ -21,7 +21,7 @@ import * as SplashScreen from "expo-splash-screen";
 import {Animated} from "react-native-maps";
 import SOSCALL from "../../../components/SOSCALL";
 import Lottie from "lottie-react-native";
-import an from './../../../assets/animation.json'
+import an from './../../../assets/logoAnimate.json';
 
 const Index = (props) => {
     const [appIsReady, setAppIsReady] = useState(false);
