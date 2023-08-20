@@ -1,9 +1,9 @@
 import React from 'react';
-import {ActivityIndicator, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import {useTranslation} from "react-i18next";
 
-const Index = ({error, condition, temperature, isLoading, navigation, color, regionName}) => {
+const Index = ({error, condition, temperature, isLoading, navigation, color, regionName, latitde, longitude}) => {
     const {t} = useTranslation();
     const weatherOption = {
         Thunderstorm: {
@@ -58,7 +58,6 @@ const Index = ({error, condition, temperature, isLoading, navigation, color, reg
     } else if (temperature) {
         text = `${Math.round(temperature)}°`;
     }
-
     if (error) {
         return (
             <View className={"mr-2"}>
@@ -69,7 +68,7 @@ const Index = ({error, condition, temperature, isLoading, navigation, color, reg
     return (
         <View>
             <>
-                <TouchableOpacity onPress={() => navigation.navigate("Weathers")}>
+                <TouchableOpacity onPress={() => navigation.navigate("Weathers")} className={"mx-auto"}>
                     <Icon name={`${weatherOption[condition.main].iconName}`}
                           style={{color: color, ...styles.weatherIcon}}
                           size={34}/>
@@ -77,6 +76,9 @@ const Index = ({error, condition, temperature, isLoading, navigation, color, reg
                         {text}
                     </Text>
                 </TouchableOpacity>
+                <Text>
+                    {latitde} - {longitude}
+                </Text>
             </>
         </View>
     );

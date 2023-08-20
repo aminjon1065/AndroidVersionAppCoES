@@ -18,8 +18,6 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import {darkMode} from "../state/slices/theme";
 import {routesDataTj} from "../data/routesDataTj";
 import {routesDataRu} from "../data/routesDataRu";
-import * as SplashScreen from "expo-splash-screen";
-import Lottie from 'lottie-react-native';
 
 const Drawer = createDrawerNavigator();
 Notifications.setNotificationHandler({
@@ -60,7 +58,7 @@ async function registerForPushNotificationsAsync() {
                 console.log("success");
             });
         } catch (e) {
-            console.log("error");
+            console.log("error", e.message);
         }
     } else {
         alert("Must use physical device for Push Notifications");

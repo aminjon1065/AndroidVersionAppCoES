@@ -1,14 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, Keyboard, ScrollView } from 'react-native';
-import { Searchbar } from 'react-native-paper';
+import React, {useState, useEffect} from 'react';
+import {View, Image, Text, TouchableOpacity, Keyboard, ScrollView, StyleSheet} from 'react-native';
+import {Searchbar} from 'react-native-paper';
 import ArrowLeftIcon from 'react-native-vector-icons/Octicons'
-import { useSelector } from "react-redux";
+import {useSelector} from "react-redux";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { routesDataTj } from "./../../../data/FirstHelpTj";
-import { routesDataRu } from "./../../../data/FirstHelpRu";
+import {routesDataTj} from "./../../../data/FirstHelpTj";
+import {routesDataRu} from "./../../../data/FirstHelpRu";
 import {useTranslation} from "react-i18next";
+import {BlurView} from 'expo-blur';
+
+const uri = 'https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=1600';
 
 const Index = (props) => {
+    const text = 'Hello, my container is blurring contents underneath!';
     const ref = React.useRef(null);
     const [searchText, setSearchText] = useState("");
     const [data, setData] = useState([]);
@@ -54,7 +58,8 @@ const Index = (props) => {
                                 className=" items-center"
                                 onPress={() => props.navigation.goBack()}
                             >
-                                <ArrowLeftIcon name='arrow-left' size={28} color={darkModeSelector ? 'white' : '#146C94'}/>
+                                <ArrowLeftIcon name='arrow-left' size={28}
+                                               color={darkModeSelector ? 'white' : '#146C94'}/>
                                 <Text className={darkModeSelector ? 'text-white' : `text-[#146C94]`}>
                                     Назад
                                 </Text>
@@ -76,6 +81,28 @@ const Index = (props) => {
                                 // clearIcon={'close'}
                             />
                         </View>
+                    </View>
+                    <Text>Lorem ipsum dolor sit amet, consectetur.</Text>
+                    <View className={"container"}>
+                        <Image style={[StyleSheet.absoluteFill]} className={"h-screen"} source={{uri}}/>
+                        <ScrollView className={"h-screen"}>
+                            <View className={"flex flex-row justify-around"}>
+                                <View
+                                    className={" w-48 h-48 rounded-xl"}
+                                >
+                                    <BlurView intensity={70} tint={"light"} className={"h-full rounded-xl"}>
+                                        <Text className={"mt-5 text-center"}>{text}</Text>
+                                    </BlurView>
+                                </View>
+                                <View
+                                    className={" w-48 h-48 rounded-xl"}
+                                >
+                                    <BlurView intensity={70} tint={"dark"} className={"h-full rounded-xl"}>
+                                        <Text className={"mt-5 text-center"}>{text}</Text>
+                                    </BlurView>
+                                </View>
+                            </View>
+                        </ScrollView>
                     </View>
                 </View>
             </View>

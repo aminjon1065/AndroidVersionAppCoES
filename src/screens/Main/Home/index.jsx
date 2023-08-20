@@ -1,24 +1,20 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import {View, Text, Image, TouchableWithoutFeedback, ImageBackground, Linking} from "react-native";
+import {View, Text, Image, TouchableWithoutFeedback} from "react-native";
 import {LinearGradient} from 'expo-linear-gradient';
 import FirstHelpIcon from './../../../assets/img/Icons/Frame.png';
-import WhatToDoIcon from './../../../assets/img/Icons/icons8-inquiry-100.png';
-import SaveKidsIcon from './../../../assets/img/Icons/defend-family.png';
+import WhatToDoIcon from './../../../assets/img/Icons/1212.png';
+import SaveKidsIcon from './../../../assets/img/Icons/saveKids150.png';
 import {StatusBar} from "expo-status-bar";
-import CallIcon from 'react-native-vector-icons/MaterialIcons';
 import MessageIcon from 'react-native-vector-icons/MaterialIcons';
 import {Searchbar} from 'react-native-paper';
 import {routesDataRu} from "../../../data/routesDataRu";
 import {routesDataTj} from "../../../data/routesDataTj";
 import {ScrollView} from 'react-native-gesture-handler';
-import MapImg from './../../../assets/img/map.jpg';
 import {useTranslation} from "react-i18next";
 import {useDispatch, useSelector} from "react-redux";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import ShowItem from "../../../components/showItem";
-import {darkMode, themeMode} from "../../../state/slices/theme";
-import * as SplashScreen from "expo-splash-screen";
-import {Animated} from "react-native-maps";
+import {darkMode} from "../../../state/slices/theme";
 import SOSCALL from "../../../components/SOSCALL";
 import Lottie from "lottie-react-native";
 import an from './../../../assets/logoAnimate.json';
@@ -52,44 +48,6 @@ const Index = (props) => {
         } else {
             setResult(data);
         }
-    }
-    useEffect(() => {
-        async function getLng() {
-            try {
-                const storageLng = await AsyncStorage.getItem("lng");
-                const themeMode = await AsyncStorage.getItem('darkMode');
-                setLng(storageLng);
-                const boolTheme = themeMode === 'dark'
-                await dispatch(darkMode(boolTheme))
-                setIsLoading(false)
-            } catch (e) {
-                console.log(e)
-            } finally {
-                // Tell the application to render
-                setAppIsReady(true);
-            }
-        }
-
-        setData(langStore.langInterface === "tj" ? routesDataTj.items : routesDataRu.items)
-        setResult(langStore.langInterface === "tj" ? routesDataTj.items : routesDataRu.items)
-        getLng();
-    }, [langStore]);
-    const onLayoutRootView = useCallback(async () => {
-        if (appIsReady) {
-            // This tells the splash screen to hide immediately! If we call this after
-            // `setAppIsReady`, then we may see a blank screen while the app is
-            // loading its initial state and rendering its first pixels. So instead,
-            // we hide the splash screen once we know the root view has already
-            // performed layout.
-            // await SplashScreen.hideAsync();
-        }
-    }, [appIsReady]);
-    if (!appIsReady) {
-        return (
-            <View className={"mx-auto w-screen h-screen bg-slate-800 items-center"}>
-                <Lottie source={an} autoPlay={true} autoSize={true} />
-            </View>
-        );
     }
     return (
         <ScrollView>
@@ -194,7 +152,7 @@ const Index = (props) => {
                                         <TouchableWithoutFeedback onPress={() => props.navigation.navigate('WhatToDo')}>
                                             <View>
                                                 <View className={"items-center"}>
-                                                    <Image source={WhatToDoIcon} className={"object-top "}/>
+                                                    <Image source={WhatToDoIcon} className={"object-top"}/>
                                                 </View>
                                                 <View className={"justify-center "}>
                                                     <Text className={"text-2xl text-center text-white"}>
@@ -222,8 +180,7 @@ const Index = (props) => {
                                                     <Image source={SaveKidsIcon} className={"object-top"}/>
                                                 </View>
                                                 <View className={" justify-center "}>
-
-                                                    <Text className={"text-2xl text-center text-white"}>
+                                                    <Text className={"text-xl text-center text-white"}>
                                                         {t('Interface.Cards.CoESForKids')}
                                                     </Text>
                                                     <Text className={"text-center text-white"}>
@@ -252,16 +209,6 @@ const Index = (props) => {
                                         </TouchableWithoutFeedback>
                                     </View>
                                 </View>
-                                {/*<View className="bg-slate-50 mt-4 rounded-2xl">*/}
-                                {/*    <TouchableWithoutFeedback onPress={() => props.navigation.navigate('Map')}>*/}
-                                {/*        <ImageBackground source={MapImg} blurRadius={5} imageStyle={{borderRadius: 10}}*/}
-                                {/*                         className="  h-32 flex flex-row items-center justify-center">*/}
-                                {/*            <Text className="text-center text-xl">*/}
-                                {/*                Map*/}
-                                {/*            </Text>*/}
-                                {/*        </ImageBackground>*/}
-                                {/*    </TouchableWithoutFeedback>*/}
-                                {/*</View>*/}
                             </>
                     }
                 </View>

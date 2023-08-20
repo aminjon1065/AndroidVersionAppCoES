@@ -55,7 +55,6 @@ const Index = (props) => {
                 setConditional(...json.weather);
                 setRegionName(json.name);
                 setLoading(false);
-                console.log(json);
             } catch (error) {
                 setErrorMsg(error);
                 setLoading(false);
@@ -104,15 +103,17 @@ const Index = (props) => {
                                 navigation={props.navigation}
                                 color={darkModeSelector ? 'white' : '#146C94'}
                                 regionName={regionName}
+                                latitde={location.latitude}
+                                longitude={location.longitude}
                             />
                             <View className={"flex flex-row justify-around"}>
-                                <Text
-                                    className={`mr-2 ${darkModeSelector ? 'text-white' : 'text-slate-900'}`}>{location.latitude}, {location.longitude}</Text>
-                                <TouchableWithoutFeedback
-                                    onPress={copiedText}
-                                >
-                                    <CopyIcon name={'copy'} size={18} color={darkModeSelector ? 'white' : 'black'}/>
-                                </TouchableWithoutFeedback>
+                                {/*<Text*/}
+                                {/*    className={`mr-2 ${darkModeSelector ? 'text-white' : 'text-slate-900'}`}>{location.latitude}, {location.longitude}</Text>*/}
+                                {/*<TouchableWithoutFeedback*/}
+                                {/*    onPress={copiedText}*/}
+                                {/*>*/}
+                                {/*    <CopyIcon name={'copy'} size={18} color={darkModeSelector ? 'white' : 'black'}/>*/}
+                                {/*</TouchableWithoutFeedback>*/}
                             </View>
                         </>
                 }

@@ -13,12 +13,12 @@
       },
       "Cards": {
         "WhatToDo": "Чи бояд кард?",
-        "WhatToDoDescription": "Чи бояд кард дар Ҳолатҳои гуногуни фавқулодда",
+        "WhatToDoDescription": "дар ҳолатҳои фавқулодда",
         "FirstHelp": "Кумаки аввал",
-        "FirstHelpDescription": "Кумаки аввал барои ҷабрдидаҳо",
+        "FirstHelpDescription": "барои ҷабрдидаҳо",
         "RiskMap": "Харитаи хатар",
         "CoESForKids": "КҲФ барои кудакон",
-        "CoESForKidsDescription": "Омӯзонидани асосҳои бехатарӣ ба кӯдакон"
+        "CoESForKidsDescription": "Асосҳои бехатарӣ ба кӯдакон"
       },
       "List": {
         "Recommended": "КҲФ тавсия медиҳад",
