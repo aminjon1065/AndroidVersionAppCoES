@@ -141,7 +141,6 @@ export const routesDataRu =
                 category: "Помощь",
                 category_slug: "FirstHelp",
             },
-
             {
                 title: "Ртуть",
                 slug: "Hydrargyrum",
