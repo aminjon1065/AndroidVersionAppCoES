@@ -3,15 +3,16 @@ import {ScrollView, Text, View} from "react-native";
 import {FAB} from "react-native-paper";
 
 const Index = ({darkMode}) => {
+
     return (
         <ScrollView>
             <View className={"pl-2"}>
                 <Text className={"text-red-500 font-bold text-2xl text-center"}>
-                    Удар молнии
+                    Раъду барқ
                 </Text>
                 <Text className={`font-bold text-lg ${darkMode ? 'text-white' : 'text-slate-950'}`}>
-                    Удар молнии может быть очень опасным и требует мгновенной медицинской помощи. Если вы или кто-то
-                    вокруг вас были поражены молнией, следуйте этим рекомендациям:
+                    Раъду барқ метавонад хеле хатарнок бошад ва ёрии таъҷилии тиббиро талаб мекунад. Агар шумо ё касе
+                    Ба гирду атрофатон барқ занад, ин дастурҳоро риоя кунед:
                 </Text>
                 <Text className={` text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     1. Проверьте наличие сознания: проверьте, дышит ли пострадавший и есть ли у него пульс. Если у него
@@ -44,15 +45,6 @@ const Index = ({darkMode}) => {
                     также ожоги и другие травмы, поэтому пострадавший должен быть доставлен в медицинское учреждение для
                     дополнительного обследования и лечения.
                 </Text>
-            </View>
-            <View className={"items-end mb-5"}>
-                <FAB
-                    icon="share"
-                    className={" w-36 bg-slate-800 mt-2 text-white"}
-                    onPress={handleShare}
-                    color={"#fff"}
-                    label={"Поделиться"}
-                />
             </View>
         </ScrollView>
     );
