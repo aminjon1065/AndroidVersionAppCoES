@@ -2,13 +2,13 @@
   "expo": {
     "name": "SOS",
     "description": "Действия при определённых ЧС",
-    "slug": "SOS",
-    "version": "0.0.1",
+    "slug": "ProtectionAndRescue",
+    "version": "0.0.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/splash-app.jpg",
+      "image": "./assets/splash-app.png",
       "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },

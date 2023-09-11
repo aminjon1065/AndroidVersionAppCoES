@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Image, Platform, TouchableOpacity, View} from "react-native";
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import Main from "./Main/";
@@ -114,7 +114,6 @@ const Index = ({navigation}) => {
     const darkModeSelector = useSelector(state => state.theme.darkMode);
     // console.log(expoPushToken)
     const {t} = useTranslation();
-
     useEffect(() => {
         async function getLng() {
             try {
@@ -136,16 +135,6 @@ const Index = ({navigation}) => {
         setResult(langStore.langInterface === "tj" ? routesDataTj.items : routesDataRu.items)
         getLng();
     }, [langStore]);
-    const onLayoutRootView = useCallback(async () => {
-        if (appIsReady) {
-            // This tells the splash screen to hide immediately! If we call this after
-            // `setAppIsReady`, then we may see a blank screen while the app is
-            // loading its initial state and rendering its first pixels. So instead,
-            // we hide the splash screen once we know the root view has already
-            // performed layout.
-            await SplashScreen.hideAsync();
-        }
-    }, [appIsReady]);
     if (!appIsReady) {
         return (
             <View className={"mx-auto h-screen w-screen justify-center items-center bg-slate-600"}>
