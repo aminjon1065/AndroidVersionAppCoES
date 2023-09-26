@@ -1,8 +1,8 @@
 import React from 'react';
-import {ScrollView, Text, View} from "react-native";
+import {Image, ScrollView, Text, View} from "react-native";
 import {FAB} from "react-native-paper";
 import onShare from "../../../../../components/onShare";
-
+import image from './../assets/Lightning.jpg';
 const Index = ({darkMode}) => {
     const handleShare = async () => {
         const message =
@@ -33,6 +33,7 @@ const Index = ({darkMode}) => {
                 <Text className={"text-red-500 font-bold text-2xl text-center"}>
                     Раъду барқ
                 </Text>
+                <Image source={image} className={"rounded mx-auto w-3/4"}/>
                 <Text className={`font-bold text-lg ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     Раъду барқ метавонад хеле хатарнок бошад ва ёрии таъҷилии тиббиро талаб мекунад. Агар шумо ё касе
                     Ба гирду атрофатон барқ занад, ин дастурҳоро риоя кунед:
