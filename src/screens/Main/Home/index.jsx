@@ -7,36 +7,22 @@ import SaveKidsIcon from './../../../assets/img/Icons/saveKids150.png';
 import {StatusBar} from "expo-status-bar";
 import MessageIcon from 'react-native-vector-icons/MaterialIcons';
 import {Searchbar} from 'react-native-paper';
-import {routesDataRu} from "../../../data/routesDataRu";
-import {routesDataTj} from "../../../data/routesDataTj";
 import {ScrollView} from 'react-native-gesture-handler';
 import {useTranslation} from "react-i18next";
 import {useDispatch, useSelector} from "react-redux";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import ShowItem from "../../../components/showItem";
-import {darkMode} from "../../../state/slices/theme";
 import SOSCALL from "../../../components/SOSCALL";
-import Lottie from "lottie-react-native";
-import an from './../../../assets/logoAnimate.json';
-
+import QuizIcon from './../../../assets/img/quiz.png';
 const Index = (props) => {
-    const [appIsReady, setAppIsReady] = useState(false);
     const darkModeSelector = useSelector(state => state.theme.darkMode);
     const [searchText, setSearchText] = useState("")
-    const [lng, setLng] = useState('');
     const [result, setResult] = useState([]);
     const [data, setData] = useState([]);
-    const dispatch = useDispatch();
-    const [isLoading, setIsLoading] = useState(true);
     const {t} = useTranslation();
-    // const FontSize = useSelector(state => state.font.fontSize)
-    const langStore = useSelector(state => state.lang)
-
     const onChangeSearchText = (text) => {
         setSearchText(text)
         searchFilterFunction(text);
     }
-
     const searchFilterFunction = (text) => {
         if (text) {
             const newData = data.filter(item => {
@@ -58,8 +44,6 @@ const Index = (props) => {
                     <View className={""}>
                         <Searchbar
                             className={`mb-5 rounded text-slate-300 ${darkModeSelector ? 'bg-slate-500' : 'bg-slate-100'}`}
-                            // onIconPress={() => ref.current.focus()}
-                            // ref={ref}
                             placeholder="Поиск"
                             placeholderTextColor={darkModeSelector ? 'white' : '#E0E0E0'}
                             onChangeText={onChangeSearchText}
@@ -191,6 +175,29 @@ const Index = (props) => {
                                         </TouchableWithoutFeedback>
                                     </LinearGradient>
                                 </View>
+                                <LinearGradient
+                                    start={[0.5, 1]} end={[0, 0.1]}
+                                    // Background Linear Gradient
+                                    className={"rounded-lg shadow shadow-indigo-800 bg-pink-500  mt-5"}
+                                    colors={['#e18d98', '#d57a80', 'transparent']}
+                                    // colors={['#e18d98', '#d57a80', 'transparent']}
+                                >
+                                    <TouchableWithoutFeedback onPress={() => props.navigation.navigate('FirstHelp')}>
+                                        <View className={"flex flex-row justify-around rounded h-24"}>
+                                            <View className={"flex-1 justify-center "}>
+                                                <Text className={"text-2xl text-center text-white"}>
+                                                    {t('Interface.Cards.FirstHelp')}
+                                                </Text>
+                                                <Text className={"text-center text-white"}>
+                                                    {t('Interface.Cards.FirstHelpDescription')}
+                                                </Text>
+                                            </View>
+                                            <View className={""}>
+                                                <Image source={QuizIcon} className={"object-top bottom-11 max-h-[125]"}/>
+                                            </View>
+                                        </View>
+                                    </TouchableWithoutFeedback>
+                                </LinearGradient>
                                 <View className={"mt-4"}>
                                     <Text
                                         className={`text-center text-xl ${darkModeSelector ? 'text-slate-100' : 'text-slate-800'}`}>
@@ -200,9 +207,9 @@ const Index = (props) => {
                                         <SOSCALL/>
                                         <TouchableWithoutFeedback onPress={() => console.log("message")}>
                                             <View
-                                                className="flex flex-row flex-1 ml-1 items-center justify-center rounded-xl py-3 bg-cyan-800">
+                                                className="flex flex-row flex-1 mr-1 items-center justify-center rounded-xl py-3 bg-cyan-800">
                                                 <MessageIcon name='message' size={32} color={"white"}/>
-                                                <Text className="text-center text-white ml-3">
+                                                <Text className="text-center text-white ml-1">
                                                     {t('Interface.Review')}
                                                 </Text>
                                             </View>

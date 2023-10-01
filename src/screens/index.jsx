@@ -18,7 +18,6 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import {darkMode} from "../state/slices/theme";
 import {routesDataTj} from "../data/routesDataTj";
 import {routesDataRu} from "../data/routesDataRu";
-
 const Drawer = createDrawerNavigator();
 Notifications.setNotificationHandler({
     handleNotification: async () => ({
@@ -138,8 +137,8 @@ const Index = ({navigation}) => {
     if (!appIsReady) {
         return (
             <View className={"mx-auto h-screen w-screen justify-center items-center bg-slate-600"}>
-                <Text>
-                    ......
+                <Text className={"text-white text-2xl"}>
+                    {t('Loading')}
                 </Text>
             </View>
         );
