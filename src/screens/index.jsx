@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {Image, Platform, TouchableOpacity, View} from "react-native";
+import {Image, Platform, TouchableOpacity, View, ActivityIndicator} from "react-native";
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import Main from "./Main/";
 import Settings from "./Settings/";
@@ -18,6 +18,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import {darkMode} from "../state/slices/theme";
 import {routesDataTj} from "../data/routesDataTj";
 import {routesDataRu} from "../data/routesDataRu";
+
 const Drawer = createDrawerNavigator();
 Notifications.setNotificationHandler({
     handleNotification: async () => ({
@@ -138,7 +139,7 @@ const Index = ({navigation}) => {
         return (
             <View className={"mx-auto h-screen w-screen justify-center items-center bg-slate-600"}>
                 <Text className={"text-white text-2xl"}>
-                    {t('Loading')}
+                    <ActivityIndicator size={"large"} color={"#fff"}/>
                 </Text>
             </View>
         );

@@ -18,7 +18,9 @@
         "FirstHelpDescription": "Первая помощь пострадавшему",
         "RiskMap": "Карта рисков",
         "CoESForKids": "КЧС Детям",
-        "CoESForKidsDescription": "Основы безопасности детям"
+        "CoESForKidsDescription": "Основы безопасности детям",
+        "Quiz": "Проверь себя",
+        "QuizDescription": "Проверь свои знания"
       },
       "List": {
         "Recommended": "КЧС рекомендует",

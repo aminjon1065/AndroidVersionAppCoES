@@ -41,6 +41,7 @@ import Compass from "./FirstHelp/Compass";
 import Epilepsy from "./FirstHelp/Epilepsy";
 import DogBite from "./FirstHelp/DogBite";
 import Weathers from "./Weathers";
+import Quiz from "./Quiz";
 
 const Stack = createNativeStackNavigator();
 
@@ -58,6 +59,7 @@ const Index = () => {
                 <Stack.Screen name={"FirstHelp"} component={FirstHelpScreen} options={{headerShown: false}}/>
                 <Stack.Screen name={"WhatToDo"} component={WhatToDoScreen} options={{headerShown: false}}/>
                 <Stack.Screen name={"CoesKids"} component={CoesKidsScreen} options={{headerShown: false}}/>
+                <Stack.Screen name={"Quiz"} component={Quiz} options={{headerShown: false}}/>
                 <Stack.Screen name={"Weathers"} component={Weathers} options={{headerShown: false}}/>
 
                 {/*<Stack.Screen name="Map" component={MapScreen}/>*/}

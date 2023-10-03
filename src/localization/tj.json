@@ -18,7 +18,9 @@
         "FirstHelpDescription": "барои ҷабрдидаҳо",
         "RiskMap": "Харитаи хатар",
         "CoESForKids": "КҲФ барои кудакон",
-        "CoESForKidsDescription": "Асосҳои бехатарӣ ба кӯдакон"
+        "CoESForKidsDescription": "Асосҳои бехатарӣ ба кӯдакон",
+        "Quiz": "Худро санҷ",
+        "QuizDescription": "Таёрии худро санҷед"
       },
       "List": {
         "Recommended": "КҲФ тавсия медиҳад",

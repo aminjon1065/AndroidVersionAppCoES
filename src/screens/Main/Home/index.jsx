@@ -12,7 +12,8 @@ import {useTranslation} from "react-i18next";
 import {useDispatch, useSelector} from "react-redux";
 import ShowItem from "../../../components/showItem";
 import SOSCALL from "../../../components/SOSCALL";
-import QuizIcon from './../../../assets/img/quiz.png';
+import QuizIcon from './../../../assets/img/quiz_hand.png';
+
 const Index = (props) => {
     const darkModeSelector = useSelector(state => state.theme.darkMode);
     const [searchText, setSearchText] = useState("")
@@ -182,18 +183,18 @@ const Index = (props) => {
                                     colors={['#e18d98', '#d57a80', 'transparent']}
                                     // colors={['#e18d98', '#d57a80', 'transparent']}
                                 >
-                                    <TouchableWithoutFeedback onPress={() => props.navigation.navigate('FirstHelp')}>
+                                    <TouchableWithoutFeedback onPress={() => props.navigation.navigate('Quiz')}>
                                         <View className={"flex flex-row justify-around rounded h-24"}>
                                             <View className={"flex-1 justify-center "}>
                                                 <Text className={"text-2xl text-center text-white"}>
-                                                    {t('Interface.Cards.FirstHelp')}
+                                                    {t('Interface.Cards.Quiz')}
                                                 </Text>
                                                 <Text className={"text-center text-white"}>
-                                                    {t('Interface.Cards.FirstHelpDescription')}
+                                                    {t('Interface.Cards.QuizDescription')}
                                                 </Text>
                                             </View>
                                             <View className={""}>
-                                                <Image source={QuizIcon} className={"object-top bottom-11 max-h-[125]"}/>
+                                                <Image source={QuizIcon} className={"object-bottom"}/>
                                             </View>
                                         </View>
                                     </TouchableWithoutFeedback>
