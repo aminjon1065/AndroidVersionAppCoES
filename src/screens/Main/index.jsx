@@ -42,6 +42,7 @@ import Epilepsy from "./FirstHelp/Epilepsy";
 import DogBite from "./FirstHelp/DogBite";
 import Weathers from "./Weathers";
 import Quiz from "./Quiz";
+import {Platform} from "react-native";
 
 const Stack = createNativeStackNavigator();
 
@@ -50,7 +51,7 @@ const Index = () => {
         <>
             <Stack.Navigator initialRouteName='Home' screenOptions={{
                 header: (props) => <NavigationBackBar props={props}/>,
-                animation: "slide_from_right",
+                animation: Platform.OS==='android' ?  "fade_from_bottom" : "default",
                 animationDuration:30,
 
             }}>

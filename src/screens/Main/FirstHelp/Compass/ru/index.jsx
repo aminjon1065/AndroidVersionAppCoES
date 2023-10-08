@@ -1,17 +1,18 @@
 import React from 'react';
-import {ScrollView, View, Text} from "react-native";
-
+import {ScrollView, View, Text, Image} from "react-native";
+import Compass from "../../../../../components/Compass";
+import compassInMap from "../assets/a_compass_is_on_the_map.jpg";
 const Index = ({darkMode}) => {
-
     return (
         <ScrollView>
+            <Image source={compassInMap} className={"rounded mx-auto w-[90%]"} />
             <View className={"pl-2"}>
                 <Text className={`text-lg ${darkMode ? 'text-white' : 'text-slate-950'}`}>
-                    <Text className={"text-red-500 font-bold text-2xl text-center"}>Использование компаса </Text> может
-                    быть
-                    полезным при ориентировании в горах или другой местности, особенно
-                    если вы заблудились. Ниже приведены некоторые основные инструкции по использованию
-                    компаса:
+                    <Text className={"text-red-500 font-bold text-2xl text-center"}>Использование компаса </Text>
+                </Text>
+                <Text className={"text-lg font-bold"}>1.Ознакомьтесь с вашим компасом.</Text>
+                <Text>
+                    Стрелка, окрашенная в красный цвет, обычно указывает на север.
                 </Text>
                 <Text className={`text-base ${darkMode ? 'text-white' : 'text-slate-950'}`}>
                     1. Определите магнитный север: перед использованием компаса необходимо определить магнитный север на

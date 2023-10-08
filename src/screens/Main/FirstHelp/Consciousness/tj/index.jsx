@@ -13,7 +13,7 @@ import image10 from './../assets/10.jpg';
 import {FAB} from "react-native-paper";
 import onShare from "../../../../../components/onShare";
 
-const Index = (darkMode) => {
+const Index = ({darkMode}) => {
     const handleShare = async () => {
         const message = 'РАСОНДАНИ ЁРИИ АВВАЛИН БЕХАТАРӢ\n' +
             'САНҶИШИ ҲУШ\n' +

@@ -179,8 +179,8 @@ const Index = (props) => {
                                 <LinearGradient
                                     start={[0.5, 1]} end={[0, 0.1]}
                                     // Background Linear Gradient
-                                    className={"rounded-lg shadow shadow-indigo-800 bg-pink-500  mt-5"}
-                                    colors={['#e18d98', '#d57a80', 'transparent']}
+                                    className={"rounded-lg shadow shadow-indigo-800 bg-cyan-500  mt-5"}
+                                    colors={['#42849f', '#104c62', 'transparent']}
                                     // colors={['#e18d98', '#d57a80', 'transparent']}
                                 >
                                     <TouchableWithoutFeedback onPress={() => props.navigation.navigate('Quiz')}>
