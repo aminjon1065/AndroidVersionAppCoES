@@ -17,8 +17,6 @@ export default function Compass() {
                 return;
             }
             let location = await Location.getCurrentPositionAsync({});
-            // Здесь вы бы использовали location для получения магнитной деклинации
-            // Но для этого примера я использую фиксированное значение:
             setDeclination(10); // предположим, магнитная деклинация равна 10 градусам
         })();
 
