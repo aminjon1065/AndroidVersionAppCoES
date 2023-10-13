@@ -55,12 +55,11 @@ const Index = () => {
                     </AnimatedLottieView>
                 </View>
             ) : (
-                <View>
+                <View className={"flex-1"}>
                     <Text>{questions[currentQuestion].question}</Text>
                     {questions[currentQuestion].answers.map((answer, index) => (
                         <Button
                             key={index}
-
                             onPress={() => handleAnswer(answer)}
                         >{answer}</Button>
                     ))}
