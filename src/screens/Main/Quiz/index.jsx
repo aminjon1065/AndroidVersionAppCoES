@@ -1,39 +1,40 @@
 import React, {useState} from 'react';
-import {Text, View} from "react-native";
+import {Text, TouchableOpacity, View} from "react-native";
 import {getRandomQuestions} from "../../../utils/quizUtils";
 import {questionsRu} from "../../../data/QuizRu";
 import {Button} from "react-native-paper";
 import AnimatedLottieView from "lottie-react-native";
-// import animate from './../../../assets/animation_lnobi847.json';
 import animate from './../../../assets/animation_lnobhxex.json';
+import {useSelector} from "react-redux";
+import {useTranslation} from "react-i18next";
 
 const Index = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [score, setScore] = useState(0);
     const [quizCompleted, setQuizCompleted] = useState(false);
-
-    // Замените ваш исходный массив questionsRu на случайные вопросы
     const [questions, setQuestions] = useState(getRandomQuestions(questionsRu, 10));
-
+    const {t} = useTranslation();
     const handleAnswer = (selectedAnswer) => {
+        console.log(selectedAnswer);
         if (quizCompleted) {
-            // Если квиз уже завершен, игнорируйте ответы
             return;
         }
 
         const currentQuestionData = questions[currentQuestion];
-
-        if (currentQuestionData.answers[currentQuestionData.correct] === selectedAnswer) {
+        const correctAnswer = currentQuestionData.correct; // Правильный ответ
+        console.log(correctAnswer);
+        if (correctAnswer === selectedAnswer) {
             setScore(score + 1);
         }
 
         if (currentQuestion + 1 < questions.length) {
             setCurrentQuestion(currentQuestion + 1);
         } else {
-            // Квиз завершен
             setQuizCompleted(true);
         }
     };
+
+
 
     const restartQuiz = () => {
         setQuestions(getRandomQuestions(questionsRu, 10));
@@ -41,34 +42,50 @@ const Index = () => {
         setScore(0);
         setQuizCompleted(false);
     };
-
+    const darkModeSelector = useSelector(state => state.theme.darkMode);
     return (
-        <View>
-            {quizCompleted ? (
-                <View className={"mx-auto"}>
+        quizCompleted ?
+            <View className={`h-screen w-screen ${darkModeSelector ? "bg-slate-950" : "bg-white"}`}>
+                <View className={`mx-auto ${darkModeSelector ? "bg-slate-950" : "bg-white"}`}>
                     <AnimatedLottieView className={"w-11/12 h-auto flex flex-row"} autoPlay={true} loop={true}
                                         source={animate}>
-                        <View className={"items-center justify-center my-auto mx-auto"}>
-                            <Text className={"text-center"}>Квиз завершен</Text>
-                            <Text>Ваш счет: {score} из {questions.length}</Text>
+                        <View className={"flex-1"}>
+                            <View className={"items-center justify-center my-auto mx-auto"}>
+                                <Text
+                                    className={`text-center text-xl ${darkModeSelector ? "text-white" : "text-slate-950"}`}>Опрос
+                                    завершен</Text>
+                                <Text className={darkModeSelector ? "text-white" : "text-slate-950"}>Ваш
+                                    счет: {score} из {questions.length}
+                                </Text>
+                            </View>
+                            <View className={"mx-auto"}>
+                                <Button onPress={() => restartQuiz()} className={"w-5/12 bg-slate-800 rounded"}><Text
+                                    className={"text-white"}>New</Text></Button>
+                            </View>
                         </View>
                     </AnimatedLottieView>
                 </View>
-            ) : (
-                <View className={"flex-1"}>
-                    <Text>{questions[currentQuestion].question}</Text>
+            </View>
+            :
+            <View className={`h-screen w-screen ${darkModeSelector ? "bg-slate-950" : "bg-white"}`}>
+                <View className={`flex-1`}>
+                    <Text
+                        className={`flex-wrap text-2xl text-center ${darkModeSelector ? "text-white" : "text-slate-950"}`}>{questions[currentQuestion].question}</Text>
                     {questions[currentQuestion].answers.map((answer, index) => (
-                        <Button
+                        <TouchableOpacity
                             key={index}
                             onPress={() => handleAnswer(answer)}
-                        >{answer}</Button>
+                            className={"w-11/12 mx-auto my-2 bg-slate-800 rounded flex-wrap"}
+                        >
+                            <View className={"px-2 py-4"}>
+                                <Text className={"text-white"}>
+                                    {answer}
+                                </Text>
+                            </View>
+                        </TouchableOpacity>
                     ))}
                 </View>
-
-            )}
-
-            <Button onPress={() => restartQuiz()}>New</Button>
-        </View>
+            </View>
     );
 };
 
