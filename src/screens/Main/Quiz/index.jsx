@@ -16,14 +16,11 @@ const Index = () => {
     const [questions, setQuestions] = useState(getRandomQuestions(questionsRu, 10));
     const {t} = useTranslation();
     const handleAnswer = (selectedAnswer) => {
-        console.log(selectedAnswer);
         if (quizCompleted) {
             return;
         }
-
         const currentQuestionData = questions[currentQuestion];
         const correctAnswer = currentQuestionData.correct; // Правильный ответ
-        console.log(correctAnswer);
         if (correctAnswer === selectedAnswer) {
             setScore(score + 1);
         }
@@ -41,7 +38,6 @@ const Index = () => {
         setQuizCompleted(false);
     };
     const darkModeSelector = useSelector(state => state.theme.darkMode);
-    console.log(currentQuestion);
     return (
         quizCompleted ?
             <View className={`h-screen w-screen ${darkModeSelector ? "bg-slate-950" : "bg-white"}`}>
