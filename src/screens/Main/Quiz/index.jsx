@@ -24,7 +24,6 @@ const Index = () => {
         if (correctAnswer === selectedAnswer) {
             setScore(score + 1);
         }
-
         if (currentQuestion + 1 < questions.length) {
             setCurrentQuestion(currentQuestion + 1);
         } else {
@@ -98,5 +97,4 @@ const Index = () => {
             </View>
     );
 };
-
 export default Index;
