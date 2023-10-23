@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
-import {Text, TouchableOpacity, View} from "react-native";
-import {getRandomQuestions} from "../../../../utils/quizUtils";
-import {questionsTj} from "../../../../data/QuizTj";
-import {Button} from "react-native-paper";
+import React, { useState } from 'react';
+import { Text, TouchableOpacity, View } from "react-native";
+import { getRandomQuestions } from "../../../../utils/quizUtils";
+import { questionsTj } from "../../../../data/QuizTj";
+import { Button } from "react-native-paper";
 import AnimatedLottieView from "lottie-react-native";
 import animate from '../../../../assets/animation_lnobi847.json';
 import animate2 from '../../../../assets/animation_lnobhxex.json';
-import {useSelector} from "react-redux";
+import { useSelector } from "react-redux";
 
 const Index = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -41,10 +41,10 @@ const Index = () => {
                 <View className={`mx-auto ${darkModeSelector ? "bg-slate-950" : "bg-white"}`}>
                     {score < 5 ?
                         <AnimatedLottieView source={animate2} className={"w-11/12 h-auto flex flex-row"} autoPlay={true}
-                                            loop={true}/>
+                            loop={true} />
                         :
                         <AnimatedLottieView className={"w-11/12 h-auto flex flex-row"} autoPlay={true} loop={true}
-                                            source={animate}/>
+                            source={animate} />
                     }
                     <View className={"flex-1"}>
                         <View className={"items-center justify-center my-auto mx-auto"}>
@@ -74,7 +74,7 @@ const Index = () => {
             </View>
             :
             <View className={`h-screen w-screen ${darkModeSelector ? "bg-slate-950" : "bg-white"}`}>
-                <Text className={"text-base text-center"}>{currentQuestion} из {questions.length} вопросов</Text>
+                <Text className={"text-base text-center"}>{currentQuestion +    1} из {questions.length} вопросов</Text>
                 <View className={`flex-1`}>
                     <Text
                         className={`flex-wrap text-2xl text-center ${darkModeSelector ? "text-white" : "text-slate-950"}`}>{questions[currentQuestion].question}</Text>

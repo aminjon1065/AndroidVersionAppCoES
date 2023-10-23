@@ -74,7 +74,7 @@ const Index = () => {
             </View>
             :
             <View className={`h-screen w-screen ${darkModeSelector ? "bg-slate-950" : "bg-white"}`}>
-                <Text className={"text-base text-center"}>{currentQuestion} из {questions.length} вопросов</Text>
+                <Text className={"text-base text-center"}>{currentQuestion+1} из {questions.length} вопросов</Text>
                 <View className={`flex-1`}>
                     <Text
                         className={`flex-wrap text-2xl text-center ${darkModeSelector ? "text-white" : "text-slate-950"}`}>{questions[currentQuestion].question}</Text>
